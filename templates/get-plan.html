@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Select Your Goal</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
+<body>
+    <header>
+        <button id="theme-toggle" title="Toggle Theme">
+            &#x1f31c;
+        </button>
+        <h2>Select Your Goal</h2>
+    </header>
+    <section>
+    <form action="/result" method="post">
+        <label>Fitness Goal:</label>
+        <select name="goal" required>
+            <option value="Weight Loss">Weight Loss</option>
+            <option value="Muscle Gain">Muscle Gain</option>
+            <option value="General Health">General Health</option>
+        </select><br><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label>Preference:</label>
+        <select name="preference" required>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non-vegetarian">Non-Vegetarian</option>
+        </select><br><br>
+
+        <label>Activity Level:</label>
+        <select name="activity" required>
+            <option value="Sedentary">Sedentary</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Active">Active</option>
+        </select><br><br>
+
+        <input type="submit" value="Get Your Plan" class="btn">
+        </form>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2024 AI Diet Plan. All rights reserved.</p>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        // Load theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+</body>
+</html>

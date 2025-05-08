@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        /* Specific styles for result.html */
+        .meal-section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .meal-section h2 {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .meal-section p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media print {
+
+            header,
+            footer,
+            nav,
+            .result-actions,
+            #theme-toggle {
+                display: none !important;
+            }
+
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+                color: black;
+            }
+
+            .meal-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="theme-toggle" title="Toggle Theme">
+        &#x1f31c;
+    </button>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button id="hamburger-menu" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="navbar-brand">Meal Genie ☘️</span>
+
+            <ul class="navbar-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="result-section" id="meal-plan-content">
+        <div class="result-header">
+            <h2>Your Personalized Meal Plan</h2>
+            <p class="plan-details">Based on your profile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }}
+                activity, {{ preference|capitalize }}</p>
+        </div>
+
+        <section class="meal-plan-container" id="meal-plan">
+            {% for meal_time, meals in meal_plans.items() %}
+                <div class="meal-card">
+                    <div class="meal-time">
+                        <h3>{{ meal_time|capitalize }}</h3>
+                    </div>
+                    <div class="meal-content">
+                        {% if meals is iterable and meals is not string %}
+                            {% for meal in meals %}
+                                <div class="meal-section">
+                                    <p><strong>Item:</strong> {{ meal.item }}</p>
+                                    <p><strong>Quantity:</strong> {{ meal.quantity }}</p>
+                                    <p><strong>Time:</strong> {{ meal.time if meal.time is defined else 'N/A' }}</p>
+                                    <p><strong>Calories:</strong> {{ meal.calories }} kcal</p>
+                                    <p><strong>Protein:</strong> {{ meal.protein }} g</p>
+                                    <p><strong>Carbs:</strong> {{ meal.carbs }} g</p>
+                                    <p><strong>Fats:</strong> {{ meal.fats }} g</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="meal-section">
+                                <p><strong>Item:</strong> {{ meals.item }}</p>
+                                <p><strong>Quantity:</strong> {{ meals.quantity }}</p>
+                                <p><strong>Time:</strong> {{ meals.time if meals.time is defined else 'N/A' }}</p>
+                                <p><strong>Calories:</strong> {{ meals.calories }} kcal</p>
+                                <p><strong>Protein:</strong> {{ meals.protein }} g</p>
+                                <p><strong>Carbs:</strong> {{ meals.carbs }} g</p>
+                                <p><strong>Fats:</strong> {{ meals.fats }} g</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if healthy_tip %}
+                <div class="meal-section tip-section">
+                    <strong>Tip:</strong> {{ healthy_tip }}
+                </div>
+            {% endif %}
+        </section>
+        <form action="/download_pdf" method="post">
+            <input type="hidden" name="goal" value="{{ goal }}">
+            <input type="hidden" name="age" value="{{ age }}">
+            <input type="hidden" name="gender" value="{{ gender }}">
+            <input type="hidden" name="preference" value="{{ preference }}">
+            <input type="hidden" name="activity" value="{{ activity }}">
+            <button type="submit">Download Meal Plan as PDF</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2024 Meal Genie. All rights reserved.</p>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        // Load theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+        
+        // Mobile menu toggle
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const navbarMenu = document.querySelector(".navbar-menu");
+        hamburgerMenu.addEventListener("click", () => {
+            navbarMenu.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
