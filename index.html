@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | AI Diet Plan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,12 +21,12 @@
           <span class="navbar-brand">Meal Genie ☘️</span>
 
           <ul class="navbar-menu">
-              <li><a href="{{ url_for('index') }}">Home</a></li>
-              <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
-              <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
-              <li><a href="{{ url_for('about') }}">About</a></li>
-              <li><a href="{{ url_for('contact') }}">Contact</a></li>
-              <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+              <li><a href="index.html">Home</a></li>
+                <li><a href="get-plan.html">Get Your Plan</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
           </ul>
       </div>
   </nav>
@@ -36,8 +36,8 @@
           <h1>Your Diet, Your Way</h1>
           <p class="hero-subtitle">Personalized Meal Plans Just for You</p>
           <div class="hero-buttons">
-              <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
-              <a href="{{ url_for('pricing') }}" class="btn btn-secondary">View Pricing</a>
+              <a href="get-plan.html" class="btn btn-primary">Get Your Diet Plan</a>
+              <a href="pricing.html" class="btn btn-secondary">View Pricing</a>
           </div>
       </div>
   </header>
@@ -88,8 +88,8 @@
 
   <footer>
     <div class="footer-content">
-    <a href="{{ url_for('faq') }}">Faq</a>
-   <a href="{{ url_for('contact') }}">Contact</a> 
+    <a href="faq.html">Faq</a>
+   <a href="contact.html">Contact</a> 
    {# <a href="{{ url_for('pricing') }}">Pricing</a> #}
    {# <a href="{{ url_for('about') }}">About</a>  #}
   </div>
@@ -99,8 +99,7 @@
       <a href="/terms-of-service">Terms of Service</a>
   </div>
   <div class="footer-social">
-      <a href="https://instagram.com/yourhandle"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
   </div>
 </div>
   </footer>
