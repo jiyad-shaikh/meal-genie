@@ -1,4 +1,4 @@
 Flask
 xhtml2pdf==0.2.5
-reportlab==3.5.67
+reportlab==3.6.12
 gunicorn
