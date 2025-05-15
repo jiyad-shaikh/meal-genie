@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: diet-backend
+    name: ai-diet-plan
     env: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    plan: free
-    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
