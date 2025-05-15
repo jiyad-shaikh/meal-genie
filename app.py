@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, make_response
-from xhtml2pdf import pisa
-import io
+from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates',static_folder='static')
 
 meal_plans = {
     "general_health": {
@@ -7041,67 +7039,6 @@ def result():
         activity=activity,
         healthy_tip=healthy_tip
     )
-
-from flask import make_response, request, render_template
-import io
-from xhtml2pdf import pisa
-
-@app.route('/download_pdf', methods=['POST'])
-def download_pdf():
-    global meal_plans, tips
-
-    goal = request.form.get('goal').lower().replace(" ", "_")
-    gender = request.form.get('gender').lower()
-    preference = request.form.get('preference').lower()
-    activity = request.form.get('activity').lower()
-
-    # Get raw input and store it for display
-    age_input = request.form.get('age')
-
-    # Default to using age_group for accessing dictionary
-    try:
-        user_age = int(age_input)  # exact age for display
-        age_group = get_age_range(user_age)  # for accessing the dictionary
-    except ValueError:
-        # If input is like '18-30', use it directly
-        age_group = age_input
-        user_age = age_input  # fallback if no exact number provided
-
-    try:
-        meal_plan_result = meal_plans[goal][preference][gender][age_group][activity]
-    except KeyError:
-        meal_plan_result = {
-            "breakfast": "No meal plan found for this combination.",
-            "lunch": "Please try different inputs.",
-            "dinner": "Sorry!",
-        }
-
-    try:
-        healthy_tip = tips[goal][gender][age_group][activity]
-    except KeyError:
-        healthy_tip = "Stay healthy, stay consistent, and trust the process!"
-
-    rendered = render_template('pdf_template.html',
-                                meal_plans=meal_plan_result,
-                                healthy_tip=healthy_tip,
-                                goal=goal,
-                                age=user_age,  # Now defined
-                                gender=gender,
-                                preference=preference,
-                                activity=activity
-                               )
-
-    result = io.BytesIO()
-    pdf = pisa.pisaDocument(io.BytesIO(rendered.encode("UTF-8")), result)
-
-    if not pdf.err:
-        response = make_response(result.getvalue())
-        response.headers['Content-Type'] = 'application/pdf'
-        response.headers['Content-Disposition'] = 'attachment; filename=meal_plan.pdf'
-        return response
-    return "Failed to generate PDF"
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
