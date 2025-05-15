@@ -23,12 +23,12 @@
             <span class="navbar-brand">Meal Genie ☘️</span>
 
             <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="get-plan.html">Get Your Plan</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+                 <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
             </ul>
         </div>
     </nav>
@@ -64,10 +64,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-               <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="about.html">About Us</a>
-                <a href="pricing.html">Pricing</a>
+               <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
             </div>
             <div class="footer-legal">
                 <p>&copy; 2024 Meal Genie. All rights reserved.</p>

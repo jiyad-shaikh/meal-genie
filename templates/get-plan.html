@@ -51,17 +51,17 @@
         <input type="submit" value="Get Your Plan" class="btn">
         </form>
         <div style="text-align: center; margin-top: 20px;">
-            <a href="index.html" class="btn">Back to Home</a>
+            <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                 <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="about.html">About Us</a>
-                <a href="pricing.html">Pricing</a>
+                 <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
             </div>
             <div class="footer-legal">
                 <p>&copy; 2024 AI Diet Plan. All rights reserved.</p>

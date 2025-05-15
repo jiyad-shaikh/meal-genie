@@ -21,12 +21,12 @@
           <span class="navbar-brand">Meal Genie ☘️</span>
 
           <ul class="navbar-menu">
-              <li><a href="index.html">Home</a></li>
-                <li><a href="get-plan.html">Get Your Plan</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+             <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
           </ul>
       </div>
   </nav>
@@ -36,8 +36,8 @@
           <h1>Your Diet, Your Way</h1>
           <p class="hero-subtitle">Personalized Meal Plans Just for You</p>
           <div class="hero-buttons">
-              <a href="get-plan.html" class="btn btn-primary">Get Your Diet Plan</a>
-              <a href="pricing.html" class="btn btn-secondary">View Pricing</a>
+              <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
+                <a href="{{ url_for('pricing') }}" class="btn btn-secondary">View Pricing</a>
           </div>
       </div>
   </header>
@@ -88,10 +88,10 @@
 
   <footer>
     <div class="footer-content">
-    <a href="faq.html">Faq</a>
-   <a href="contact.html">Contact</a> 
-   {# <a href="{{ url_for('pricing') }}">Pricing</a> #}
-   {# <a href="{{ url_for('about') }}">About</a>  #}
+   <a href="{{ url_for('faq') }}">FAQ</a>
+   <a href="{{ url_for('contact') }}">Contact Us</a>
+   <a href="{{ url_for('about') }}">About Us</a>
+   <a href="{{ url_for('pricing') }}">Pricing</a>
   </div>
   <div class="footer-legal">
       <p>&copy; 2024 Meal Genie . All rights reserved.</p>
