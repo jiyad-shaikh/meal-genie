@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Meal Genie</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <button id="theme-toggle" title="Toggle Theme">
         &#x1f31c;
@@ -33,33 +31,54 @@
         </div>
     </nav>
 
-    <header>
-        <h1>Frequently Asked Questions</h1>
-    </header>
-
-    <section>
-        <ul>
-            <li>
-                <strong>Is it personalized?</strong>
-                Yes, based on your data.
-            </li>
-            <li>
-                <strong>Is it free?</strong>
-                Yes, for now.
-            </li>
-            <li>
-                <strong>How long to get the plan?</strong>
-                24 hours.
-            </li>
-            <li>
-                <strong>Do you deliver meals?</strong>
-                Not yet, coming soon.
-            </li>
-        </ul>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
-        </div>
-    </section>
+    <main class="wrapper">
+        <section>
+            <h1 class="section-title">Terms of Service</h1>
+            <p>Last updated: May 2025</p>
+            
+            <div class="legal-content">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing or using Meal Genie's services, you agree to be bound by these Terms of Service.</p>
+                
+                <h2>2. Service Description</h2>
+                <p>Meal Genie provides personalized meal planning services based on user-provided information about dietary preferences, health goals, and other relevant factors.</p>
+                
+                <h2>3. User Responsibilities</h2>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information</li>
+                    <li>Use the service for personal, non-commercial purposes</li>
+                    <li>Not share your account credentials</li>
+                    <li>Consult with a healthcare professional before making significant dietary changes</li>
+                </ul>
+                
+                <h2>4. Intellectual Property</h2>
+                <p>All meal plans, content, and materials provided by Meal Genie are protected by copyright and may not be reproduced or distributed without permission.</p>
+                
+                <h2>5. Payments and Refunds</h2>
+                <p>Premium services require payment. Refund policies are as follows:</p>
+                <ul>
+                    <li>Digital products: No refunds after delivery</li>
+                    <li>Subscription services: Cancel anytime, no prorated refunds</li>
+                </ul>
+                
+                <h2>6. Disclaimer</h2>
+                <p>Meal Genie provides general dietary information, not medical advice. Results may vary based on individual adherence and other factors.</p>
+                
+                <h2>7. Limitation of Liability</h2>
+                <p>Meal Genie shall not be liable for any indirect, incidental, or consequential damages resulting from use of our services.</p>
+                
+                <h2>8. Modifications</h2>
+                <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of changes.</p>
+                
+                <h2>9. Governing Law</h2>
+                <p>These terms shall be governed by the laws of India , Maharashtra.</p>
+                
+                <h2>10. Contact Information</h2>
+                <p>For questions about these terms, please contact us at <a href="{{ url_for('contact') }}">our contact page</a>.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -79,6 +98,7 @@
             </div>
         </div>
     </footer>
+    
     <script>
         const toggleBtn = document.getElementById("theme-toggle");
         toggleBtn.addEventListener("click", () => {
@@ -86,14 +106,13 @@
             localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         });
 
-        // Load theme on page load
         window.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('theme') === 'light') {
                 document.body.classList.add('light-mode');
             }
         });
-
-        // Mobile menu toggle
+    </script>
+    <script>
         const hamburgerMenu = document.getElementById("hamburger-menu");
         const navbarMenu = document.querySelector(".navbar-menu");
         hamburgerMenu.addEventListener("click", () => {
@@ -101,5 +120,4 @@
         });
     </script>
 </body>
-
 </html>

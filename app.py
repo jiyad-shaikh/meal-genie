@@ -6958,6 +6958,15 @@ def pricing():
 def about():
     return render_template('about.html')
 
+@app.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy.html')
+
+@app.route('/terms-of-service')  # Must match the URL in browser
+def terms_of_service():  # This name must match url_for()
+    return render_template('terms.html')
+
+
 @app.route('/result', methods=['POST'])
 def result():
 

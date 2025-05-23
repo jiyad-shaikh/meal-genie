@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | AI Diet Plan</title>
@@ -8,122 +9,124 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
 </head>
-<body>
-  <button id="theme-toggle" title="Toggle Theme">
-      &#x1f31c;
-  </button>
-  <nav class="navbar">
-      <div class="navbar-container">
-          <button id="hamburger-menu" title="Toggle Menu">
-              <i class="fas fa-bars"></i>
-          </button>
-          <span class="navbar-brand">Meal Genie ☘️</span>
 
-          <ul class="navbar-menu">
-             <li><a href="{{ url_for('index') }}">Home</a></li>
+<body>
+    <button id="theme-toggle" title="Toggle Theme">
+        &#x1f31c;
+    </button>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <button id="hamburger-menu" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="navbar-brand">Meal Genie ☘️</span>
+
+            <ul class="navbar-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
                 <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-          </ul>
-      </div>
-  </nav>
-  <header class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-          <h1>Your Diet, Your Way</h1>
-          <p class="hero-subtitle">Personalized Meal Plans Just for You</p>
-          <div class="hero-buttons">
-              <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
+            </ul>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Your Diet, Your Way</h1>
+            <p class="hero-subtitle">Personalized Meal Plans Just for You</p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
                 <a href="{{ url_for('pricing') }}" class="btn btn-secondary">View Pricing</a>
-          </div>
-      </div>
-  </header>
+            </div>
+        </div>
+    </header>
 
-  <!-- Replace feature-section with this -->
-  <section class="feature-section">
-      <h2 class="section-title">Why Choose Us</h2>
-      <div class="feature-grid">
-          <div class="feature-card">
-              <div class="feature-icon">
-                  <i class="fas fa-carrot"></i>
-              </div>
-              <h3>Tailored Plans</h3>
-              <p>Customized diet plans based on your specific goals and preferences.</p>
-          </div>
-          <div class="feature-card">
-              <div class="feature-icon">
-                  <i class="fas fa-leaf"></i>
-              </div>
-              <h3>Dietary Options</h3>
-              <p>Variety of options including Vegetarian, Non-Veg, Vegan, and Jain.</p>
-          </div>
-          <div class="feature-card">
-              <div class="feature-icon">
-                  <i class="fas fa-coins"></i>
-              </div>
-              <h3>Affordable Ingredients</h3>
-              <p>Plans that use easily accessible and budget-friendly ingredients.</p>
-          </div>
-          <div class="feature-card">
-              <div class="feature-icon">
-                  <i class="fas fa-users"></i>
-              </div>
-              <h3>Expertly Created</h3>
-              <p>Developed by a team of fitness enthusiasts and tech professionals.</p>
-          </div>
-      </div>
-  </section>
+    <!-- Replace feature-section with this -->
+    <section class="feature-section">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-carrot"></i>
+                </div>
+                <h3>Tailored Plans</h3>
+                <p>Customized diet plans based on your specific goals and preferences.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Dietary Options</h3>
+                <p>Variety of options including Vegetarian, Non-Veg, Vegan, and Jain.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3>Affordable Ingredients</h3>
+                <p>Plans that use easily accessible and budget-friendly ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Expertly Created</h3>
+                <p>Developed by a team of fitness enthusiasts and tech professionals.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="steps-section">
-      <h2>How It Works</h2>
-      <ol>
-          <li>Fill out our detailed questionnaire to provide us with your information.</li>
-          <li>Our system analyzes your data to create a personalized meal plan.</li>
-          <li>Receive your detailed plan via WhatsApp or email.</li>
-      </ol>
-  </section>
+    <section class="steps-section">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Fill out our detailed questionnaire to provide us with your information.</li>
+            <li>Our system analyzes your data to create a personalized meal plan.</li>
+            <li>Receive your detailed plan via WhatsApp or email.</li>
+        </ol>
+    </section>
 
-  <footer>
-    <div class="footer-content">
-   <a href="{{ url_for('faq') }}">FAQ</a>
-   <a href="{{ url_for('contact') }}">Contact Us</a>
-   <a href="{{ url_for('about') }}">About Us</a>
-   <a href="{{ url_for('pricing') }}">Pricing</a>
-  </div>
-  <div class="footer-legal">
-      <p>&copy; 2024 Meal Genie . All rights reserved.</p>
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/terms-of-service">Terms of Service</a>
-  </div>
-  <div class="footer-social">
-      <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
-  </div>
-</div>
-  </footer>
-  <script>
-    const toggleBtn = document.getElementById("theme-toggle");
-    toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
-        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-    });
+    <footer>
+        <div class="footer-content">
+            <a href="{{ url_for('faq') }}">FAQ</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('pricing') }}">Pricing</a>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2024 Meal Genie . All rights reserved.</p>
+            <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+            <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
+        </div>
+        </div>
+    </footer>
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
 
-    // Load theme on page load
-    window.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-mode');
-        }
-    });
-</script>
-<script>
-    const hamburgerMenu = document.getElementById("hamburger-menu");
-    const navbarMenu = document.querySelector(".navbar-menu");
-    hamburgerMenu.addEventListener("click", () => {
-        navbarMenu.classList.toggle("active");
-    });
-</script>
+        // Load theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    <script>
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const navbarMenu = document.querySelector(".navbar-menu");
+        hamburgerMenu.addEventListener("click", () => {
+            navbarMenu.classList.toggle("active");
+        });
+    </script>
 
 </body>
 
