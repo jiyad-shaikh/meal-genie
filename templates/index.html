@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | AI Diet Plan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personalized diet plans and healthy meal boxes based on your lifestyle and goals. Join MealGenie to take charge of your health journey.">
+  <meta name="keywords" content="diet plan, healthy meals, personalized nutrition, meal boxes, fitness diet, vegetarian diet, non-veg diet, weight loss, muscle gain">
+  <meta name="author" content="MealGenie">
+  <title>MealGenie | Personalized Diet Plans & Healthy Meal Boxes</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
 </head>
+        
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
 <script>
@@ -44,58 +47,81 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Your Diet, Your Way</h1>
-            <p class="hero-subtitle">Personalized Meal Plans Just for You</p>
+             <h1>Personalized Diet Plans – Just for You</h1>
+             <p>Say goodbye to generic diets. Get a custom meal plan based on your goals, preferences, and lifestyle – plus,( order ready-to-eat meal boxes delivered to your doorstep.)--launching soon </p>
             <div class="hero-buttons">
                 <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
-                <a href="{{ url_for('pricing') }}" class="btn btn-secondary">View Pricing</a>
             </div>
         </div>
     </header>
 
-    <!-- Replace feature-section with this -->
+     <!-- Why Choose Us -->
     <section class="feature-section">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-carrot"></i>
-                </div>
-                <h3>Tailored Plans</h3>
-                <p>Customized diet plans based on your specific goals and preferences.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h3>Dietary Options</h3>
-                <p>Variety of options including Vegetarian, Non-Veg, Vegan, and Jain.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <h3>Affordable Ingredients</h3>
-                <p>Plans that use easily accessible and budget-friendly ingredients.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Expertly Created</h3>
-                <p>Developed by a team of fitness enthusiasts and tech professionals.</p>
-            </div>
-        </div>
-    </section>
+  <h2>Why People Love MealGenie</h2>
+  <ul>
+    <li>Personalized meal plans by real nutrition experts</li>
+    <li>Ready-to-eat meals that match your diet plan (Coming Soon)</li>
+    <li>Both Veg & Non-Veg options – no boring boiled food</li>
+    <li>Affordable subscriptions</li>
+    <li>Soon powered by AI for 24/7 guidance</li>
+    <li>Flexible plans for fitness enthusiasts, working professionals & athletes</li>
+  </ul>
+</section>
+    
 
     <section class="steps-section">
-        <h2>How It Works</h2>
-        <ol>
-            <li>Fill out our detailed questionnaire to provide us with your information.</li>
-            <li>Our system analyzes your data to create a personalized meal plan.</li>
-            <li>Receive your detailed plan via WhatsApp or email.</li>
-        </ol>
+       <!-- How It Works -->
+  <h2>How MealGenie Works</h2>
+  <ol>
+    <li><strong>Tell Us About You:</strong> Fill out a short form about your health goals, body type, activity level, and food preferences.</li>
+    <li><strong>Get a Personalized Plan:</strong> Our team of expert nutritionists will craft a customized meal plan tailored to your goals.</li>
+    <li><strong>Order Your Meals (Coming Soon):</strong> Our diet meal box delivery service is under development. Stay tuned!</li>
+  </ol>
     </section>
+
+    <!-- Coming Soon: AI Nutritionist -->
+<section id="ai-nutritionist">
+  <h2>Coming Soon: Your Smart AI Nutritionist</h2>
+  <p>We're building an AI-powered nutritionist that will guide you 24/7. It will chat with you. It will talk to you. It will understand your goals better than anyone.</p>
+</section>
+
+<!-- Sample Meal Plans -->
+<section id="sample-plans">
+  <h2>What Your Diet Plan Might Look Like</h2>
+  <ul>
+    <li><strong>Breakfast:</strong> High-protein paneer sandwich + black coffee (350 kcal)</li>
+    <li><strong>Lunch:</strong> Grilled chicken salad with brown rice (500 kcal)</li>
+    <li><strong>Snack:</strong> Dates + almonds + whey shake (200 kcal)</li>
+    <li><strong>Dinner:</strong> Light paneer tofu bowl (400 kcal)</li>
+  </ul>
+  <p>Designed for real goals. Backed by nutrition. No crash diets.</p>
+</section>
+
+<!-- Testimonials Placeholder -->
+<section id="testimonials">
+  <h2>What Our Early Users Are Saying</h2>
+  <p><em>Coming soon – reviews from our first 100 users.</em></p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <dl>
+    <dt>Is this suitable for beginners?</dt>
+    <dd>Yes! Whether you’re just starting or a fitness pro, we’ll build your plan accordingly.</dd>
+    <dt>Are meal boxes compulsory?</dt>
+    <dd>No. You can follow your plan at home or order meals from us when available.</dd>
+    <dt>Can I choose vegetarian only?</dt>
+    <dd>Absolutely. You’ll select food preferences when filling the form.</dd>
+  </dl>
+</section>
+
+<!-- Final CTA -->
+<section id="final-cta">
+  <h2>Ready to Take Control of Your Health?</h2>
+  <p>Get a personalized diet plan and start your journey towards better health today.</p>
+   <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
+</section>
 
     <footer>
         <div class="footer-content">
@@ -137,5 +163,4 @@
     </script>
 
 </body>
-
 </html>
