@@ -30,12 +30,7 @@
     </header>
     <section>
         <form action="/result" method="post">
-            <label>Fitness Goal:</label>
-            <select name="goal" required>
-                <option value="Weight Loss">Weight Loss</option>
-                <option value="Muscle Gain">Muscle Gain</option>
-                <option value="General Health">General Health</option>
-            </select><br><br>
+           
 
             <label>Age:</label>
             <input type="number" name="age" required><br><br>
@@ -72,6 +67,13 @@
 
 <!-- Hidden input for goal (can be left empty if user doesn’t choose manually) -->
 <input type="hidden" id="goal" name="goal">
+
+ <label>Fitness Goal:</label>
+            <select name="goal" required>
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Muscle Gain">Muscle Gain</option>
+                <option value="General Health">General Health</option>
+            </select><br><br>
 
 
             <input type="submit" value="Get Your Plan" class="btn">
