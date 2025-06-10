@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Personalized diet plans and healthy meal boxes based on your lifestyle and goals. Join MealGenie to take charge of your health journey.">
+  <meta name="keywords"
+    content="diet plan, healthy meals, personalized nutrition, meal boxes, fitness diet, vegetarian diet, non-veg diet, weight loss, muscle gain">
+  <meta name="author" content="MealGenie">
+  <title>MealGenie | Personalized Diet Plans & Healthy Meal Boxes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-71JWJ7DBKD');
+</script>
+
+<body>
+  <button id="theme-toggle" title="Toggle Theme">
+    &#x1f31c;
+  </button>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <button id="hamburger-menu" title="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Example HTML inside your navbar/header -->
+<div class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+  <img src="/static/images/logo.jpg" alt="MealGenie Logo" style="height: 50px; margin-right: 20px;">
+  <span style="color: #aaff55; font-weight: bold; font-size: 3em;">Meal Genie</span>
+</div>
+
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text-and-button">
+        <h1>MealGenie</h1>
+        <p class="hero-subtitle">Your Personalized Diet Plan & Healthy Meal Box Delivery</p>
+        <a href="{{ url_for('get_plan') }}" class="btn btn-primary rounded-button">Get My Plan</a>
+      </div>
+    </div>
+    <div class="dishes-container">
+      <div class="dishes-animation">
+        <div class="dish" style="--i:1"><img src="/static/images/dish1.png" alt="Dish 1"></div>
+        <div class="dish" style="--i:2"><img src="/static/images/dish2.png" alt="Dish 2"></div>
+        <div class="dish" style="--i:3"><img src="/static/images/dish3.png" alt="Dish 3"></div>
+        <div class="dish" style="--i:4"><img src="/static/images/dish4.png" alt="Dish 4"></div>
+        <div class="dish" style="--i:5"><img src="/static/images/dish1.png" alt="Dish 1"></div>
+        <div class="dish" style="--i:6"><img src="/static/images/dish2.png" alt="Dish 2"></div>
+        <div class="dish" style="--i:7"><img src="/static/images/dish3.png" alt="Dish 3"></div>
+        <div class="dish" style="--i:8"><img src="/static/images/dish4.png" alt="Dish 4"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="feature-section">
+    <h2>Why People Love MealGenie</h2>
+    <ul>
+      <li>Personalized meal plans by real nutrition experts</li>
+      <li>Ready-to-eat meals that match your diet plan (Coming Soon)</li>
+      <li>Both Veg & Non-Veg options – no boring boiled food</li>
+      <li>Affordable subscriptions</li>
+      <li>Soon powered by AI for 24/7 guidance</li>
+      <li>Flexible plans for fitness enthusiasts, working professionals & athletes</li>
+    </ul>
+  </section>
+
+
+  <section class="steps-section">
+    <h2>How MealGenie Works</h2>
+    <ol>
+      <li><strong>Tell Us About You:</strong> Fill out a short form about your health goals, body type, activity level,
+        and food preferences.</li>
+      <li><strong>Get a Personalized Plan:</strong> Our team of expert nutritionists will craft a customized meal plan
+        tailored to your goals.</li>
+      <li><strong>Order Your Meals (Coming Soon):</strong> Our diet meal box delivery service is under development. Stay
+        tuned!</li>
+    </ol>
+  </section>
+
+  <section id="ai-nutritionist">
+    <h2>Coming Soon: Your Smart AI Nutritionist</h2>
+    <p>We're building an AI-powered nutritionist that will guide you 24/7. It will chat with you. It will talk to you.
+      It will understand your goals better than anyone.</p>
+  </section>
+
+  <section id="sample-plans">
+    <h2>What Your Diet Plan Might Look Like</h2>
+    <ul>
+      <li><strong>Breakfast:</strong> High-protein paneer sandwich + black coffee (350 kcal)</li>
+      <li><strong>Lunch:</strong> Grilled chicken salad with brown rice (500 kcal)</li>
+      <li><strong>Snack:</strong> Dates + almonds + whey shake (200 kcal)</li>
+      <li><strong>Dinner:</strong> Light paneer tofu bowl (400 kcal)</li>
+    </ul>
+    <p>Designed for real goals. Backed by nutrition. No crash diets.</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Early Users Are Saying</h2>
+    <p><em>Coming soon – reviews from our first 100 users.</em></p>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <dt>Is this suitable for beginners?</dt>
+      <dd>Yes! Whether you’re just starting or a fitness pro, we’ll build your plan accordingly.</dd>
+      <dt>Are meal boxes compulsory?</dt>
+      <dd>No. You can follow your plan at home or order meals from us when available.</dd>
+      <dt>Can I choose vegetarian only?</dt>
+      <dd>Absolutely. You’ll select food preferences when filling the form.</dd>
+    </dl>
+  </section>
+
+  <section id="final-cta">
+    <h2>Ready to Take Control of Your Health?</h2>
+    <p>Get a personalized diet plan and start your journey towards better health today.</p>
+    <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      <a href="{{ url_for('contact') }}">Contact Us</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('pricing') }}">Pricing</a>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2024 Meal Genie . All rights reserved.</p>
+      <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+      <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
+    </div>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

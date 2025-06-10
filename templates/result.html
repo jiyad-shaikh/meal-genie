@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-71JWJ7DBKD');
+</script>
+<body>
+    <button id="theme-toggle" title="Toggle Theme" class="no-print">
+        &#x1f31c;
+    </button>
+    <nav class="navbar no-print">
+        <div class="navbar-container">
+            <button id="hamburger-menu" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="navbar-brand">Meal Genie ☘️</span>
+            <ul class="navbar-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="result-container" id="meal-plan-content">
+            <div class="result-header">
+                <h1>Your Personalized Meal Plan</h1>
+                <p class="plan-details">Based on your profile: Goal: {{ goal }}, Gender: {{ gender|capitalize }}, Activity: {{ activity|capitalize }}, {{ preference|capitalize }} </p>
+            </div>
+             <h2>Your Daily Meal Schedule</h2>
+            <div class="meal-plan-container">
+                {% for meal_time, meals in meal_plans.items() %}
+                <div class="meal-card">
+                    <div class="meal-time">
+                        <h2>{{ meal_time|capitalize }}</h2>
+                    </div>
+                    <div class="meal-content">
+                        {% if meals is iterable and meals is not string %}
+                            {% for meal in meals %}
+                                {% include 'meal_section.html' %}
+                            {% endfor %}
+                        {% else %}
+                            {% with meal=meals %}
+                                {% include 'meal_section.html' %}
+                            {% endwith %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% if healthy_tip %}
+                <div class="tip-section">
+                    <p><strong>Health Tip:</strong> {{ healthy_tip }}</p>
+                </div>
+                {% endif %}
+            </div>
+        
+        </div>
+
+        <div class="result-actions no-print">
+
+            <a href="#" id="send-whatsapp" class="action-btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <button id="send-email" class="action-btn btn-email">
+                <i class="fas fa-envelope"></i> Email
+            </button>
+        </div>
+    </div>
+
+    <footer class="no-print">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('pricing') }}">Pricing</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2024 Meal Genie. All rights reserved.</p>
+                <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://instagram.com/mealgenie_official"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const toggleBtn = document.getElementById("theme-toggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        // Mobile menu toggle
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const navbarMenu = document.querySelector(".navbar-menu");
+        hamburgerMenu.addEventListener("click", () => {
+            navbarMenu.classList.toggle("active");
+        });
+
+
+
+        // WhatsApp Sharing
+        document.getElementById('send-whatsapp').addEventListener('click', (e) => {
+            e.preventDefault();
+            const planText = `Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
+                `{% for meal_time, meals in meal_plans.items() %}` +
+                `{{ meal_time|capitalize }}:\n` +
+                `{% if meals is iterable and meals is not string %}` +
+                `{% for meal in meals %}` +
+                `- {{ meal.item }} ({{ meal.quantity }})\n` +
+                `  Calories: {{ meal.calories }}kcal\n` +
+                `  Protein: {{ meal.protein }}g\n` +
+                `  Carbs: {{ meal.carbs }}g\n` +
+                `  Fats: {{ meal.fats }}g\n\n` +
+                `{% endfor %}` +
+                `{% else %}` +
+                `- {{ meals.item }} ({{ meals.quantity }})\n` +
+                `  Calories: {{ meals.calories }}kcal\n` +
+                `  Protein: {{ meals.protein }}g\n` +
+                `  Carbs: {{ meals.carbs }}g\n` +
+                `  Fats: {{ meals.fats }}g\n\n` +
+                `{% endif %}` +
+                `{% endfor %}` +
+                `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
+            
+            window.open(`https://wa.me/?text=${encodeURIComponent(planText)}`, '_blank');
+        });
+
+        // Email Sharing
+        document.getElementById('send-email').addEventListener('click', () => {
+            const planText = `Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
+                `{% for meal_time, meals in meal_plans.items() %}` +
+                `{{ meal_time|capitalize }}:\n` +
+                `{% if meals is iterable and meals is not string %}` +
+                `{% for meal in meals %}` +
+                `- {{ meal.item }} ({{ meal.quantity }})\n` +
+                `  Calories: {{ meal.calories }}kcal\n` +
+                `  Protein: {{ meal.protein }}g\n` +
+                `  Carbs: {{ meal.carbs }}g\n` +
+                `  Fats: {{ meal.fats }}g\n\n` +
+                `{% endfor %}` +
+                `{% else %}` +
+                `- {{ meals.item }} ({{ meals.quantity }})\n` +
+                `  Calories: {{ meals.calories }}kcal\n` +
+                `  Protein: {{ meals.protein }}g\n` +
+                `  Carbs: {{ meals.carbs }}g\n` +
+                `  Fats: {{ meals.fats }}g\n\n` +
+                `{% endif %}` +
+                `{% endfor %}` +
+                `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
+            
+            window.location.href = `mailto:?subject=Meal%20Genie%20Plan&body=${encodeURIComponent(planText)}`;
+        });
+
+        // Load theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+    </script>
+</body>
+</html>
