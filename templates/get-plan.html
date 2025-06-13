@@ -68,7 +68,7 @@
 
 
  <label>Fitness Goal:</label>
-            <select name="goal" required>
+            <select name="goal" id="goal" required>
                 <option value="Weight Loss">Weight Loss</option>
                 <option value="Muscle Gain">Muscle Gain</option>
                 <option value="General Health">General Health</option>
@@ -136,13 +136,13 @@ function suggestGoal() {
 
         if (bmi < 18.5) {
             suggestion = 'Muscle Gain';
-            goalField.value = 'muscle_gain';
+            goalField.value = 'Muscle Gain';
         } else if (bmi >= 25) {
             suggestion = 'Weight Loss';
-            goalField.value = 'weight_loss';
+            goalField.value = 'Weight Loss';
         } else {
             suggestion = 'General Health';
-            goalField.value = 'general_health';
+            goalField.value = 'General Health';
         }
 
         suggestedField.value = suggestion;
