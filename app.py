@@ -66,7 +66,7 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Quinoa pulao with curd",
+            "item": "pulao with curd",
             "quantity": "1.5 cups pulao + 1/2 cup curd",
             "time": "1:00 PM",
             "calories": 550,
@@ -88,8 +88,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Vegetable stir-fry + tofu + brown rice",
-            "quantity": "1 cup stir-fry + 100g tofu + 1/2 cup brown rice",
+            "item": "Vegetable stir-fry + paneer + brown rice",
+            "quantity": "1 cup stir-fry + 100g paneer + 1/2 cup brown rice",
             "time": "8:00 PM",
             "calories": 500,
             "protein": 25,
@@ -149,13 +149,13 @@ meal_plans = {
                    "sedentary": {
     "Breakfast": [
         {
-            "item": "Vegetable upma with coconut chutney",
-            "quantity": "1 cup upma + 2 tbsp chutney",
-            "time": "7:30 AM",
-            "calories": 400,
-            "protein": 10,
-            "carbs": 50,
-            "fats": 15
+           "item": "Vegetable upma with a glass of buttermilk",
+            "quantity": "1.5 cups upma + 1 glass (200ml) buttermilk",
+            "time": "8:00 AM",
+            "calories": 350,
+            "protein": 12,
+            "carbs": 45,
+            "fats": 10
         }
     ],
     "Lunch": [
@@ -414,8 +414,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Quinoa pulao with paneer bhurji",
-            "quantity": "1 cup quinoa pulao + 1/2 cup paneer bhurji",
+            "item": "pulao with paneer bhurji",
+            "quantity": "1 cup  pulao + 1/2 cup paneer bhurji",
             "time": "8:00 PM",
             "calories": 500,
             "protein": 22,
@@ -556,8 +556,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Grilled tofu with sautéed vegetables and brown rice",
-            "quantity": "100g tofu + 1/2 cup veggies + 1/2 cup rice",
+            "item": "Grilled paneer with  vegetables and brown rice",
+            "quantity": "100g paneer + 1/2 cup veggies + 1/2 cup rice",
             "time": "8:00 PM",
             "calories": 450,
             "protein": 25,
@@ -890,13 +890,13 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry + brown rice + steamed broccoli",
-            "quantity": "100g fish + 1 cup brown rice + 1 cup broccoli",
+            "item": "Grilled chicken with brown rice and steamed broccoli",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup broccoli",
             "time": "8:00 PM",
             "calories": 500,
             "protein": 35,
             "carbs": 40,
-            "fats": 15
+            "fats": 18
         }
     ]
 },
@@ -982,13 +982,13 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Grilled salmon + brown rice + sautéed broccoli",
-            "quantity": "120g salmon + ¾ cup rice + 1 cup broccoli",
+            "item": "Grilled chicken with brown rice and steamed broccoli",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup broccoli",
             "time": "8:00 PM",
-            "calories": 600,
-            "protein": 40,
-            "carbs": 38,
-            "fats": 24
+            "calories": 500,
+            "protein": 35,
+            "carbs": 40,
+            "fats": 18
         }
     ]
 }
@@ -1076,13 +1076,13 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry + brown rice + mixed salad",
-            "quantity": "100g fish + ¾ cup rice + 1 cup salad",
+            "item": "Grilled chicken with brown rice and steamed broccoli",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup broccoli",
             "time": "8:00 PM",
-            "calories": 550,
-            "protein": 32,
+            "calories": 500,
+            "protein": 35,
             "carbs": 40,
-            "fats": 22
+            "fats": 18
         }
     ]
 },
@@ -1170,12 +1170,12 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry with brown rice and sautéed spinach",
-            "quantity": "100g fish + 1 cup rice + 1 cup spinach",
-            "time": "7:30 PM",
-            "calories": 520,
+            "item": "Grilled chicken with brown rice and steamed broccoli",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup broccoli",
+            "time": "8:00 PM",
+            "calories": 500,
             "protein": 35,
-            "carbs": 45,
+            "carbs": 40,
             "fats": 18
         }
     ]
@@ -1358,13 +1358,13 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry with brown rice and sautéed greens",
-            "quantity": "100g fish + 1/2 cup rice + 1/2 cup greens",
-            "time": "7:30 PM",
-            "calories": 400,
-            "protein": 28,
-            "carbs": 35,
-            "fats": 15
+            "item": "Grilled chicken with brown rice and steamed broccoli",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup broccoli",
+            "time": "8:00 PM",
+            "calories": 500,
+            "protein": 35,
+            "carbs": 40,
+            "fats": 18
         }
     ]
 },
@@ -1544,12 +1544,12 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry with brown rice and cucumber salad",
-            "quantity": "100g fish + 3/4 cup rice + 1/2 cup salad",
-            "time": "8:00 PM",
-            "calories": 460,
-            "protein": 30,
-            "carbs": 38,
+            "item": "Chicken curry with brown rice and salad",
+            "quantity": "90g chicken + 1 cup rice + 1 cup salad",
+            "time": "1:00 PM",
+            "calories": 450,
+            "protein": 32,
+            "carbs": 35,
             "fats": 20
         }
     ]
@@ -2293,7 +2293,7 @@ meal_plans = {
         ],
         "Lunch": [
             {
-                "item": "Quinoa or brown rice",
+                "item": " brown rice",
                 "quantity": "1 cup cooked",
                 "time": "2:00 PM",
                 "calories": 220,
@@ -2881,7 +2881,7 @@ meal_plans = {
         ],
         "Lunch": [
             {
-                "item": "Quinoa or brown rice with rajma and salad",
+                "item": "brown rice with rajma and salad",
                 "quantity": "1 bowl rice + 1 bowl rajma + salad",
                 "time": "1:30 PM",
                 "calories": 450,
@@ -4084,13 +4084,13 @@ meal_plans = {
         ],
         "Dinner": [
             {
-                "item": "Fish curry + brown rice + stir-fried vegetables",
-                "quantity": "100g fish + 1/2 cup rice + 1 cup vegetables",
-                "time": "7:30 PM",
-                "calories": 550,
-                "protein": 32,
-                "carbs": 35,
-                "fats": 22
+                "item": "Chicken curry with brown rice and salad",
+            "quantity": "90g chicken + 1 cup rice + 1 cup salad",
+            "time": "8:00 PM",
+            "calories": 450,
+            "protein": 32,
+            "carbs": 35,
+            "fats": 20
             }
         ],
         "Bedtime": [
@@ -4349,8 +4349,8 @@ meal_plans = {
                     ],
                     "dinner": [
                         {
-                        "item": "Fish curry + brown rice + sautéed spinach",
-                        "quantity": "100g fish + 1 cup rice + 1 cup spinach",
+                        "item": "chicken curry + brown rice + sautéed spinach",
+                        "quantity": "130g chicken + 1/2 cup rice + 1.5 cup spinach(in 1.5 tsp oil)",
                         "time": "8:00 PM",
                         "calories": 550,
                         "protein": 35,
@@ -4638,8 +4638,8 @@ meal_plans = {
                     ],
                     "Dinner": [
                         {
-                            "item": "Fish curry + brown rice + sautéed beans",
-                            "quantity": "100g fish + 1/2 cup rice + 1 cup beans",
+                            "item": "Chicken-Cocunut curry + brown rice + sautéed beans",
+                            "quantity": "80g chicken breast + 1.5 tsp cocunut milk + 1/2 cup rice + 1 cup beans + 1tsp oil",
                             "time": "7:30 PM",
                             "calories": 500,
                             "protein": 32,
@@ -4695,8 +4695,8 @@ meal_plans = {
                     ],
                     "Dinner": [
                         {
-                            "item": "Fish tikka + brown rice + sautéed spinach",
-                            "quantity": "100g fish + 1/2 cup rice + 1 cup spinach",
+                            "item": "Chicken tikka + brown rice + sautéed spinach",
+                            "quantity": "90g chicken breast + 1/2 cup rice + 1 cup spinach ",
                             "time": "8:00 PM",
                             "calories": 530,
                             "protein": 32,
@@ -4761,8 +4761,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Multigrain roti, tofu bhurji, and sautéed spinach",
-            "quantity": "2 rotis + 1/2 cup tofu + 1/2 cup spinach",
+            "item": "Multigrain roti, paneer bhurji, and sautéed spinach",
+            "quantity": "2 rotis + 1/2 cup paneer + 1/2 cup spinach",
             "time": "8:00 PM",
             "calories": 400,
             "protein": 22,
@@ -5385,8 +5385,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Whole wheat roti, tofu bhurji & salad",
-                        "quantity": "2 rotis + 3/4 cup tofu bhurji + 1 bowl salad",
+                        "item": "Whole wheat roti, paneer bhurji & salad",
+                        "quantity": "2 rotis + 3/4 cup paneer bhurji + 1 bowl salad",
                         "time": "1:30 PM",
                         "calories": 450,
                         "protein": 22,
@@ -5652,13 +5652,13 @@ meal_plans = {
 "moderate": {
         "Breakfast": [
                 {
-                        "item": "Vegetable upma with sprouts",
-                        "quantity": "1 cup upma + 1/2 cup sprouts",
-                        "time": "7:30 AM",
-                        "calories": 400,
-                        "protein": 15,
-                        "carbs": 50,
-                        "fats": 10
+                        "item": "Vegetable upma with a glass of buttermilk",
+            "quantity": "1.5 cups upma + 1 glass (200ml) buttermilk",
+            "time": "7:30 AM",
+            "calories": 350,
+            "protein": 12,
+            "carbs": 45,
+            "fats": 10
                 }
         ],
         "Mid-Morning Snack": [
@@ -6797,8 +6797,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Grilled fish with sautéed spinach and brown rice",
-                        "quantity": "120g fish + 1/2 cup brown rice + 1 cup spinach",
+                        "item": "Grilled chicken with sautéed spinach and brown rice",
+                        "quantity": "110g chicken + 1/3 cup cooked brown rice + 1.5 cup spinach",
                         "time": "8:00 PM",
                         "calories": 480,
                         "protein": 35,

@@ -760,13 +760,6 @@ form button {
   margin-top: 10px;
 }
 
-.form-heading {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  color: #fff;
-}
 
 /******************************/
 /********* Contact Page *******/
@@ -1264,4 +1257,30 @@ form button {
 .text-center {
   text-align: center;
   color: var(--accent);
+}
+
+/**** Header ****/
+/**********/
+header {
+  background: linear-gradient(to right, var(--card-bg), var(--card-bg));
+  color: var(--accent);
+  text-align: center; /* This is already here, but ensures children inherit/obey */
+  padding: 50px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(168, 255, 96, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center; /* ADD THIS LINE or ensure it's present */
+  color: var(--accent);
+}
+
+header p { /* Also ensure any paragraphs in the header are centered */
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--fg);
+  text-align: center; /* ADD THIS LINE or ensure it's present */
 }
