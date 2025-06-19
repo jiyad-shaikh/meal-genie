@@ -1284,3 +1284,41 @@ header p { /* Also ensure any paragraphs in the header are centered */
   color: var(--fg);
   text-align: center; /* ADD THIS LINE or ensure it's present */
 }
+/*********************************/
+/********* General Button Styles *********/
+/*********************************/
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none; /* Ensures no underline on link buttons */
+  text-align: center;
+  cursor: pointer;
+  /* Smooth transitions for all relevant properties */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid var(--accent); /* Theme-matched green border */
+  border-radius: 50px; /* Modern pill shape */
+}
+
+/* Primary Button Style (Filled) */
+.btn-primary {
+  background-color: var(--accent); /* Button filled with theme accent color */
+  color: var(--card-bg); /* Text color for good contrast with accent background */
+  border-color: var(--accent); /* Border matches background color */
+}
+
+/* Hover Effect for Primary Button */
+.btn-primary:hover {
+  background-color: var(--hover); /* Slightly different accent shade on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  border-color: var(--hover); /* Border color matches hover background */
+  color: var(--card-bg); /* Ensures text color remains contrasting on hover */
+}
+
+/* Specific styling for the hero button (if you use .rounded-button alongside .btn-primary) */
+.btn-primary.rounded-button {
+  padding: 15px 30px; /* Slightly larger padding for a prominent button */
+  font-size: 1.1rem; /* Slightly larger font size */
+}
