@@ -803,13 +803,13 @@ meal_plans = {
 "active": {
     "Breakfast": [
         {
-            "item": "Multigrain toast with avocado and a boiled egg",
-            "quantity": "2 slices toast + 1/2 avocado + 1 egg",
+            "item": "Multigrain toast with Peanut Chutney, Sprouted Moong and a Cucumber",
+            "quantity": "2 slices toast + 2 tbsp peanut chutney + 5 cucumber slices + 1 tsp sesame seeds ",
             "time": "7:30 AM",
             "calories": 400,
-            "protein": 14,
-            "carbs": 35,
-            "fats": 22
+            "protein": 15,
+            "carbs": 36,
+            "fats": 21
         }
     ],
     "Lunch": [
@@ -903,13 +903,13 @@ meal_plans = {
 "moderate": {
     "Breakfast": [
         {
-            "item": "Boiled eggs + avocado toast",
-            "quantity": "3 eggs + 2 slices whole wheat toast + ½ avocado",
+            "item": "Boiled eggs + Masala Omelette Toast",
+            "quantity": "3 boiled eggs + 2 slices whole wheat toast + 1 tbsp butter/ghee + masala omelette (1 egg + veggies)",
             "time": "8:00 AM",
             "calories": 500,
-            "protein": 30,
+            "protein": 32,
             "carbs": 35,
-            "fats": 25
+            "fats": 26
         }
     ],
     "Lunch": [
@@ -936,11 +936,11 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Grilled fish + sweet potato + green beans",
-            "quantity": "120g fish + 1 medium sweet potato + 1 cup beans",
+            "item": "Tandoori Chicken+ Mashed sweet potato + Sauteed beans ",
+            "quantity": "1 Chicken leg (120g, skinless) + 1 medium sweet potato + 1 cup beans",
             "time": "8:00 PM",
             "calories": 550,
-            "protein": 40,
+            "protein": 42,
             "carbs": 35,
             "fats": 18
         }
@@ -1030,11 +1030,11 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Baked fish + sautéed vegetables + small sweet potato",
-            "quantity": "100g fish + 1 cup veggies + ½ medium sweet potato",
+            "item": "Butter Chicken + Roasted vegetables + sweet potato",
+            "quantity": "100g chicken thigh (curry cut) + 1 cup veggies + ½ medium sweet potato",
             "time": "8:00 PM",
             "calories": 550,
-            "protein": 35,
+            "protein": 36,
             "carbs": 40,
             "fats": 20
         }
@@ -1122,13 +1122,13 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Grilled fish + mashed sweet potatoes + mixed greens",
-            "quantity": "120g fish + ¾ cup mash + 1 cup greens",
+            "item": "Tandoori Chicken + Mashed sweet potatoes + mixed greens",
+            "quantity": "1 Chicken leg (120g, skinless) + 1 medium sweet potato + 1 cup greens",
             "time": "8:00 PM",
-            "calories": 600,
-            "protein": 35,
-            "carbs": 40,
-            "fats": 22
+            "calories": 550,
+            "protein": 42,
+            "carbs": 35,
+            "fats": 18
         }
     ]
 }
@@ -5015,11 +5015,11 @@ meal_plans = {
 "active": {
         "Breakfast": [
                 {
-                        "item": "Multigrain toast with avocado and tofu scramble",
-                        "quantity": "2 slices toast + 1/2 avocado + 1/2 cup tofu",
+                        "item": "Paneer Bhurji Toast",
+                        "quantity": "2 slices toast + 1/2 cup paneer bhurji + 1tsp ghee",
                         "time": "7:30 AM",
                         "calories": 400,
-                        "protein": 20,
+                        "protein": 22,
                         "carbs": 30,
                         "fats": 20
                 }
@@ -6407,8 +6407,8 @@ meal_plans = {
 "active": {
         "Breakfast": [
                 {
-                        "item": "Boiled eggs with avocado and whole wheat toast",
-                        "quantity": "2 eggs + 1/2 avocado + 1 toast",
+                        "item": "Masala Egg Bhurji with Butter toast",
+                        "quantity": "2 eggs (bhurji style) + 1 tbsp butter + 1 toast + spices",
                         "time": "7:30 AM",
                         "calories": 400,
                         "protein": 24,
@@ -6639,8 +6639,8 @@ meal_plans = {
                     "sedentary": {
         "Breakfast": [
                 {
-                        "item": "Boiled egg with multigrain toast and a slice of avocado",
-                        "quantity": "1 egg + 1 toast + 2 slices avocado",
+                        "item": "Egg Masala Toast ",
+                        "quantity": "1 boiled egg (mashed) + 1 toast + 1 tsp ghee",
                         "time": "8:00 AM",
                         "calories": 300,
                         "protein": 14,
