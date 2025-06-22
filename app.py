@@ -252,8 +252,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Quinoa pulao with mixed vegetables and dal",
-            "quantity": "1 cup quinoa pulao + 1 cup dal",
+            "item": "brown rice pulao with mixed vegetables and dal",
+            "quantity": "1 cup brown rice pulao + 1 cup dal",
             "time": "1:00 PM",
             "calories": 650,
             "protein": 22,
@@ -534,8 +534,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Quinoa salad with chickpeas and vegetables",
-            "quantity": "1 cup quinoa + 1/2 cup chickpeas + 1 cup veggies",
+            "item": "brown rice  with chickpeas and vegetables",
+            "quantity": "1 cup brown rice + 1/2 cup chickpeas + 1 cup veggies",
             "time": "12:30 PM",
             "calories": 500,
             "protein": 22,
@@ -696,8 +696,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Quinoa salad with vegetables and cottage cheese cubes",
-            "quantity": "1 cup quinoa salad + 50g paneer cubes",
+            "item": "brown rice  and paneer curry",
+            "quantity": "1 cup brown rice + 50g paneer cubes",
             "time": "8:00 PM",
             "calories": 450,
             "protein": 20,
@@ -790,7 +790,7 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Quinoa vegetable pulao with raita",
+            "item": "vegetable pulao with raita",
             "quantity": "1 cup pulao + 1/2 cup raita",
             "time": "8:00 PM",
             "calories": 350,
@@ -868,8 +868,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken breast + quinoa + mixed greens salad",
-            "quantity": "120g chicken + 1 cup quinoa + 1 cup salad",
+            "item": "Grilled chicken breast + brown rice + mixed greens salad",
+            "quantity": "120g chicken + 1 cup brown rice + 1 cup salad",
             "time": "1:00 PM",
             "calories": 550,
             "protein": 40,
@@ -923,10 +923,11 @@ meal_plans = {
             "fats": 20
         }
     ],
+
     "Snack": [
         {
-            "item": "Cottage cheese with berries",
-            "quantity": "150g cottage cheese + ½ cup berries",
+            "item": "Peanut butter-stuffed dates with almonds",
+            "quantity": "3 medium dates + 1tbsp peanut butter + 5 almonds",
             "time": "4:30 PM",
             "calories": 200,
             "protein": 15,
@@ -960,8 +961,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken + quinoa + mixed veggies",
-            "quantity": "150g chicken + 1 cup quinoa + 1 cup vegetables",
+            "item": "Grilled chicken + brown rice + mixed veggies",
+            "quantity": "150g chicken + 1 cup brown rice + 1 cup vegetables",
             "time": "1:00 PM",
             "calories": 600,
             "protein": 45,
@@ -1054,8 +1055,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken breast + quinoa + steamed broccoli",
-            "quantity": "120g chicken + ¾ cup quinoa + 1 cup broccoli",
+            "item": "Grilled chicken breast + brown rice + steamed broccoli",
+            "quantity": "120g chicken + ¾ cup brown rice + 1 cup broccoli",
             "time": "1:00 PM",
             "calories": 600,
             "protein": 40,
@@ -1194,8 +1195,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken breast with quinoa and stir-fried vegetables",
-            "quantity": "100g chicken + 1 cup quinoa + 1 cup veggies",
+            "item": "Grilled chicken breast with brown rice and stir-fried vegetables",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup veggies",
             "time": "1:00 PM",
             "calories": 500,
             "protein": 35,
@@ -1336,8 +1337,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken with quinoa and sautéed vegetables",
-            "quantity": "100g chicken + 1/2 cup quinoa + 1 cup veggies",
+            "item": "Grilled chicken with brown rice and sautéed vegetables",
+            "quantity": "100g chicken + 1/2 cup brown rice + 1 cup veggies",
             "time": "1:00 PM",
             "calories": 450,
             "protein": 32,
@@ -1522,8 +1523,8 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Grilled chicken with quinoa and sautéed vegetables",
-            "quantity": "100g chicken + 1 cup quinoa + 1 cup vegetables",
+            "item": "Grilled chicken with brown rice and sautéed vegetables",
+            "quantity": "100g chicken + 1 cup brown rice + 1 cup vegetables",
             "time": "1:00 PM",
             "calories": 520,
             "protein": 35,
@@ -1638,8 +1639,8 @@ meal_plans = {
     ],
     "Dinner": [
         {
-            "item": "Fish curry with quinoa and sautéed vegetables",
-            "quantity": "90g fish + 1/2 cup quinoa + 1 cup vegetables",
+            "item": "Fish curry with brown rice and sautéed vegetables",
+            "quantity": "90g fish + 1/2 cup brown rice + 1 cup vegetables",
             "time": "7:30 PM",
             "calories": 400,
             "protein": 30,
@@ -1838,7 +1839,7 @@ meal_plans = {
     ],
     "dinner": [
         {
-            "item": "Quinoa + Soya Chunk Curry + Steamed Broccoli",
+            "item": "brown rice + Soya Chunk Curry + Steamed Broccoli",
             "quantity": "1 cup + 1 cup + 1 cup",
             "time": "8:30 PM",
             "calories": 600,
@@ -2611,7 +2612,7 @@ meal_plans = {
         ],
         "Dinner": [
             {
-                "item": "Quinoa khichdi with dal & veggies",
+                "item": "brown rice khichdi with dal & veggies",
                 "quantity": "1 bowl",
                 "time": "7:30 PM",
                 "calories": 300,
@@ -3073,7 +3074,7 @@ meal_plans = {
         ],
         "Dinner": [
             {
-                "item": "Quinoa pulao with tofu and mixed vegetables",
+                "item": "brown rice pulao with tofu and mixed vegetables",
                 "quantity": "1.5 bowls",
                 "time": "7:30 PM",
                 "calories": 450,
@@ -3201,7 +3202,7 @@ meal_plans = {
         ],
         "Lunch": [
             {
-                "item": "Quinoa pulao with tofu and mixed vegetables",
+                "item": "brown rice pulao with tofu and mixed vegetables",
                 "quantity": "1.5 cups",
                 "time": "1:30 PM",
                 "calories": 500,
@@ -3411,7 +3412,7 @@ meal_plans = {
         ],
         "Dinner": [
             {
-                "item": "Quinoa pulao with mixed vegetables + moong dal soup",
+                "item": "brown rice pulao with mixed vegetables + moong dal soup",
                 "quantity": "1 bowl pulao + 1 bowl soup",
                 "time": "7:30 PM",
                 "calories": 450,
@@ -3856,7 +3857,7 @@ meal_plans = {
         ],
         "Lunch": [
             {
-                "item": "Grilled chicken breast + quinoa/jeera rice + rajma + salad",
+                "item": "Grilled chicken breast + jeera rice + rajma + salad",
                 "quantity": "120g chicken + 1 cup rice + 1/2 cup rajma + salad",
                 "time": "1:30 PM",
                 "calories": 600,
@@ -4327,8 +4328,8 @@ meal_plans = {
                     ],
                     "lunch": [
                         {
-                        "item": "Grilled chicken breast + quinoa + mixed vegetable curry + salad",
-                        "quantity": "120g chicken + 1 cup quinoa + 1/2 cup curry + 1 bowl salad",
+                        "item": "Grilled chicken breast + brown rice + mixed vegetable curry + salad",
+                        "quantity": "120g chicken + 1 cup brown rice + 1/2 cup curry + 1 bowl salad",
                         "time": "1:30 PM",
                         "calories": 700,
                         "protein": 45,
@@ -4500,8 +4501,8 @@ meal_plans = {
                     ],
                     "Lunch": [
                         {
-                            "item": "Grilled chicken breast + quinoa + sautéed veggies",
-                            "quantity": "100g chicken + 1 cup quinoa + 1 cup mixed veggies",
+                            "item": "Grilled chicken breast + brown rice + sautéed veggies",
+                            "quantity": "100g chicken + 1 cup brown rice + 1 cup mixed veggies",
                             "time": "1:00 PM",
                             "calories": 650,
                             "protein": 40,
@@ -4673,8 +4674,8 @@ meal_plans = {
                     ],
                     "Lunch": [
                         {
-                            "item": "Grilled chicken breast + quinoa + mixed vegetables",
-                            "quantity": "100g chicken + 1/2 cup quinoa + 1 cup veggies",
+                            "item": "Grilled chicken breast + brown rice + mixed vegetables",
+                            "quantity": "100g chicken + 1/2 cup brown rice + 1 cup veggies",
                             "time": "1:00 PM",
                             "calories": 550,
                             "protein": 35,
@@ -4796,7 +4797,7 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Quinoa khichdi with mixed vegetables and cucumber raita",
+            "item": "brown rice khichdi with mixed vegetables and cucumber raita",
             "quantity": "1 cup khichdi + 1/2 cup raita",
             "time": "1:30 PM",
             "calories": 450,
@@ -4945,7 +4946,7 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Quinoa khichdi with steamed broccoli",
+                        "item": "brown rice khichdi with steamed broccoli",
                         "quantity": "1 cup khichdi + 1 cup broccoli",
                         "time": "8:00 PM",
                         "calories": 350,
@@ -5037,8 +5038,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Quinoa with mixed vegetables and moong dal",
-                        "quantity": "1 cup quinoa + 1 cup vegetables + 1 cup dal",
+                        "item": "brown rice with mixed vegetables and moong dal",
+                        "quantity": "1 cup brown rice + 1 cup vegetables + 1 cup dal",
                         "time": "1:30 PM",
                         "calories": 500,
                         "protein": 22,
@@ -5232,7 +5233,7 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Quinoa khichdi with vegetables and mint chutney",
+                        "item": "brown rice khichdi with vegetables and mint chutney",
                         "quantity": "1.5 cups khichdi + 1 tbsp chutney",
                         "time": "8:00 PM",
                         "calories": 420,
@@ -5350,8 +5351,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Quinoa pulao with sautéed vegetables",
-                        "quantity": "3/4 cup quinoa + 1 cup vegetables",
+                        "item": "brown rice pulao with sautéed vegetables",
+                        "quantity": "3/4 cup brown rice + 1 cup vegetables",
                         "time": "8:00 PM",
                         "calories": 350,
                         "protein": 15,
@@ -5466,8 +5467,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Quinoa with mixed vegetable curry",
-                        "quantity": "3/4 cup cooked quinoa + 1 cup curry",
+                        "item": "brown rice with mixed vegetable curry",
+                        "quantity": "3/4 cup cooked brown rice + 1 cup curry",
                         "time": "8:00 PM",
                         "calories": 350,
                         "protein": 12,
@@ -5639,8 +5640,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Vegetable stew with quinoa",
-                        "quantity": "1 cup stew + 1/2 cup quinoa",
+                        "item": "Vegetable stew with brown rice",
+                        "quantity": "1 cup stew + 1/2 cup brown rice",
                         "time": "8:00 PM",
                         "calories": 300,
                         "protein": 15,
@@ -5731,8 +5732,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Quinoa salad with chickpeas and veggies",
-                        "quantity": "1 cup quinoa + 1/2 cup chickpeas + veggies",
+                        "item": "brown rice salad with chickpeas and veggies",
+                        "quantity": "1 cup brown rice + 1/2 cup chickpeas + veggies",
                         "time": "1:30 PM",
                         "calories": 500,
                         "protein": 20,
@@ -5908,8 +5909,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Grilled chicken breast with quinoa salad",
-                        "quantity": "150g chicken + 1 cup quinoa salad",
+                        "item": "Grilled chicken breast with brown rice salad",
+                        "quantity": "150g chicken + 1 cup brown rice salad",
                         "time": "1:30 PM",
                         "calories": 500,
                         "protein": 40,
@@ -6024,8 +6025,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Grilled chicken breast with quinoa and steamed broccoli",
-                        "quantity": "150g chicken + 1/2 cup quinoa + 1 cup broccoli",
+                        "item": "Grilled chicken breast with brown rice and steamed broccoli",
+                        "quantity": "150g chicken + 1/2 cup brown rice + 1 cup broccoli",
                         "time": "1:30 PM",
                         "calories": 500,
                         "protein": 40,
@@ -6197,8 +6198,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Grilled chicken breast with quinoa and mixed veggies",
-                        "quantity": "120g chicken + 1/2 cup quinoa + 1 cup veggies",
+                        "item": "Grilled chicken breast with brown rice and mixed veggies",
+                        "quantity": "120g chicken + 1/2 cup brown rice + 1 cup veggies",
                         "time": "1:00 PM",
                         "calories": 450,
                         "protein": 35,
@@ -6372,8 +6373,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Grilled fish with quinoa and salad",
-                        "quantity": "120g fish + 1/2 cup quinoa + 1 cup salad",
+                        "item": "Grilled fish with brown rice and salad",
+                        "quantity": "120g fish + 1/2 cup brown rice + 1 cup salad",
                         "time": "2:00 PM",
                         "calories": 450,
                         "protein": 35,
@@ -6418,13 +6419,13 @@ meal_plans = {
         ],
         "Mid-Morning Snack": [
                 {
-                        "item": "Cottage cheese with berries",
-                        "quantity": "1/2 cup cottage cheese + 1/2 cup berries",
-                        "time": "10:30 AM",
-                        "calories": 200,
-                        "protein": 15,
-                        "carbs": 10,
-                        "fats": 8
+                  "item": "Peanut butter-stuffed dates with almonds",
+                  "quantity": "3 medium dates + 1tbsp peanut butter + 5 almonds",
+                  "time": "4:30 PM",
+                  "calories": 200,
+                  "protein": 15,
+                  "carbs": 15,
+                  "fats": 8
                 }
         ],
         "Lunch": [
@@ -6534,8 +6535,8 @@ meal_plans = {
         ],
         "Mid-Morning Snack": [
                 {
-                        "item": "Cottage cheese with cucumber slices",
-                        "quantity": "50g cottage cheese + 1/2 cucumber",
+                        "item": "roasted masala paneer cubes",
+                        "quantity": "60g low-fat paneer",
                         "time": "10:30 AM",
                         "calories": 120,
                         "protein": 10,
@@ -6567,8 +6568,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Grilled fish with quinoa and broccoli",
-                        "quantity": "100g fish + 1/2 cup quinoa + 1 cup broccoli",
+                        "item": "Grilled fish with brown rice and broccoli",
+                        "quantity": "100g fish + 1/2 cup brown rice + 1 cup broccoli",
                         "time": "8:00 PM",
                         "calories": 400,
                         "protein": 30,
@@ -6661,8 +6662,8 @@ meal_plans = {
         ],
         "Lunch": [
                 {
-                        "item": "Grilled chicken breast with steamed broccoli and quinoa",
-                        "quantity": "100g chicken + 1 cup broccoli + 1/2 cup quinoa",
+                        "item": "Grilled chicken breast with steamed broccoli and brown rice",
+                        "quantity": "100g chicken + 1 cup broccoli + 1/2 cup brown rice",
                         "time": "1:30 PM",
                         "calories": 400,
                         "protein": 35,
@@ -6740,8 +6741,8 @@ meal_plans = {
         ],
         "Dinner": [
                 {
-                        "item": "Baked salmon with quinoa and sautéed zucchini",
-                        "quantity": "100g salmon + 1/2 cup quinoa + 1 cup zucchini",
+                        "item": "crilled chicken thighs with brown rice and side salad (lettuce/cucumber) + olive oil (grilling) ",
+                        "quantity": "100g chicken thigh + 1/3 cup brown rice + 1 tsp olive oil +50g salad",
                         "time": "8:00 PM",
                         "calories": 450,
                         "protein": 35,
