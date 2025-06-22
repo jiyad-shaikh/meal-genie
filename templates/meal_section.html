@@ -16,6 +16,7 @@
 </script>
 <body>
     <div class="meal-section">
+      <p><strong>Meal Time:</strong> {{ meal_time_passed }}</p>
     <p><strong>Item:</strong> {{ meal.item }}</p>
     <p><strong>Quantity:</strong> {{ meal.quantity }}</p>
     <p><strong>Time:</strong> {{ meal.time if meal.time is defined else 'N/A' }}</p>
@@ -23,6 +24,19 @@
     <p><strong>Protein:</strong> {{ meal.protein }} g</p>
     <p><strong>Carbs:</strong> {{ meal.carbs }} g</p>
     <p><strong>Fats:</strong> {{ meal.fats }} g</p>
+
+    <form action="/order" method="POST" style="margin-top: 10px;">
+            <input type="hidden" name="meal_time" value="{{ meal_time_passed }}">
+            <input type="hidden" name="item" value="{{ meal.item }}">
+            <input type="hidden" name="quantity" value="{{ meal.quantity }}">
+            <input type="hidden" name="time" value="{{ meal.time }}">
+            <input type="hidden" name="calories" value="{{ meal.calories }}">
+            <input type="hidden" name="protein" value="{{ meal.protein }}">
+            <input type="hidden" name="carbs" value="{{ meal.carbs }}">
+            <input type="hidden" name="fats" value="{{ meal.fats }}">
+
+            <button type="submit" class="btn">Order This Meal</button>
+    </form>
 </div>
 </body>
 </html>

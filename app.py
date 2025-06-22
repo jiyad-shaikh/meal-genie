@@ -7038,9 +7038,6 @@ def result():
     except KeyError:
         healthy_tip = "Stay healthy, stay consistent, and trust the process!"
 
-       
-
-
     return render_template(
         "result.html",
         meal_plans=meal_plan_result,
@@ -7051,6 +7048,36 @@ def result():
         activity=activity,
         healthy_tip=healthy_tip
     )
+
+@app.route('/order', methods=['POST'])
+def order():
+    meal_time = request.form.get('meal_time')
+    item = request.form.get('item')
+    quantity = request.form.get('quantity')
+    calories = request.form.get('calories')
+    protein = request.form.get('protein')
+    carbs = request.form.get('carbs')
+    fats = request.form.get('fats')
+
+    return render_template(
+        'order_form.html',
+        meal_time=meal_time,
+        item=item,
+        quantity=quantity,
+        calories=calories,
+        protein=protein,
+        carbs=carbs,
+        fats=fats
+    )
+
+@app.route('/confirm_order', methods=['POST'])
+def confirm_order():
+    # Save or print the order
+    order_info = dict(request.form)
+
+    # TODO: store in database or Google Sheet
+
+    return render_template('success.html', order=order_info)
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=10000)

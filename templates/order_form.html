@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Your Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .order-container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+        }
+
+        .order-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .meal-details {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #00ff88;
+        }
+
+        .meal-details p {
+            margin: 6px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #00ff88;
+            background-color: #121212;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00ff88;
+            color: #000;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #00cc6e;
+        }
+    </style>
+</head>
+
+<body>
+
+       <!-- Theme Toggle Button -->
+    <button id="theme-toggle" title="Toggle Theme">
+        &#x1f31c;
+    </button>
+
+    <div class="order-container">
+        <h2 class="order-heading">🛒 Confirm Your Order</h2>
+
+        <div class="meal-details">
+            <p><strong>Meal Time:</strong> {{ meal_time }}</p>
+            <p><strong>Item:</strong> {{ item }}</p>
+            <p><strong>Quantity:</strong> {{ quantity }}</p>
+            <p><strong>Calories:</strong> {{ calories }} kcal</p>
+            <p><strong>Protein:</strong> {{ protein }} g | <strong>Carbs:</strong> {{ carbs }} g | <strong>Fats:</strong> {{ fats }} g</p>
+        </div>
+
+        <form action="/submit_order" method="POST">
+            <!-- Hidden Meal Data -->
+            <input type="hidden" name="meal_time" value="{{ meal_time }}">
+            <input type="hidden" name="item" value="{{ item }}">
+            <input type="hidden" name="quantity" value="{{ quantity }}">
+            <input type="hidden" name="calories" value="{{ calories }}">
+            <input type="hidden" name="protein" value="{{ protein }}">
+            <input type="hidden" name="carbs" value="{{ carbs }}">
+            <input type="hidden" name="fats" value="{{ fats }}">
+
+            <!-- Customer Details -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" name="name" id="name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" required />
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address:</label>
+                <textarea name="address" id="address" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Confirm & Pay</button>
+        </form>
+    </div>
+
+     <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        // Load theme on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    
+</body>
+</html>

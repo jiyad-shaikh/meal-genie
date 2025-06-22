@@ -47,24 +47,25 @@
             </div>
              <h2>Your Daily Meal Schedule</h2>
             <div class="meal-plan-container">
-                {% for meal_time, meals in meal_plans.items() %}
-                <div class="meal-card">
-                    <div class="meal-time">
-                        <h2>{{ meal_time|capitalize }}</h2>
-                    </div>
-                    <div class="meal-content">
-                        {% if meals is iterable and meals is not string %}
-                            {% for meal in meals %}
-                                {% include 'meal_section.html' %}
-                            {% endfor %}
-                        {% else %}
-                            {% with meal=meals %}
-                                {% include 'meal_section.html' %}
-                            {% endwith %}
-                        {% endif %}
-                    </div>
-                </div>
+              {% for meal_time, meals in meal_plans.items() %}
+    <div class="meal-card">
+        <div class="meal-time">
+            <h2>{{ meal_time|capitalize }}</h2>
+        </div>
+        <div class="meal-content">
+            {% if meals is iterable and meals is not string %}
+                {% for meal in meals %}
+                    {% set meal_time_passed = meal_time %}
+                    {% include 'meal_section.html' with context %}
                 {% endfor %}
+            {% else %}
+                {% set meal = meals %}
+                {% set meal_time_passed = meal_time %}
+                {% include 'meal_section.html' with context %}
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
 
                 {% if healthy_tip %}
                 <div class="tip-section">
