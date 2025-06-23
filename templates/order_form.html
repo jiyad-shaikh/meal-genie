@@ -119,12 +119,67 @@
 
             <div class="form-group">
                 <label for="address">Delivery Address:</label>
-                <textarea name="address" id="address" rows="4" required></textarea>
+                <textarea id="address" name="address" placeholder="Enter your delivery address" rows="3" required></textarea>
+
+               <button type="button" id="get-location" class="btn btn-secondary">Select My Live Location</button>
+<div id="location-note" style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">
+    <i class="fas fa-info-circle"></i> Note: Please allow location access for accurate delivery address.
+</div>
+
+<div id="location-spinner" style="display: none; margin-top: 10px;">
+    <i class="fas fa-spinner fa-spin"></i> Getting your location...
+</div>
             </div>
 
             <button type="submit">Confirm & Pay</button>
         </form>
     </div>
+
+ <script>
+document.getElementById('get-location').addEventListener('click', function () {
+    const locationButton = this;
+    const spinner = document.getElementById('location-spinner');
+
+    locationButton.textContent = 'Fetching Location...';
+    locationButton.disabled = true;
+    spinner.style.display = 'block';
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('address').value = data.display_name || 'Location not found';
+                        locationButton.textContent = 'Select My Live Location';
+                        locationButton.disabled = false;
+                        spinner.style.display = 'none';
+                    })
+                    .catch(error => {
+                        alert('Failed to fetch location. Please try again.');
+                        locationButton.textContent = 'Select My Live Location';
+                        locationButton.disabled = false;
+                        spinner.style.display = 'none';
+                    });
+            },
+            function (error) {
+                alert('Please enable location access.');
+                locationButton.textContent = 'Select My Live Location';
+                locationButton.disabled = false;
+                spinner.style.display = 'none';
+            }
+        );
+    } else {
+        alert('Geolocation is not supported by your browser.');
+        locationButton.textContent = 'Select My Live Location';
+        locationButton.disabled = false;
+        spinner.style.display = 'none';
+    }
+});
+</script>
 
      <script>
         const toggleBtn = document.getElementById("theme-toggle");
