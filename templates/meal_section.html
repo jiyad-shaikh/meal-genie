@@ -17,28 +17,33 @@
 
   gtag('config', 'G-71JWJ7DBKD');
 </script>
-<body>
-    <div class="meal-section">
-      <p><strong>Meal Time:</strong> {{ meal_time_passed }}</p>
-    <p><strong>Item:</strong> {{ meal.item }}</p>
-    <p><strong>Quantity:</strong> {{ meal.quantity }}</p>
-    <p><strong>Time:</strong> {{ meal.time if meal.time is defined else 'N/A' }}</p>
-    <p><strong>Calories:</strong> {{ meal.calories }} kcal</p>
-    <p><strong>Protein:</strong> {{ meal.protein }} g</p>
-    <p><strong>Carbs:</strong> {{ meal.carbs }} g</p>
-    <p><strong>Fats:</strong> {{ meal.fats }} g</p>
+<div class="meal-card-item">
+    <div class="meal-header">
+        <h4>{{ meal.item }}</h4>
+        <span class="meal-time-badge">{{ meal_time_passed }}</span>
+    </div>
 
-    <form action="/order" method="POST" style="margin-top: 10px;">
-            <input type="hidden" name="meal_time" value="{{ meal_time_passed }}">
-            <input type="hidden" name="item" value="{{ meal.item }}">
-            <input type="hidden" name="quantity" value="{{ meal.quantity }}">
-            <input type="hidden" name="time" value="{{ meal.time }}">
-            <input type="hidden" name="calories" value="{{ meal.calories }}">
-            <input type="hidden" name="protein" value="{{ meal.protein }}">
-            <input type="hidden" name="carbs" value="{{ meal.carbs }}">
-            <input type="hidden" name="fats" value="{{ meal.fats }}">
+    <p class="meal-quantity">Quantity: {{ meal.quantity }}</p>
+    <p class="meal-time">Scheduled Time: {{ meal.time if meal.time is defined else 'N/A' }}</p>
 
-            <button type="submit" class="btn">Order This Meal</button>
+    <div class="nutrients">
+        <span class="badge calories">{{ meal.calories }} kcal</span>
+        <span class="badge protein">{{ meal.protein }}g Protein</span>
+        <span class="badge carbs">{{ meal.carbs }}g Carbs</span>
+        <span class="badge fats">{{ meal.fats }}g Fats</span>
+    </div>
+
+    <form action="/order" method="POST" style="margin-top: 15px;">
+        <input type="hidden" name="meal_time" value="{{ meal_time_passed }}">
+        <input type="hidden" name="item" value="{{ meal.item }}">
+        <input type="hidden" name="quantity" value="{{ meal.quantity }}">
+        <input type="hidden" name="time" value="{{ meal.time }}">
+        <input type="hidden" name="calories" value="{{ meal.calories }}">
+        <input type="hidden" name="protein" value="{{ meal.protein }}">
+        <input type="hidden" name="carbs" value="{{ meal.carbs }}">
+        <input type="hidden" name="fats" value="{{ meal.fats }}">
+
+        <button type="submit" class="order-btn">Order This Meal</button>
     </form>
 </div>
 </body>

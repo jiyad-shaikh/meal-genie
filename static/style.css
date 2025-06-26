@@ -1224,3 +1224,85 @@ header p { /* Also ensure any paragraphs in the header are centered */
     font-size: 18px;
     color: #ccc;
 }
+.meal-card-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(0, 255, 174, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.meal-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px #00ffae;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.meal-header h4 {
+    color: #00ffae;
+    font-size: 20px;
+    margin: 0;
+}
+
+.meal-time-badge {
+    background: #ff4c4c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.meal-quantity, .meal-time {
+    color: #ccc;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.nutrients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.badge:hover {
+    filter: brightness(1.2);
+}
+
+.calories { background: #ff4c4c; }
+.protein { background: #4cff7a; }
+.carbs { background: #4cafff; }
+.fats { background: #ffc14c; }
+
+.order-btn {
+    background: #00ffae;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.order-btn:hover {
+    background: #00ffc8;
+    transform: translateY(-2px);
+}

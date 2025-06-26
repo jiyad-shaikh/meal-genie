@@ -170,6 +170,45 @@ footer {
         padding: 30px;
     }
 }
+
+/* Existing CSS (keep your base styles) */
+
+/* ===== Foldable Device Adjustments ===== */
+/* Cover Screen (Tall & Narrow) */
+@media (max-width: 904px) and (max-aspect-ratio: 9/20) {
+    .meal-plan-container {
+        grid-template-columns: 1fr !important; /* Force single column */
+    }
+    .meal-card {
+        padding: 12px; /* Slightly reduce padding */
+    }
+}
+
+/* Unfolded Screen (Square-Like) */
+@media (min-width: 905px) and (max-width: 1812px) {
+    .meal-plan-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns when unfolded */
+    }
+}
+
+/* Prevent hinge interference */
+@media (min-width: 905px) {
+    .wrapper {
+        padding-left: 30px;
+        padding-right: 30px; /* Avoid center hinge */
+    }
+}
+
+/* Dynamic font scaling */
+@media (max-width: 904px) {
+    .result-header h1 { font-size: 28px; }
+    .meal-time h2 { font-size: 20px; }
+}
+
+@media (min-width: 905px) {
+    .result-header h1 { font-size: 32px; }
+    .meal-time h2 { font-size: 24px; }
+}
 </style>
 <body>
     <div id="tsparticles"></div>

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
 </head>
 
@@ -30,6 +31,7 @@
 </script>
 
 <body>
+  <div id="tsparticles"></div>
   <button id="theme-toggle" title="Toggle Theme">
     &#x1f31c;
   </button>
@@ -212,6 +214,26 @@
     </div>
   </footer>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <script>
+    tsParticles.load("tsparticles", {
+        fullScreen: { enable: false },
+        particles: {
+            number: { value: 80, density: { enable: true, area: 800 } },
+            color: { value: "#00ffae" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
+            links: { enable: true, distance: 150, color: "#00ffae", opacity: 0.4, width: 1 }
+        },
+        interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+            modes: { repulse: { distance: 100 }, push: { quantity: 4 } }
+        },
+        detectRetina: true
+    });
+</script>
 
 </body>
 
