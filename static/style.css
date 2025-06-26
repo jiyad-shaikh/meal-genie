@@ -1322,3 +1322,11 @@ header p { /* Also ensure any paragraphs in the header are centered */
   padding: 15px 30px; /* Slightly larger padding for a prominent button */
   font-size: 1.1rem; /* Slightly larger font size */
 }
+#tsparticles {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /*send it behind all content */
+  top: 0;
+  left: 0;
+}

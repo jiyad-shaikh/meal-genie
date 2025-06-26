@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 
 </head>
 <!-- Google tag (gtag.js) -->
@@ -25,12 +26,205 @@
 </script>
 
 <body>
-    <header>
+   <div id="tsparticles"></div>
+      <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    header {
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #theme-toggle {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s;
+        margin-right: 10px;
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.2);
+    }
+
+    .form-heading {
+        font-size: 32px;
+        color: #00ffae;
+        animation: slideFade 1s ease;
+        text-align: center;
+    }
+
+    @keyframes slideFade {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    form {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 700px;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(0, 255, 174, 0.3);
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 14px 15px;
+        border-radius: 10px;
+        border: 1px solid #00ffae;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        outline: none;
+        transition: border-color 0.3s, background-color 0.3s;
+        font-size: 16px;
+        box-shadow: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #00ffc8;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .form-group label {
+        position: absolute;
+        top: 14px;
+        left: 15px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 0 5px;
+        color: #aaa;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group select:focus + label,
+    .form-group select:not([value=""]) + label {
+        top: -10px;
+        left: 10px;
+        font-size: 12px;
+        color: #00ffc8;
+    }
+
+    .btn {
+        background: #00ffae;
+        border: none;
+        padding: 16px;
+        width: 100%;
+        border-radius: 10px;
+        color: black;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+        background: #00ffc8;
+        transform: translateY(-2px);
+    }
+
+    .back-btn {
+        margin-top: 15px;
+        background: transparent;
+        border: 1px solid #00ffae;
+        color: #00ffae;
+    }
+
+    .back-btn:hover {
+        background: rgba(0, 255, 174, 0.2);
+    }
+
+    footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #aaa;
+        font-size: 14px;
+    }
+
+    .footer-links a {
+        color: #00ffae;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .form-heading {
+            font-size: 24px;
+        }
+
+        form {
+            padding: 30px;
+        }
+
+        .btn {
+            font-size: 16px;
+        }
+    }
+
+
+
+</style>
+
+     <header>
         <button id="theme-toggle" title="Toggle Theme">
             &#x1f31c;
         </button>
         <h2 class="form-heading"> Select Your Goal</h2>
     </header>
+
     <section>
         <form action="/result" method="post">
            
@@ -85,6 +279,7 @@
 
 
             <input type="submit" value="Get Your Plan" class="btn btn-primary">
+
         </form>
 
         <div style="text-align: center; margin-top: 20px;">
@@ -157,6 +352,26 @@ function suggestGoal() {
 
 document.getElementById('height').addEventListener('input', suggestGoal);
 document.getElementById('weight').addEventListener('input', suggestGoal);
+</script>
+
+<script>
+    tsParticles.load("tsparticles", {
+        fullScreen: { enable: false },
+        particles: {
+            number: { value: 80, density: { enable: true, area: 800 } },
+            color: { value: "#00ffae" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
+            links: { enable: true, distance: 150, color: "#00ffae", opacity: 0.4, width: 1 }
+        },
+        interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+            modes: { repulse: { distance: 100 }, push: { quantity: 4 } }
+        },
+        detectRetina: true
+    });
 </script>
 
 </body>
