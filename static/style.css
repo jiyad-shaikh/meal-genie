@@ -1330,3 +1330,34 @@ header p { /* Also ensure any paragraphs in the header are centered */
   top: 0;
   left: 0;
 }
+.success-animation {
+    font-size: 80px;
+    color: #00ffae;
+    animation: pop 0.6s ease forwards;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#success-section h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #00ffae;
+}
+
+#success-section p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ccc;
+}
