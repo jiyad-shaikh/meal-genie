@@ -1306,3 +1306,101 @@ header p { /* Also ensure any paragraphs in the header are centered */
     background: #00ffc8;
     transform: translateY(-2px);
 }
+
+ .form-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+.form-step {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.option-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    padding: 20px 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.option-card:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+.option-card.selected {
+    border-color: #ffcc00;
+    background-color: #fff8e1;
+}
+
+.next-btn, .submit-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-btn:hover, .submit-btn:hover {
+    background-color: #45a049;
+}
+
+.progress-bar {
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background: #4CAF50;
+            transition: width 0.4s ease;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4CAF50;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    

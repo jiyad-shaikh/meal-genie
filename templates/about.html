@@ -2,27 +2,39 @@
 <html lang="en">
 
 <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
         crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-4213903728229123">
+
+    <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
+    <title>About MealGenie | Personalized Diet Plans & Meal Boxes</title>
+    <meta name="description"
+        content="Learn more about MealGenie - your partner in personalized diet plans, healthy meal boxes, and achieving your fitness goals with clean eating.">
+    <meta name="keywords"
+        content="MealGenie, Diet Plans, Healthy Meal Boxes, Personalized Diet, Fitness, Weight Loss, Muscle Gain, Clean Eating, Nutrition">
+    <meta name="author" content="MealGenie Team">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-71JWJ7DBKD');
+    </script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
 
 <body>
     <!-- Theme Toggle Button -->
@@ -36,6 +48,9 @@
             <button id="hamburger-menu" title="Toggle Menu">
                 <i class="fas fa-bars"></i>
             </button>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MealGenie Logo" class="navbar-logo" width="120">
+            </a>
             <span class="navbar-brand">Meal Genie ☘️</span>
 
             <ul class="navbar-menu">
@@ -50,18 +65,34 @@
     </nav>
 
     <header>
-        <h1>About Us</h1>
-        <p>We're a team of students who love fitness, tech, and clean eating. Our mission is to help people achieve
-            their health goals without confusion.</p>
+        <h1>About MealGenie</h1>
+        <p>We’re a passionate team focused on helping people achieve their health and fitness goals through personalized diet plans and clean eating.</p>
     </header>
 
-    <section>
-        <h2>More About Our Mission</h2>
-        <p>More features and partnerships are coming soon!</p>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
-        </div>
-    </section>
+    <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>At MealGenie, we aim to make healthy eating simple, accessible, and tailored to your lifestyle. Whether your goal is weight loss, muscle gain, or general wellness, we’ve got you covered with affordable and delicious meal options.</p>
+        </section>
+
+        <section>
+            <h2>Why Choose MealGenie?</h2>
+            <ul>
+                <li>✅ Personalized Diet Plans for every goal</li>
+                <li>✅ Fresh and Balanced Meal Boxes</li>
+                <li>✅ Affordable Pricing starting at ₹99</li>
+                <li>✅ Simple Process to Get Your Plan</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Join Us on Your Health Journey</h2>
+            <p>We’re continuously working on adding new features and partnerships to serve you better. Follow us on Instagram for updates and special offers.</p>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -72,16 +103,16 @@
                 <a href="{{ url_for('pricing') }}">Pricing</a>
             </div>
             <div class="footer-legal">
-                <p>&copy; 2024 AI Diet Plan. All rights reserved.</p>
+                <p>&copy; 2024 MealGenie. All rights reserved.</p>
                 <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
                 <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
             </div>
             <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i> Follow Us</a>
             </div>
         </div>
     </footer>
-    
+
     <script>
         // Theme toggle
         const toggleBtn = document.getElementById("theme-toggle");
@@ -105,4 +136,5 @@
         });
     </script>
 </body>
+
 </html>
