@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Personalized diet plans and healthy meal boxes based on your lifestyle and goals. Join MealGenie to take charge of your health journey.">
-  <meta name="keywords"
-    content="diet plan, healthy meals, personalized nutrition, meal boxes, fitness diet, vegetarian diet, non-veg diet, weight loss, muscle gain">
-  <meta name="author" content="MealGenie">
-  <title>MealGenie | Personalized Diet Plans & Healthy Meal Boxes</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+{% block title %}MealGenie | Personalized Diet Plans & Healthy Meal Boxes{% endblock %}
+{% block meta_description %}Get customized diet plans and healthy meal boxes for weight loss, muscle gain, and overall fitness. Start your journey today with MealGenie.{% endblock %}
+{% block meta_keywords %}MealGenie, personalized diet plans, healthy meal boxes, fitness diet, weight loss, muscle gain{% endblock %}
+{% block og_title %}MealGenie - Personalized Diet Plans{% endblock %}
+{% block og_description %}Customized diet plans and healthy meal boxes made just for you. Join MealGenie today!{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/home_share.png') }}{% endblock %}
 
-</head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
-
-<body>
+{% block content %}
+<!-- Homepage content -->
   <div id="tsparticles"></div>
   <button id="theme-toggle" title="Toggle Theme">
     &#x1f31c;
@@ -157,7 +134,7 @@
     </ol>
   </section>
 
-    
+
 
   <section id="ai-nutritionist">
     <h2>Coming Soon: Your Smart AI Nutritionist</h2>
@@ -237,7 +214,4 @@
         detectRetina: true
     });
 </script>
-
-</body>
-
-</html>
+{% endblock %}

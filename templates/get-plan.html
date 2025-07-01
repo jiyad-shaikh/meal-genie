@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Select Your Goal</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+{% block title %}Get Your Personalized Diet Plan | MealGenie{% endblock %}
+{% block meta_description %}Fill out your preferences to get a fully personalized diet plan based on your goals, lifestyle, and food choices.{% endblock %}
+{% block meta_keywords %}Get diet plan, customized diet plan, healthy meal generator, mealgenie plan{% endblock %}
+{% block og_title %}Get Your MealGenie Diet Plan{% endblock %}
+{% block og_description %}Enter your goals and preferences to receive your personalized MealGenie diet plan today.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/getplan_share.png') }}{% endblock %}
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+{% block content %}
+<!-- Get your plan page content -->
 
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
 
-<body>
    <div id="tsparticles"></div>
      <style>
     * {
@@ -374,5 +358,4 @@ document.getElementById('weight').addEventListener('input', suggestGoal);
     });
 </script>
 
-</body>
-</html>
+{% endblock %}

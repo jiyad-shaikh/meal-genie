@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag() { dataLayer.push(arguments); }
+       gtag('js', new Date());
+       gtag('config', 'G-71JWJ7DBKD');
+    </script>
+    
+    <!-- Universal Head Content -->
+    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dynamic SEO Blocks -->
+    <title>{% block title %}MealGenie - Personalized Diet Plans{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Get personalized diet plans and healthy meal boxes with MealGenie.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}diet plans, healthy meals, weight loss, fitness{% endblock %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="{% block og_title %}MealGenie - Personalized Diet Plans{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Get personalized diet plans and healthy meal boxes with MealGenie.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/social_share.png') }}{% endblock %}">
+    <meta property="og:url" content="{{ request.url }}">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
+    crossorigin="anonymous"></script>
+
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <!-- Any other CSS/JS here -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Page content block -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+</body>
+
+</html>

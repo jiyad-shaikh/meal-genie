@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+{% block title %}Contact MealGenie | We’re Here to Help{% endblock %}
+{% block meta_description %}Reach out to MealGenie for questions, support, or collaborations. We’re here to guide you on your health journey.{% endblock %}
+{% block meta_keywords %}Contact MealGenie, support, meal plan help, customer care{% endblock %}
+{% block og_title %}Contact MealGenie{% endblock %}
+{% block og_description %}Have questions? Contact the MealGenie team for support and information.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/contact_share.png') }}{% endblock %}
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-71JWJ7DBKD');
-</script>
+{% block content %}
+<!-- Contact page content -->
 
-<body>
+
     <button id="theme-toggle" title="Toggle Theme">&#x1f31c;</button>
 
     <nav class="navbar">
@@ -113,6 +101,4 @@
             navbarMenu.classList.toggle("active");
         });
     </script>
-</body>
-
-</html>
+{% endblock %}

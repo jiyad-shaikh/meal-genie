@@ -1,42 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <!-- Google Adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
+{% block title %}About MealGenie | Your Health Partner{% endblock %}
+{% block meta_description %}Learn about MealGenie’s mission to provide affordable, healthy, and personalized diet plans and meal boxes for everyone.{% endblock %}
+{% block meta_keywords %}About MealGenie, mealgenie team, diet plan company, personalized diet plans{% endblock %}
+{% block og_title %}About MealGenie{% endblock %}
+{% block og_description %}Discover the story and mission behind MealGenie’s personalized diet planning services.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/about_share.png') }}{% endblock %}
 
-    <!-- Basic Meta -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About MealGenie | Personalized Diet Plans & Meal Boxes</title>
-    <meta name="description"
-        content="Learn more about MealGenie - your partner in personalized diet plans, healthy meal boxes, and achieving your fitness goals with clean eating.">
-    <meta name="keywords"
-        content="MealGenie, Diet Plans, Healthy Meal Boxes, Personalized Diet, Fitness, Weight Loss, Muscle Gain, Clean Eating, Nutrition">
-    <meta name="author" content="MealGenie Team">
+{% block content %}
+<!-- About page content -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/png">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-71JWJ7DBKD');
-    </script>
-</head>
-
-<body>
     <!-- Theme Toggle Button -->
     <button id="theme-toggle" title="Toggle Theme">
         &#x1f31c;
@@ -135,6 +108,4 @@
             navbarMenu.classList.toggle("active");
         });
     </script>
-</body>
-
-</html>
+{% endblock %}
