@@ -1,0 +1,26 @@
+ <nav class="navbar">
+    <div class="navbar-container">
+      <button id="hamburger-menu" title="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Example HTML inside your navbar/header -->
+<div class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+  <img src="/static/images/logo.png" alt="MealGenie Logo" style="height: 50px; margin-right: 20px;">
+  <span style="color: #aaff55; font-weight: bold; font-size: 3em;">Meal Genie</span>
+</div>
+
+
+
+      <ul class="navbar-menu">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
+        <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        <li><a href="{{ url_for('blog') }}"class="">blog</a></li>
+
+
+      </ul>
+    </div>
+  </nav>

@@ -15,28 +15,6 @@
         &#x1f31c;
     </button>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <button id="hamburger-menu" title="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MealGenie Logo" class="navbar-logo" width="120">
-            </a>
-            <span class="navbar-brand">Meal Genie ☘️</span>
-
-            <ul class="navbar-menu">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
-                <li><a href="{{ url_for('pricing') }}">Pricing</a></li>
-                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <header>
         <h1>About MealGenie: Empowering Your Health & Wellness Journey</h1>
         <p>At MealGenie, we are a passionate team dedicated to revolutionizing how people approach their health and fitness goals. We combine cutting-edge technology with nutritional expertise to provide genuinely personalized diet plans and convenient, healthy meal solutions, making clean eating accessible and enjoyable for everyone.</p>
@@ -81,25 +59,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="{{ url_for('faq') }}">FAQ</a>
-                <a href="{{ url_for('contact') }}">Contact Us</a>
-                <a href="{{ url_for('about') }}">About Us</a>
-                <a href="{{ url_for('pricing') }}">Pricing</a>
-            </div>
-            <div class="footer-legal">
-                <p>&copy; 2024 MealGenie. All rights reserved.</p>
-                <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
-                <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i> Follow Us</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Theme toggle

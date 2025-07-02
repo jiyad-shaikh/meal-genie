@@ -14,25 +14,6 @@
         &#x1f31c;
     </button>
 
-    <!-- Navbar (same as index.html) -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <button id="hamburger-menu" title="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <span class="navbar-brand">Meal Genie ☘️</span>
-
-            <ul class="navbar-menu">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('get_plan') }}">Get Your Plan</a></li>
-                <li><a href="{{ url_for('pricing') }}" class="active">Pricing</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <header>
         <h1>Choose Your Plan</h1>
         <p>Find the perfect meal plan for your needs and budget</p>
@@ -140,25 +121,6 @@
             <p><i class="fas fa-info-circle"></i> All prices are per meal box. Custom plans available upon request.</p>
         </div>
     </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="{{ url_for('faq') }}">FAQ</a>
-                <a href="{{ url_for('contact') }}">Contact Us</a>
-                <a href="{{ url_for('about') }}">About Us</a>
-                <a href="{{ url_for('pricing') }}">Pricing</a>
-            </div>
-            <div class="footer-legal">
-                <p>&copy; 2024 AI Diet Plan. All rights reserved.</p>
-                <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
-                <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         const toggleBtn = document.getElementById("theme-toggle");
