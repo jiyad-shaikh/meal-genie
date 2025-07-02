@@ -33,6 +33,9 @@
         <li><a href="{{ url_for('about') }}">About</a></li>
         <li><a href="{{ url_for('contact') }}">Contact</a></li>
         <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        <li><a href="{{ url_for('blog') }}"class="nav-link">Blog</a></li>
+
+
       </ul>
     </div>
   </nav>
@@ -60,123 +63,165 @@
   </div>
 
 
-<section id="diet-plans" class="info-section">
-  <div class="container">
-    <h2 class="section-title">🌟 Explore Our Diet Plans</h2>
-
-    <!-- Keto Diet Plan -->
-    <div class="diet-plan-card">
-      <h3>🥑 1. Keto Diet Plan</h3>
-      <div class="diet-type-wrapper">
-        <div class="diet-type">
-          <h4>🥦 Veg Option: Paneer & Spinach Stir-Fry</h4>
-          <ul>
-            <li><strong>Ingredients:</strong> Paneer, spinach, olive oil, garlic, bell peppers, spices</li>
-            <li><strong>Nutrition:</strong> Carbs: Low | Protein: High | Fat: High</li>
-          </ul>
-        </div>
-        <div class="diet-type">
-          <h4>🍗 Non-Veg Option: Keto Chicken Bowl</h4>
-          <!-- <img src="/static/images/keto chicken bowl.jpg" alt="Keto Chicken Bowl" style="width: 100%; border-radius: 10px; max-height: 200px; object-fit: cover;"> -->
-          <ul>
-            <li><strong>Ingredients:</strong> Grilled chicken, cheese, leafy greens, boiled egg, olive oil</li>
-            <li><strong>Nutrition:</strong> Carbs: Very Low | Protein: High | Fat: Moderate</li>
-          </ul>
-        </div>
+<section class="feature-section">
+    <h2>Why Thousands Choose MealGenie for Their Health Journey</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <h3>✅ Precision Personalized Diet Plans</h3>
+        <p>Our expert nutritionists, soon to be amplified by cutting-edge AI, craft **customized meal plans** that align perfectly with your unique body type, specific health goals (like <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">weight loss</a>, <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">muscle gain</a>, or general wellness), activity level, and dietary preferences. No more generic diets – just results-driven nutrition tailored for you.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Convenient Healthy Meal Box Delivery (Coming Soon!)</h3>
+        <p>Imagine delicious, **ready-to-eat meals** delivered right to your doorstep, perfectly portioned and nutritionally balanced according to your diet plan. Our meal box service is currently under development to make healthy eating effortless and consistent for busy individuals.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Diverse & Delicious Cuisine</h3>
+        <p>Say goodbye to bland, boiled food! Whether you prefer **vegetarian or non-vegetarian** options, our plans feature a wide variety of flavorful dishes. We believe healthy eating should be an enjoyable culinary experience, not a chore.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Affordable & Flexible Subscriptions</h3>
+        <p>Achieving your health goals shouldn't be expensive. MealGenie offers **affordable subscription plans** designed to fit various budgets, starting from just ₹99. We provide flexible options that cater to fitness enthusiasts, working professionals, and athletes alike. <a href="{{ url_for('pricing') }}" class = "nav-link nav-link:hover">View our pricing</a> to find the best plan for you.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Innovative AI Guidance for 24/7 Support (Coming Soon!)</h3>
+        <p>We are pioneering the future of nutrition with our **AI-powered nutritionist**. This intelligent companion will provide continuous guidance, chat support, and understand your evolving goals, making your health journey smarter and more supported around the clock.</p>
       </div>
     </div>
-
-    <!-- Detox Plan -->
-    <div class="diet-plan-card">
-      <h3>🌿 2. Detox Plan</h3>
-      <div class="diet-type-wrapper">
-        <div class="diet-type">
-          <h4>🥒 Veg Option: Cucumber Mint Smoothie & Veg Platter</h4>
-          <ul>
-            <li><strong>Ingredients:</strong> Cucumber, mint, lime, spinach, beetroot, boiled carrots</li>
-            <li><strong>Nutrition:</strong> Hydrating | Low Calorie | Vitamin-rich</li>
-          </ul>
-        </div>
-        <div class="diet-type">
-          <h4>🍋 Non-Veg Option: Lemon-Herb Grilled Chicken</h4>
-          <ul>
-            <li><strong>Description:</strong> Lightly seasoned, low-oil grilled chicken breast with lemon and herbs - gentle on digestion</li>
-            <li><strong>Nutrition:</strong> High Protein | Low Fat | Lean Meat Option</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="feature-section">
-    <h2>Why People Love MealGenie</h2>
-    <ul>
-      <li>Personalized meal plans by real nutrition experts</li>
-      <li>Ready-to-eat meals that match your diet plan (Coming Soon)</li>
-      <li>Both Veg & Non-Veg options – no boring boiled food</li>
-      <li>Affordable subscriptions</li>
-      <li>Soon powered by AI for 24/7 guidance</li>
-      <li>Flexible plans for fitness enthusiasts, working professionals & athletes</li>
-    </ul>
   </section>
 
 
   <section class="steps-section">
-    <h2>How MealGenie Works</h2>
+    <h2>How MealGenie Transforms Your Eating Habits in 3 Simple Steps</h2>
     <ol>
-      <li><strong>Tell Us About You:</strong> Fill out a short form about your health goals, body type, activity level,
-        and food preferences.</li>
-      <li><strong>Get a Personalized Plan:</strong> Our team of expert nutritionists will craft a customized meal plan
-        tailored to your goals.</li>
-      <li><strong>Order Your Meals (Coming Soon):</strong> Our diet meal box delivery service is under development. Stay
-        tuned!</li>
+      <li><strong>Tell Us About You:</strong> It starts with you. Simply fill out our quick and comprehensive form detailing your health goals, body measurements, daily activity level, and all your food preferences or restrictions. This is where your personalized journey begins.</li>
+      <li><strong>Get Your Personalized Plan:</strong> Our dedicated team of expert nutritionists diligently crafts a customized meal plan. This plan is designed not just for your goals, but to be sustainable and enjoyable, providing the right balance of nutrients.</li>
+      <li><strong>Achieve & Thrive with Meal Support:</strong> While our convenient diet meal box delivery service is under active development, you can start following your plan with confidence today. Soon, you'll be able to order delicious, pre-prepared meals that perfectly align with your custom plan, simplifying healthy living even further.</li>
     </ol>
+    <div class="text-center">
+      <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get My Customized Plan Now</a>
+    </div>
+  </section>
+
+  <section id="ai-nutritionist" class="highlight-section">
+    <h2>The Future of Nutrition: Your Smart AI Nutritionist, Coming Soon!</h2>
+    <p>Imagine having a dedicated nutritionist available 24/7, ready to answer your questions, adjust your plan, and motivate you. That's exactly what we're building! Our revolutionary AI-powered nutritionist will offer personalized insights, real-time guidance, and an unparalleled level of support to help you stay on track and achieve lasting results.</p>
+  </section>
+
+  <section id="sample-plans" class="info-section">
+    <h2>Discover What Your MealGenie Diet Plan Could Look Like</h2>
+    <p class="section-description">Our plans are designed for real-world application, offering delicious and balanced meals that fit your daily routine and specific objectives. Here's a glimpse into a typical day's personalized plan, focusing on effective nutrition without resorting to crash diets:</p>
+    <div class="sample-meal-grid">
+      <div class="meal-card">
+        <h3>☀️ Breakfast: Power Start</h3>
+        <p><strong>High-protein paneer sandwich</strong> with fresh vegetables, paired with a revitalizing black coffee (approx. 350 kcal).</p>
+      </div>
+      <div class="meal-card">
+        <h3>🥗 Lunch: Balanced & Energizing</h3>
+        <p>A hearty **grilled chicken salad** loaded with greens and a side of wholesome brown rice (approx. 500 kcal).</p>
+      </div>
+      <div class="meal-card">
+        <h3>💪 Snack: Fuel & Recovery</h3>
+        <p>A nutrient-dense combination of **dates, almonds, and a high-quality whey shake** to keep energy levels stable (approx. 200 kcal).</p>
+      </div>
+      <div class="meal-card">
+        <h3>🍲 Dinner: Light & Nourishing</h3>
+        <p>A satisfying **light paneer tofu bowl** packed with plant-based protein and essential nutrients (approx. 400 kcal).</p>
+      </div>
+    </div>
+    <p class="text-center">Each plan is meticulously designed for your specific goals, backed by sound nutrition principles. No crash diets, just sustainable, healthy eating.</p>
+    <div class="text-center" style="margin-top: 25px;">
+        <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Custom Sample Plan!</a>
+    </div>
+  </section>
+
+  <section id="diet-plans" class="info-section detailed-diet-plans">
+    <div class="container">
+      <h2>Explore Diverse Diet Plans Tailored to Your Needs</h2>
+      <p class="section-description">MealGenie offers various specialized diet types, ensuring you find the perfect fit for your health objectives and preferences. Here are two examples:</p>
+
+      <div class="diet-plan-card">
+        <h3>🥑 1. Keto Diet Plan: Fuel Your Body with Healthy Fats</h3>
+        <p>Our Keto diet plans are meticulously designed to guide your body into a state of ketosis, promoting fat burning for energy. We focus on high-quality fats, moderate protein, and very low carbohydrates, ensuring you feel satisfied and energized.</p>
+        <div class="diet-type">
+          <h4>🥦 Veg Keto: Paneer & Spinach Stir-Fry</h4>
+          <ul>
+            <li><strong>Ingredients:</strong> Succulent paneer cubes, fresh spinach, a hint of olive oil, aromatic garlic, vibrant bell peppers, and a blend of authentic spices.</li>
+            <li><strong>Nutritional Info:</strong> Optimized for Keto – Very Low Carbs | High Protein | High Healthy Fats.</li>
+            <li><strong>Benefits:</strong> Supports sustainable weight loss, boosts energy levels, and enhances mental clarity.</li>
+          </ul>
+        </div>
+        <div class="diet-type">
+          <h4>🍗 Non-Veg Keto: Keto Chicken Bowl</h4>
+          <ul>
+            <li><strong>Ingredients:</strong> Perfectly grilled chicken, creamy avocado, crisp leafy greens, a boiled egg, rich cheese, and a drizzle of premium olive oil.</li>
+            <li><strong>Benefits:</strong> An ideal meal for muscle retention during weight loss and sustained energy throughout the day.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diet-plan-card">
+        <h3>🌿 2. Detox Plan: Cleanse & Rejuvenate Your System</h3>
+        <p>Our Detox plans are crafted to help reset your body, eliminate toxins, and improve overall vitality. These plans emphasize fresh, whole foods, focusing on hydration and nutrient-dense ingredients to support your natural detoxification processes.</p>
+        <div class="diet-type">
+          <h4>🥒 Veg Detox: Cucumber Mint Smoothie + Boiled Veg Platter</h4>
+          <ul>
+            <li><strong>Ingredients:</strong> Refreshing cucumber, invigorating mint, zesty lime, nutrient-packed spinach, and earthy beets.</li>
+            <li><strong>Benefits:</strong> Promotes hydration, aids digestion, and provides a rich source of vitamins and antioxidants for a gentle cleanse.</li>
+          </ul>
+        </div>
+        <div class="diet-type">
+          <h4>🍋 Non-Veg Detox (Optional): Lemon-Herb Grilled Fish</h4>
+          <ul>
+            <li><strong>Description:</strong> A light and flavorful option featuring lightly seasoned, low-oil grilled fish. This serves as an excellent source of lean protein for a mild detox, ensuring you maintain essential nutrients while cleansing.</li>
+            <li><strong>Benefits:</strong> Supports liver function, reduces bloating, and leaves you feeling lighter and more energized.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 25px;">
+        <a href="{{ url_for('pricing') }}" class="btn btn-primary">See All Plans & Pricing</a>
+    </div>
   </section>
 
 
-
-  <section id="ai-nutritionist">
-    <h2>Coming Soon: Your Smart AI Nutritionist</h2>
-    <p>We're building an AI-powered nutritionist that will guide you 24/7. It will chat with you. It will talk to you.
-      It will understand your goals better than anyone.</p>
-  </section>
-
-  <section id="sample-plans">
-    <h2>What Your Diet Plan Might Look Like</h2>
-    <ul>
-      <li><strong>Breakfast:</strong> High-protein paneer sandwich + black coffee (350 kcal)</li>
-      <li><strong>Lunch:</strong> Grilled chicken salad with brown rice (500 kcal)</li>
-      <li><strong>Snack:</strong> Dates + almonds + whey shake (200 kcal)</li>
-      <li><strong>Dinner:</strong> Light paneer tofu bowl (400 kcal)</li>
-    </ul>
-    <p>Designed for real goals. Backed by nutrition. No crash diets.</p>
-  </section>
-
-  <section id="testimonials">
+  <section id="testimonials" class="testimonials-section">
     <h2>What Our Early Users Are Saying</h2>
-    <p><em>Coming soon – reviews from our first 100 users.</em></p>
+    <div class="testimonial-content">
+      <p><em>"MealGenie has transformed my approach to healthy eating. The personalized plan was incredibly easy to follow, and I've already seen amazing results!"</em> - Priya S.</p>
+      <p><em>"Finally, a diet plan that considers my busy schedule and my food preferences. MealGenie made reaching my fitness goals achievable and enjoyable."</em> - Rohan M.</p>
+      <p class="coming-soon-note">More reviews from our growing community are coming soon!</p>
+    </div>
   </section>
 
-  <section id="faq">
+  <section id="faq" class="faq-section-homepage">
     <h2>Frequently Asked Questions</h2>
     <dl>
       <dt>Is this suitable for beginners?</dt>
-      <dd>Yes! Whether you’re just starting or a fitness pro, we’ll build your plan accordingly.</dd>
+      <dd>Yes! MealGenie is designed to cater to all fitness levels. Whether you’re just starting your health journey or are a seasoned fitness enthusiast, our personalized system will build a plan specifically tailored to your experience and goals.</dd>
+
       <dt>Are meal boxes compulsory?</dt>
-      <dd>No. You can follow your plan at home or order meals from us when available.</dd>
+      <dd>No, **meal boxes are entirely optional**. Your personalized plan provides all the guidance you need to prepare meals at home. However, for ultimate convenience, you'll soon have the option to order healthy, ready-to-eat meals from us once our delivery service launches.</dd>
+
       <dt>Can I choose vegetarian only?</dt>
-      <dd>Absolutely. You’ll select food preferences when filling the form.</dd>
+      <dd>Absolutely. When you fill out our easy-to-use form to <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">get your plan</a>, you’ll be prompted to select your food preferences, including a dedicated option for vegetarian meals. We ensure your plan perfectly aligns with your dietary choices.</dd>
+      
+      <dt>What kind of results can I expect?</dt>
+      <dd>Results vary based on individual consistency, adherence to the plan, and unique body metabolism. However, users commonly report sustainable weight loss, increased energy levels, improved muscle definition (for muscle gain plans), better digestion, and an overall enhanced sense of well-being. MealGenie focuses on healthy, long-term changes.</dd>
+
     </dl>
+    <div class="text-center">
+        <a href="{{ url_for('faq') }}" class="btn btn-primary">View All FAQs</a>
+    </div>
   </section>
 
   <section id="final-cta">
-    <h2>Ready to Take Control of Your Health?</h2>
-    <p>Get a personalized diet plan and start your journey towards better health today.</p>
-    <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Diet Plan</a>
+    <h2>Ready to Transform Your Health and Achieve Your Goals?</h2>
+    <p>Don't wait to start living a healthier, more energized life. Get your personalized diet plan from MealGenie today and take the first crucial step towards your wellness aspirations.</p>
+    <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get My Personalized Diet Plan Now</a>
+    <a href="{{ url_for('pricing') }}" class="btn btn-primary">Explore Our Affordable Plans</a>
   </section>
-
   <footer>
+    
     <div class="footer-content">
       <a href="{{ url_for('faq') }}">FAQ</a>
       <a href="{{ url_for('contact') }}">Contact Us</a>

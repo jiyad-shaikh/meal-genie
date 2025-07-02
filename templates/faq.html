@@ -33,30 +33,65 @@
     </nav>
 
     <header>
-        <h1>Frequently Asked Questions</h1>
+        <h1>Frequently Asked Questions About MealGenie</h1>
+        <p>Here you'll find answers to the most common questions about MealGenie, our personalized diet plans, meal delivery services, and how we can help you achieve your health goals.</p>
     </header>
 
-    <section>
-        <ul>
-            <li>
-                <strong>Is it personalized?</strong>
-                Yes, based on your data.
-            </li>
-            <li>
-                <strong>Is it free?</strong>
-                Yes, for now.
-            </li>
-            <li>
-                <strong>How long to get the plan?</strong>
-                24 hours.
-            </li>
-            <li>
-                <strong>Do you deliver meals?</strong>
-                Not yet, coming soon.
-            </li>
-        </ul>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    <section class="faq-list">
+        <div class="faq-item">
+            <h2>Is my diet plan truly personalized?</h2>
+            <p><strong>Yes, absolutely!</strong> Your MealGenie diet plan is meticulously crafted based on the detailed information you provide, including your age, gender, activity level, current weight, height, specific health goals (like <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">weight loss</a>, <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">muscle gain</a>, or general wellness), and any dietary preferences or restrictions. Our intelligent system ensures your plan is unique to your needs and lifestyle.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Is MealGenie currently free?</h2>
+            <p><strong>Yes, for a limited time!</strong> We are currently offering our personalized diet plan generation service for free to help as many people as possible kickstart their health journey. This allows you to experience the benefits of a tailored plan without any cost. Be sure to explore our <a href="{{ url_for('pricing') }}" class = "nav-link nav-link:hover">pricing page</a> for future premium features and subscription options as we evolve.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>How long does it take to receive my personalized plan?</h2>
+            <p>Once you've submitted your details through our easy-to-use form, your personalized diet plan is generated almost instantly! You should receive your comprehensive plan within **24 hours** via your provided contact method, ready for you to begin your transformation immediately.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Do you currently deliver meals?</h2>
+            <p><strong>Not yet, but it's coming very soon!</strong> MealGenie is actively working on launching our convenient healthy meal box delivery service. This feature will allow you to receive freshly prepared, perfectly portioned meals that align with your personalized plan, taking the guesswork out of meal prep. Stay tuned for updates on our official launch!</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Can I choose vegetarian or other dietary preferences?</h2>
+            <p><strong>Absolutely!</strong> When you use our "Get Your Plan" tool, you'll be prompted to select your food preferences. You can indicate if you prefer a vegetarian diet, non-vegetarian, or specify any allergies or ingredients you wish to avoid. Your plan will then be customized accordingly.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What kind of goals can MealGenie help me achieve?</h2>
+            <p>MealGenie supports a variety of health and fitness goals, including:
+                <ul>
+                    <li><strong>Weight Loss:</strong> Customized calorie and macro-nutrient plans to help you shed pounds effectively.</li>
+                    <li><strong>Muscle Gain:</strong> Optimized protein and calorie intake to support muscle growth and recovery.</li>
+                    <li><strong>General Health & Wellness:</strong> Balanced plans focused on overall well-being, energy levels, and maintaining a healthy lifestyle.</li>
+                </ul>
+                You can select your primary goal when you <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">start creating your plan</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What if I have allergies or specific food intolerances?</h2>
+            <p>During the plan generation process, you will have the option to list any allergies (e.g., nuts, dairy, gluten) or specific food intolerances you have. Our system will then exclude these ingredients from your personalized diet plan. We highly recommend being thorough when providing this information for your safety and comfort.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>How is MealGenie different from other diet apps?</h2>
+            <p>MealGenie stands out due to its deep commitment to **true personalization** leveraging intelligent algorithms, its focus on **affordability**, and the upcoming integration of **convenient healthy meal box delivery**. We aim to provide a holistic solution that is easy to use, effective, and tailored to your individual needs, minimizing confusion and maximizing results. Learn more about us on our <a href="{{ url_for('about') }}" class = "nav-link nav-link:hover">About Us page</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>How can I contact MealGenie for further assistance?</h2>
+            <p>If your question hasn't been answered here, or you need further assistance, please don't hesitate to reach out to our support team. You can visit our <a href="{{ url_for('contact') }}" class = "nav-link nav-link:hover">Contact Us page</a> to find our email address or fill out a contact form. We aim to respond to all inquiries promptly.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Personalized Plan Now!</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-primary">Still Have Questions? Contact Us</a>
         </div>
     </section>
 

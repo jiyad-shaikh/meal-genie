@@ -38,31 +38,46 @@
     </nav>
 
     <header>
-        <h1>About MealGenie</h1>
-        <p>We’re a passionate team focused on helping people achieve their health and fitness goals through personalized diet plans and clean eating.</p>
+        <h1>About MealGenie: Empowering Your Health & Wellness Journey</h1>
+        <p>At MealGenie, we are a passionate team dedicated to revolutionizing how people approach their health and fitness goals. We combine cutting-edge technology with nutritional expertise to provide genuinely personalized diet plans and convenient, healthy meal solutions, making clean eating accessible and enjoyable for everyone.</p>
     </header>
 
     <main>
         <section>
-            <h2>Our Mission</h2>
-            <p>At MealGenie, we aim to make healthy eating simple, accessible, and tailored to your lifestyle. Whether your goal is weight loss, muscle gain, or general wellness, we’ve got you covered with affordable and delicious meal options.</p>
+            <h2>Our Mission: Simplifying Personalized Nutrition for All</h2>
+            <p>Our core mission at MealGenie is to demystify healthy eating and make it an achievable reality for individuals from all walks of life. We believe that confusing diet fads and restrictive eating habits shouldn't hinder your progress. Whether your specific goal is significant <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">weight loss</a>, targeted <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">muscle gain</a>, or simply maintaining <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">general wellness</a>, we are committed to providing you with an affordable, effective, and delicious path forward.</p>
+            <p>We leverage smart technology to analyze your unique profile and preferences, ensuring your plan is not just generic, but perfectly tailored to your body's needs and lifestyle.</p>
         </section>
 
         <section>
-            <h2>Why Choose MealGenie?</h2>
-            <ul>
-                <li>✅ Personalized Diet Plans for every goal</li>
-                <li>✅ Fresh and Balanced Meal Boxes</li>
-                <li>✅ Affordable Pricing starting at ₹99</li>
-                <li>✅ Simple Process to Get Your Plan</li>
-            </ul>
+            <h2>Why Choose MealGenie? The Benefits of Our Approach</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>✅ Truly Personalized Diet Plans</h3>
+                    <p>Unlike conventional programs, MealGenie crafts a diet plan specifically for you. Our intelligent system considers your age, gender, activity level, health goals, and dietary preferences to create a meal strategy that aligns perfectly with your body's requirements, maximizing your results and enjoyment.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Fresh & Balanced Meal Boxes (Optional)</h3>
+                    <p>Beyond providing detailed recipes and meal schedules, MealGenie offers the ultimate convenience with our optional healthy meal boxes. Enjoy perfectly portioned, freshly prepared meals delivered directly to your home, saving you time and ensuring you stick to your nutritional targets with ease.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Affordable & Transparent Pricing</h3>
+                    <p>Quality nutrition shouldn't break the bank. MealGenie is committed to offering premium personalized diet solutions at prices that are accessible to everyone. Our plans are designed to be budget-friendly, starting at just ₹99, ensuring that a healthy lifestyle is within reach. <a href="{{ url_for('pricing') }}" class = "nav-link nav-link:hover">Explore our pricing options</a> to find a plan that suits you.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Simple & User-Friendly Process</h3>
+                    <p>Getting started with MealGenie is incredibly straightforward. Our intuitive platform guides you through a few simple questions about your goals and preferences, and within minutes, you'll have a custom diet plan ready. It's never been easier to take the first step towards a healthier you! <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">Get your personalized plan now</a>.</p>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2>Join Us on Your Health Journey</h2>
-            <p>We’re continuously working on adding new features and partnerships to serve you better. Follow us on Instagram for updates and special offers.</p>
+            <h2>Join Us on Your Health Journey: What's Next?</h2>
+            <p>We are continuously dedicated to enhancing your MealGenie experience by adding innovative features, expanding our menu options, and forging new partnerships with leading health and wellness experts. Your feedback is invaluable as we strive to make personalized nutrition even more effective and enjoyable.</p>
+            <p>Stay connected with us for exciting updates, new meal ideas, and special offers by following us on Instagram and checking our <a href="{{ url_for('faq') }}" class = "nav-link nav-link:hover">FAQ section</a> for answers to common questions. We're here to support you every step of the way!</p>
             <div style="text-align: center; margin-top: 20px;">
-                <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+                <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Personalized Plan Today!</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Have Questions? Contact Our Team</a>
             </div>
         </section>
     </main>

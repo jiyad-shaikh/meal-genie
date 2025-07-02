@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | MealGenie Blog{% endblock %} {# Dynamic title from Flask context #}
+{% block meta_description %}{{ post.excerpt }}{% endblock %} {# Dynamic excerpt for meta description #}
+{% block meta_keywords %}{{ post.keywords }}{% endblock %} {# Dynamic keywords #}
+{% block og_title %}{{ post.title }}{% endblock %}
+{% block og_description %}{{ post.excerpt }}{% endblock %}
+{% block og_image %}{{ post.image }}{% endblock %} {# Path to specific blog post image #}
+
+{% block content %}
+<div class="blog-post-detail">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <p class="post-meta">By MealGenie Team | Published on: {{ post.date }}</p>
+    {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="post-hero-image">
+    {% endif %}
+
+    <div class="post-content">
+        {# This is where the main content of your blog post would go. #}
+        {# In a Flask app, 'post.content' would contain the HTML or Markdown content. #}
+        {% if post.slug == 'understanding-macronutrients' %}
+            <p>Macronutrients are the cornerstones of your diet, providing the energy and building blocks your body needs to function optimally. They consist of three main categories: carbohydrates, proteins, and fats.</p>
+
+            <h3>Carbohydrates: Your Primary Energy Source</h3>
+            <p>Carbohydrates are often misunderstood, but they are vital for energy. They are broken down into glucose, which is the body's preferred fuel. Good sources include whole grains, fruits, vegetables, and legumes.</p>
+            <p>Aim for complex carbohydrates that provide sustained energy and fiber, rather than simple sugars that lead to energy crashes.</p>
+
+            <h3>Proteins: The Building Blocks of Life</h3>
+            <p>Proteins are essential for building and repairing tissues, making enzymes and hormones, and supporting immune function. They are made up of amino acids.</p>
+            <p>Lean meats, poultry, fish, eggs, dairy, and plant-based options like tofu, lentils, and quinoa are excellent protein sources. Ensure you get enough protein, especially if you're active or aiming for muscle gain.</p>
+
+            <h3>Fats: More Than Just Energy Storage</h3>
+            <p>Fats are crucial for hormone production, nutrient absorption (especially fat-soluble vitamins A, D, E, K), and protecting organs. Healthy fats are vital for brain health and reducing inflammation.</p>
+            <p>Focus on unsaturated fats found in avocados, nuts, seeds, and olive oil. Limit saturated and trans fats found in processed foods. Remember, fats are calorie-dense, so moderation is key even with healthy fats.</p>
+
+            <h3>Balancing Your Macros</h3>
+            <p>The ideal macro ratio varies based on individual goals, activity levels, and preferences. For general health, a balanced approach is often recommended. For specific goals like weight loss or muscle gain, you might adjust your ratios (e.g., higher protein for muscle gain).</p>
+            <p>MealGenie helps you balance your macronutrients by creating a personalized plan that considers your specific needs. Start your journey today to discover your optimal macro balance!</p>
+        {% elif post.slug == 'hydration-for-weight-loss' %}
+            <p>Water is often overlooked in weight loss discussions, but it's a powerful tool in your arsenal. Staying adequately hydrated supports various bodily functions crucial for shedding those extra pounds.</p>
+
+            <h3>Boosts Metabolism</h3>
+            <p>Even mild dehydration can slow down your metabolism. Drinking enough water ensures your metabolic processes run efficiently, helping you burn more calories throughout the day. Some studies even suggest that drinking cold water can slightly increase metabolism as your body expends energy to warm it up.</p>
+
+            <h3>Reduces Appetite and Cravings</h3>
+            <p>Sometimes, what you perceive as hunger is actually thirst. Drinking a glass of water before meals can help you feel fuller, leading to less food consumption. It can also help curb cravings for sugary drinks and snacks, as water is a zero-calorie alternative.</p>
+
+            <h3>Aids Digestion and Waste Removal</h3>
+            <p>Water is essential for a healthy digestive system. It helps break down food, absorb nutrients, and soften stool, preventing constipation. Efficient waste removal can reduce bloating and contribute to a lighter feeling.</p>
+
+            <h3>Enhances Exercise Performance</h3>
+            <p>Staying hydrated is critical for effective workouts. Dehydration can lead to fatigue, reduced endurance, and muscle cramps, hindering your ability to burn calories during exercise. Drink water before, during, and after your workouts to maximize your efforts.</p>
+
+            <h3>How Much Water Do You Need?</h3>
+            <p>The general recommendation is to drink around eight 8-ounce glasses of water per day, but individual needs vary based on activity level, climate, and body size. Listen to your body and drink when you're thirsty. Keep a water bottle handy as a visual reminder!</p>
+        {% elif post.slug == 'healthy-breakfast-ideas' %}
+            <p>Breakfast is often called the most important meal of the day, and for good reason! It kick-starts your metabolism, provides energy for your morning tasks, and can even help with weight management. But what if you're always on the go?</p>
+
+            <h3>1. Overnight Oats</h3>
+            <p>Prepare these the night before for a grab-and-go breakfast. Combine rolled oats with milk (dairy or non-dairy), chia seeds, and your favorite toppings like berries, nuts, or a drizzle of honey. Refrigerate overnight and enjoy!</p>
+
+            <h3>2. Greek Yogurt with Fruit and Granola</h3>
+            <p>Greek yogurt is packed with protein, keeping you full and satisfied. Top it with fresh or frozen berries for antioxidants and a sprinkle of low-sugar granola for crunch. This takes minutes to assemble.</p>
+
+            <h3>3. Whole-Wheat Toast with Avocado and Egg</h3>
+            <p>A classic for a reason. Toast a slice of whole-wheat bread, mash half an avocado on top, and add a quickly fried or boiled egg. Healthy fats, protein, and complex carbs – all in one!</p>
+
+            <h3>4. Smoothie Packs</h3>
+            <p>Pre-portion your smoothie ingredients (fruit, spinach, protein powder) into freezer bags. In the morning, just dump the contents into a blender with liquid (water, milk, or juice) and blend until smooth. A nutrient powerhouse in seconds!</p>
+
+            <h3>5. Cottage Cheese with Sliced Tomatoes and Black Pepper</h3>
+            <p>A savory option for those who aren't keen on sweet breakfasts. Cottage cheese is rich in casein protein, which digests slowly and keeps you feeling full. Add some sliced tomatoes for freshness and a dash of black pepper for flavor.</p>
+
+            <p>These ideas are not only quick and healthy but also versatile. Feel free to experiment with ingredients to suit your taste and dietary needs. A nutritious breakfast sets the tone for a productive and healthy day!</p>
+        {% else %}
+            <p>Content for this blog post is coming soon! Please check back later.</p>
+        {% endif %}
+    </div>
+
+    <a href="{{ url_for('blog') }}" class="btn btn-secondary back-to-blog">← Back to Blog</a>
+</div>
+{% endblock %}

@@ -6933,6 +6933,31 @@ tips = {
     }
 }
 
+# Dummy data for blog posts (replace with a real database or content management system)
+blog_posts_data = {
+    'understanding-macronutrients': {
+        'title': 'Understanding Your Macronutrients',
+        'date': 'July 1, 2024',
+        'excerpt': 'Dive deep into the world of proteins, carbs, and fats. Learn how balancing these essential macronutrients can optimize your energy, performance, and weight management goals.',
+        'image': '{{ url_for("static", filename="images/macros.png") }}', # Example image path
+        'keywords': 'macronutrients, proteins, carbohydrates, fats, nutrition, healthy eating'
+    },
+    'hydration-for-weight-loss': {
+        'title': 'The Benefits of Hydration for Weight Loss',
+        'date': 'June 25, 2024',
+        'excerpt': 'Water is crucial for overall health, but did you know it plays a significant role in your weight loss journey? Discover how proper hydration can boost metabolism and reduce cravings.',
+        'image': '{{ url_for("static", filename="images/hydration.png") }}', # Example image path
+        'keywords': 'hydration, water, weight loss, metabolism, healthy habits'
+    },
+    'healthy-breakfast-ideas': {
+        'title': 'Quick & Healthy Breakfast Ideas for Busy Mornings',
+        'date': 'June 18, 2024',
+        'excerpt': 'Don\'t skip the most important meal of the day! We\'ve compiled a list of nutritious and easy-to-prepare breakfast options that fit even the busiest schedules.',
+        'image': '{{ url_for("static", filename="images/breakfast.png") }}', # Example image path
+        'keywords': 'healthy breakfast, quick meals, breakfast ideas, healthy recipes'
+    }
+}
+
 
 @app.route('/')
 def index():
@@ -6965,6 +6990,21 @@ def privacy_policy():
 @app.route('/terms-of-service')  # Must match the URL in browser
 def terms_of_service():  # This name must match url_for()
     return render_template('terms.html')
+
+@app.route('/blog')
+def blog():
+    # Pass all blog posts data to the blog.html template
+    # In a real app, you might paginate this or fetch from a DB
+    return render_template('blog.html', all_posts=blog_posts_data.values())
+@app.route('/blog/<string:slug>')
+def blog_post(slug):
+    post = blog_posts_data.get(slug)
+    if post:
+        return render_template('blog_post.html', post=post)
+    else:
+        # Handle 404 or redirect if post not found
+        return "Post not found", 404
+
 
 @app.route('/result', methods=['POST'])
 def result(): 

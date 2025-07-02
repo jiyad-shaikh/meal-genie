@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Our Blog | MealGenie{% endblock %}
+{% block meta_description %}Stay updated with the latest in healthy eating, fitness tips, and personalized diet insights from the MealGenie blog.{% endblock %}
+{% block meta_keywords %}diet blog, healthy eating tips, fitness articles, nutrition advice, meal planning blog{% endblock %}
+{% block og_title %}MealGenie Blog{% endblock %}
+{% block og_description %}Discover expert articles and practical advice on personalized diets, healthy recipes, and fitness journeys.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/blog_share.png') }}{% endblock %} {# Replace with an actual blog sharing image #}
+
+
+{% block content %}
+<div class="blog-container">
+    <h1 class="page-heading">Our Blog</h1>
+    <p class="page-subtitle">Insights, tips, and inspiration for your health journey.</p>
+
+    <div class="blog-list">
+        {# Example Blog Post Card - In a real Flask app, you'd loop through your posts here #}
+        <div class="blog-post-card">
+            <h2>Understanding Your Macronutrients</h2>
+            <p class="blog-date">Published on: July 1, 2024</p>
+            <p class="blog-excerpt">
+                Dive deep into the world of proteins, carbs, and fats. Learn how balancing these essential macronutrients can optimize your energy, performance, and weight management goals.
+            </p>
+            <a href="{{ url_for('blog_post', slug='understanding-macronutrients') }}" class="btn btn-primary btn-small">Read More</a>
+        </div>
+
+        <div class="blog-post-card">
+            <h2>The Benefits of Hydration for Weight Loss</h2>
+            <p class="blog-date">Published on: June 25, 2024</p>
+            <p class="blog-excerpt">
+                Water is crucial for overall health, but did you know it plays a significant role in your weight loss journey? Discover how proper hydration can boost metabolism and reduce cravings.
+            </p>
+            <a href="{{ url_for('blog_post', slug='hydration-for-weight-loss') }}" class="btn btn-primary btn-small">Read More</a>
+        </div>
+
+        <div class="blog-post-card">
+            <h2>Quick & Healthy Breakfast Ideas for Busy Mornings</h2>
+            <p class="blog-date">Published on: June 18, 2024</p>
+            <p class="blog-excerpt">
+                Don't skip the most important meal of the day! We've compiled a list of nutritious and easy-to-prepare breakfast options that fit even the busiest schedules.
+            </p>
+            <a href="{{ url_for('blog_post', slug='healthy-breakfast-ideas') }}" class="btn btn-primary btn-small">Read More</a>
+        </div>
+
+        {# Add more blog post cards as needed #}
+
+    </div>
+</div>
+{% endblock %}
