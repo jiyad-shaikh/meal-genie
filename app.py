@@ -20,7 +20,7 @@ meal_plans = {
     ],
     "Lunch": [
         {
-            "item": "Brown rice + dal + mixed vegetable sabzi",
+            "item": "Brown rice + Moong dal + mixed vegetable sabzi",
             "quantity": "1 cup brown rice + 1 cup dal + 1 cup sabzi",
             "time": "1:00 PM",
             "calories": 500,
