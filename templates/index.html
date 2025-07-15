@@ -37,34 +37,6 @@
     </div>
   </div>
 
-
-<section class="feature-section">
-    <h2>Why Thousands Choose MealGenie for Their Health Journey</h2>
-    <div class="features-grid">
-      <div class="feature-item">
-        <h3>✅ Precision Personalized Diet Plans</h3>
-        <p>Our expert nutritionists, soon to be amplified by cutting-edge AI, craft **customized meal plans** that align perfectly with your unique body type, specific health goals (like <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">weight loss</a>, <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">muscle gain</a>, or general wellness), activity level, and dietary preferences. No more generic diets – just results-driven nutrition tailored for you.</p>
-      </div>
-      <div class="feature-item">
-        <h3>✅ Convenient Healthy Meal Box Delivery (Coming Soon!)</h3>
-        <p>Imagine delicious, **ready-to-eat meals** delivered right to your doorstep, perfectly portioned and nutritionally balanced according to your diet plan. Our meal box service is currently under development to make healthy eating effortless and consistent for busy individuals.</p>
-      </div>
-      <div class="feature-item">
-        <h3>✅ Diverse & Delicious Cuisine</h3>
-        <p>Say goodbye to bland, boiled food! Whether you prefer **vegetarian or non-vegetarian** options, our plans feature a wide variety of flavorful dishes. We believe healthy eating should be an enjoyable culinary experience, not a chore.</p>
-      </div>
-      <div class="feature-item">
-        <h3>✅ Affordable & Flexible Subscriptions</h3>
-        <p>Achieving your health goals shouldn't be expensive. MealGenie offers **affordable subscription plans** designed to fit various budgets, starting from just ₹99. We provide flexible options that cater to fitness enthusiasts, working professionals, and athletes alike. <a href="{{ url_for('pricing') }}" class = "nav-link nav-link:hover">View our pricing</a> to find the best plan for you.</p>
-      </div>
-      <div class="feature-item">
-        <h3>✅ Innovative AI Guidance for 24/7 Support (Coming Soon!)</h3>
-        <p>We are pioneering the future of nutrition with our **AI-powered nutritionist**. This intelligent companion will provide continuous guidance, chat support, and understand your evolving goals, making your health journey smarter and more supported around the clock.</p>
-      </div>
-    </div>
-  </section>
-
-
   <section class="steps-section">
     <h2>How MealGenie Transforms Your Eating Habits in 3 Simple Steps</h2>
     <ol>
@@ -77,12 +49,7 @@
     </div>
   </section>
 
-  <section id="ai-nutritionist" class="highlight-section">
-    <h2>The Future of Nutrition: Your Smart AI Nutritionist, Coming Soon!</h2>
-    <p>Imagine having a dedicated nutritionist available 24/7, ready to answer your questions, adjust your plan, and motivate you. That's exactly what we're building! Our revolutionary AI-powered nutritionist will offer personalized insights, real-time guidance, and an unparalleled level of support to help you stay on track and achieve lasting results.</p>
-  </section>
-
-  <section id="sample-plans" class="info-section">
+  <!-- <section id="sample-plans" class="info-section">
     <h2>Discover What Your MealGenie Diet Plan Could Look Like</h2>
     <p class="section-description">Our plans are designed for real-world application, offering delicious and balanced meals that fit your daily routine and specific objectives. Here's a glimpse into a typical day's personalized plan, focusing on effective nutrition without resorting to crash diets:</p>
     <div class="sample-meal-grid">
@@ -107,57 +74,7 @@
     <div class="text-center" style="margin-top: 25px;">
         <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Custom Sample Plan!</a>
     </div>
-  </section>
-
-  <section id="diet-plans" class="info-section detailed-diet-plans">
-    <div class="container">
-      <h2>Explore Diverse Diet Plans Tailored to Your Needs</h2>
-      <p class="section-description">MealGenie offers various specialized diet types, ensuring you find the perfect fit for your health objectives and preferences. Here are two examples:</p>
-
-      <div class="diet-plan-card">
-        <h3>🥑 1. Keto Diet Plan: Fuel Your Body with Healthy Fats</h3>
-        <p>Our Keto diet plans are meticulously designed to guide your body into a state of ketosis, promoting fat burning for energy. We focus on high-quality fats, moderate protein, and very low carbohydrates, ensuring you feel satisfied and energized.</p>
-        <div class="diet-type">
-          <h4>🥦 Veg Keto: Paneer & Spinach Stir-Fry</h4>
-          <ul>
-            <li><strong>Ingredients:</strong> Succulent paneer cubes, fresh spinach, a hint of olive oil, aromatic garlic, vibrant bell peppers, and a blend of authentic spices.</li>
-            <li><strong>Nutritional Info:</strong> Optimized for Keto – Very Low Carbs | High Protein | High Healthy Fats.</li>
-            <li><strong>Benefits:</strong> Supports sustainable weight loss, boosts energy levels, and enhances mental clarity.</li>
-          </ul>
-        </div>
-        <div class="diet-type">
-          <h4>🍗 Non-Veg Keto: Keto Chicken Bowl</h4>
-          <ul>
-            <li><strong>Ingredients:</strong> Perfectly grilled chicken, creamy avocado, crisp leafy greens, a boiled egg, rich cheese, and a drizzle of premium olive oil.</li>
-            <li><strong>Benefits:</strong> An ideal meal for muscle retention during weight loss and sustained energy throughout the day.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="diet-plan-card">
-        <h3>🌿 2. Detox Plan: Cleanse & Rejuvenate Your System</h3>
-        <p>Our Detox plans are crafted to help reset your body, eliminate toxins, and improve overall vitality. These plans emphasize fresh, whole foods, focusing on hydration and nutrient-dense ingredients to support your natural detoxification processes.</p>
-        <div class="diet-type">
-          <h4>🥒 Veg Detox: Cucumber Mint Smoothie + Boiled Veg Platter</h4>
-          <ul>
-            <li><strong>Ingredients:</strong> Refreshing cucumber, invigorating mint, zesty lime, nutrient-packed spinach, and earthy beets.</li>
-            <li><strong>Benefits:</strong> Promotes hydration, aids digestion, and provides a rich source of vitamins and antioxidants for a gentle cleanse.</li>
-          </ul>
-        </div>
-        <div class="diet-type">
-          <h4>🍋 Non-Veg Detox (Optional): Lemon-Herb Grilled Fish</h4>
-          <ul>
-            <li><strong>Description:</strong> A light and flavorful option featuring lightly seasoned, low-oil grilled fish. This serves as an excellent source of lean protein for a mild detox, ensuring you maintain essential nutrients while cleansing.</li>
-            <li><strong>Benefits:</strong> Supports liver function, reduces bloating, and leaves you feeling lighter and more energized.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top: 25px;">
-        <a href="{{ url_for('pricing') }}" class="btn btn-primary">See All Plans & Pricing</a>
-    </div>
-  </section>
-
+  </section> -->
 
   <section id="testimonials" class="testimonials-section">
     <h2>What Our Early Users Are Saying</h2>
@@ -165,6 +82,32 @@
       <p><em>"MealGenie has transformed my approach to healthy eating. The personalized plan was incredibly easy to follow, and I've already seen amazing results!"</em> - Priya S.</p>
       <p><em>"Finally, a diet plan that considers my busy schedule and my food preferences. MealGenie made reaching my fitness goals achievable and enjoyable."</em> - Rohan M.</p>
       <p class="coming-soon-note">More reviews from our growing community are coming soon!</p>
+    </div>
+  </section>
+
+<section class="feature-section">
+    <h2>Why Thousands Choose MealGenie for Their Health Journey</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <h3>✅ Precision Personalized Diet Plans</h3>
+        <p>Our expert nutritionists, soon to be amplified by cutting-edge AI, craft **customized meal plans** that align perfectly with your unique body type, specific health goals (like <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">weight loss</a>, <a href="{{ url_for('get_plan') }}" class = "nav-link nav-link:hover">muscle gain</a>, or general wellness), activity level, and dietary preferences. No more generic diets – just results-driven nutrition tailored for you.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Convenient Healthy Meal Box Delivery (Coming Soon!)</h3>
+        <p>Imagine delicious, **ready-to-eat meals** delivered right to your doorstep, perfectly portioned and nutritionally balanced according to your diet plan. Our meal box service is currently under development to make healthy eating effortless and consistent for busy individuals.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Diverse & Delicious Cuisine</h3>
+        <p>Say goodbye to bland, boiled food! Whether you prefer **vegetarian or non-vegetarian** options, our plans feature a wide variety of flavorful dishes. We believe healthy eating should be an enjoyable culinary experience, not a chore.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Affordable & Flexible Subscriptions</h3>
+        <p>Achieving your health goals shouldn't be expensive. MealGenie offers **affordable subscription plans** designed to fit various budgets, starting from just ₹99. We provide flexible options that cater to fitness enthusiasts, working professionals, and athletes alike. <a href="{{ url_for('pricing') }}" class = "nav-link nav-link:hover">View our pricing</a> to find the best plan for you.</p>
+      </div>
+      <div class="feature-item">
+        <h3>✅ Innovative AI Guidance for 24/7 Support (Coming Soon!)</h3>
+        <p>We are pioneering the future of nutrition with our **AI-powered nutritionist**. This intelligent companion will provide continuous guidance, chat support, and understand your evolving goals, making your health journey smarter and more supported around the clock.</p>
+      </div>
     </div>
   </section>
 

@@ -6963,6 +6963,10 @@ blog_posts_data = {
 def index():
     return render_template("index.html")
 
+@app.route('/menu')
+def menu():
+    return render_template("menu.html")
+
 @app.route('/get-plan')
 def get_plan():
     return render_template("get-plan.html")

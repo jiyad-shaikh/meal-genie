@@ -1,9 +1,11 @@
 
 const toggleBtn = document.getElementById("theme-toggle");
-toggleBtn.addEventListener("click", () => {
+if (toggleBtn) {
+   toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
 });
+}
 
 // Load theme on page load
 window.addEventListener('DOMContentLoaded', () => {
