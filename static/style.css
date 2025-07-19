@@ -1273,6 +1273,17 @@ header p { /* Also ensure any paragraphs in the header are centered */
     margin-top: 10px;
 }
 
+.meal-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2e7d32; /* dark green for healthy/organic theme */
+  background-color: #e6f4ea; /* light green bg */
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
 .badge {
     padding: 6px 12px;
     border-radius: 20px;
