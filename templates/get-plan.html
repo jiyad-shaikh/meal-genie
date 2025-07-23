@@ -1,4 +1,4 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}Get Your Personalized Diet Plan | MealGenie{% endblock %}
 {% block meta_description %}Fill out your preferences to get a fully personalized diet plan based on your goals, lifestyle, and delicious Indian-friendly food choices.{% endblock %}
@@ -59,6 +59,28 @@ header {
     z-index: 1;
 }
 
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    /* Subtle hover effect */
+    box-shadow: 0 0 0 rgba(0, 255, 174, 0);
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    color: #00ffc8;
+    box-shadow: 0 0 10px rgba(0, 255, 174, 0.5);
+}
 
 .form-heading {
     font-size: 38px; /* Slightly larger */
@@ -568,6 +590,169 @@ footer {
 }
 
 
+/* Light Mode Adjustments (if you decide to keep it) */
+body.light-mode {
+    background: linear-gradient(135deg, #e0e0e0, #f0f0f0, #ffffff);
+    color: #333;
+}
+
+body.light-mode header .form-heading {
+    color: #1a7a6c;
+    text-shadow: 0 0 5px rgba(26, 122, 108, 0.2);
+}
+
+body.light-mode .form-container {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group select {
+    border: 1px solid #1a7a6c;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group select:focus {
+    border-color: #1a7a6c;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(26, 122, 108, 0.3);
+}
+
+body.light-mode .form-group label {
+    color: #555;
+}
+
+body.light-mode .form-group input:focus + label,
+body.light-mode .form-group input:not(:placeholder-shown) + label,
+body.light-mode .form-group select:focus + label,
+body.light-mode .form-group select:not([value=""]) + label {
+    color: #1a7a6c;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .btn {
+    background: linear-gradient(90deg, #1a7a6c, #268a7c);
+    color: white;
+    box-shadow: 0 5px 15px rgba(26, 122, 108, 0.3);
+}
+
+body.light-mode .btn:hover {
+    background: linear-gradient(90deg, #268a7c, #1a7a6c);
+    box-shadow: 0 8px 20px rgba(26, 122, 108, 0.5);
+}
+
+body.light-mode .back-btn {
+    border: 1px solid #1a7a6c;
+    color: #1a7a6c;
+}
+
+body.light-mode .back-btn:hover {
+    background: rgba(26, 122, 108, 0.1);
+}
+
+body.light-mode footer,
+body.light-mode footer p {
+    color: #666;
+}
+
+body.light-mode .footer-links a,
+body.light-mode .footer-legal a,
+body.light-mode .footer-social a {
+    color: #1a7a6c;
+}
+
+body.light-mode .footer-links a:hover,
+body.light-mode .footer-legal a:hover,
+body.light-mode .footer-social a:hover {
+    color: #268a7c;
+}
+
+body.light-mode .progress-step {
+    background: rgba(26, 122, 108, 0.1);
+    border: 2px solid #1a7a6c;
+}
+
+body.light-mode .progress-step.active,
+body.light-mode .progress-step.completed {
+    background: #1a7a6c;
+    box-shadow: 0 0 15px rgba(26, 122, 108, 0.5);
+}
+
+body.light-mode .progress-bar-container::before {
+    background: rgba(26, 122, 108, 0.2);
+}
+
+body.light-mode .step-title {
+    color: #1a7a6c;
+    text-shadow: 0 0 5px rgba(26, 122, 108, 0.2);
+}
+
+body.light-mode .plan-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(26, 122, 108, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .plan-card:hover {
+    border-color: #1a7a6c;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .plan-card input[type="radio"]:checked + .card-content {
+    border: 2px solid #1a7a6c;
+    box-shadow: 0 0 25px rgba(26, 122, 108, 0.5);
+    background: rgba(26, 122, 108, 0.1);
+}
+
+body.light-mode .plan-card h4 {
+    color: #1a7a6c;
+}
+body.light-mode .plan-card p,
+body.light-mode .features-list li {
+    color: #555;
+}
+
+body.light-mode .plan-card .price {
+    color: #1a7a6c;
+}
+
+body.light-mode .plan-card .cta-text {
+    color: #1a7a6c;
+    background: rgba(26, 122, 108, 0.1);
+}
+
+body.light-mode .plan-card input[type="radio"]:checked + .card-content .cta-text {
+    background: #1a7a6c;
+    color: white;
+}
+
+body.light-mode .plan-card .plan-tag.free {
+    background: #1a7a6c;
+    color: white;
+    box-shadow: 0 3px 10px rgba(26, 122, 108, 0.4);
+}
+
+body.light-mode .plan-tag.premium {
+    background: linear-gradient(45deg, #e6b800, #cc9900);
+    color: white;
+    box-shadow: 0 3px 10px rgba(204, 153, 0, 0.6);
+}
+
+body.light-mode .plan-tag.best-value {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+    color: white;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.6);
+}
+
+body.light-mode .plan-card .features-list li i {
+    color: #1a7a6c;
+}
+body.light-mode .plan-card .features-list li .grey-icon {
+    color: #aaa;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -667,6 +852,9 @@ footer {
 </style>
 
 <header>
+    <button id="theme-toggle" title="Toggle Theme">
+        <i class="fas fa-sun"></i>
+    </button>
     <h2 class="form-heading">Your Personalized Meal Plan Journey</h2>
 </header>
 
@@ -809,6 +997,25 @@ footer {
         </div>
     </form>
 </section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="{{ url_for('faq') }}">FAQ</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('pricing') }}">Pricing</a>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2024 MealGenie. All rights reserved.</p>
+            <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+            <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.instagram.com/mealgenie_official" target="_blank" aria-label="MealGenie Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
 
 <script>
     // Theme Toggle Logic
@@ -1034,4 +1241,4 @@ footer {
     });
 </script>
 
-{% endblock %} -->
+{% endblock %}
