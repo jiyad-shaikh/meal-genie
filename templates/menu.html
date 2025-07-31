@@ -20,41 +20,13 @@
                 <div class="search-icon">🔍</div>
                 <input type="text" class="search-bar" placeholder="Search for meals, ingredients, or nutrition goals..." id="searchInput">
             </div>
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="veg">Vegetarian</button>
-                <button class="filter-btn" data-filter="non-veg">Non-Vegetarian</button>
-                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
-                <button class="filter-btn" data-filter="lunch">Lunch</button>
-                <button class="filter-btn" data-filter="dinner">Dinner</button>
-                <button class="filter-btn" data-filter="snacks">Snacks</button>
-            </div>
         </div>
     </div>
 
     <div class="main-content">
         <div class="container">
-            <div class="category-section" id="muscle-gain">
-                <h2 class="category-title">💪 Muscle Gain</h2>
-                <div class="meal-grid" id="muscle-gain-grid">
-                    <!-- Muscle gain meals will be populated here -->
+                <div class="meal-grid" id="all-meals-grid">
                 </div>
-            </div>
-
-            <div class="category-section" id="weight-loss">
-                <h2 class="category-title">🔥 Weight Loss</h2>
-                <div class="meal-grid" id="weight-loss-grid">
-                    <!-- Weight loss meals will be populated here -->
-                </div>
-            </div>
-
-            <div class="category-section" id="general-health">
-                <h2 class="category-title">🌱 General Health</h2>
-                <div class="meal-grid" id="general-health-grid">
-                    <!-- General health meals will be populated here -->
-                </div>
-            </div>
-
             <div class="no-results hidden" id="no-results">
                 <p>No meals found matching your search criteria. Try adjusting your filters!</p>
             </div>
@@ -386,12 +358,10 @@
 
         // DOM elements
         const searchInput = document.getElementById('searchInput');
-        const filterButtons = document.querySelectorAll('.filter-btn');
+        const allMealsGrid = document.getElementById('all-meals-grid');
         const noResults = document.getElementById('no-results');
-        const categorySections = document.querySelectorAll('.category-section');
 
         // State
-        let currentFilter = 'all';
         let searchTerm = '';
 
         // Initialize
@@ -402,57 +372,30 @@
 
         // Render meals
         function renderMeals() {
-            const categories = {
-                'muscle-gain': document.getElementById('muscle-gain-grid'),
-                'weight-loss': document.getElementById('weight-loss-grid'),
-                'general-health': document.getElementById('general-health-grid')
-            };
-
             // Clear existing content
-            Object.values(categories).forEach(grid => grid.innerHTML = '');
+           allMealsGrid.innerHTML = '';
 
             // Filter meals
             const filteredMeals = meals.filter(meal => {
-                const matchesSearch = meal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                    meal.ingredients.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                    meal.benefit.toLowerCase().includes(searchTerm.toLowerCase());
-                
-                const matchesFilter = currentFilter === 'all' || 
-                                    meal.type === currentFilter || 
-                                    meal.mealTime === currentFilter;
-
-                return matchesSearch && matchesFilter;
+                const searchLower = searchTerm.toLowerCase();
+                return (
+                    meal.name.toLowerCase().includes(searchLower) ||
+                    meal.ingredients.toLowerCase().includes(searchLower) ||
+                    meal.benefit.toLowerCase().includes(searchLower)
+                );
             });
 
-            // Group by category
-            const groupedMeals = filteredMeals.reduce((acc, meal) => {
-                if (!acc[meal.category]) acc[meal.category] = [];
-                acc[meal.category].push(meal);
-                return acc;
-            }, {});
-
-            // Render meals in their categories
-            Object.keys(groupedMeals).forEach(category => {
-                const grid = categories[category];
-                if (grid) {
-                    groupedMeals[category].forEach(meal => {
-                        grid.appendChild(createMealCard(meal));
-                    });
-                }
-            });
-
-            // Handle empty results
-            const hasResults = filteredMeals.length > 0;
-            noResults.classList.toggle('hidden', hasResults);
-            
-            // Hide/show category sections
-            categorySections.forEach(section => {
-                const categoryId = section.id;
-                const categoryMeals = groupedMeals[categoryId] || [];
-                section.classList.toggle('hidden', categoryMeals.length === 0);
-            });
-        }
-
+            // Render all filtered meals
+            if (filteredMeals.length > 0) {
+                filteredMeals.forEach(meal => {
+                    allMealsGrid.appendChild(createMealCard(meal));
+                });
+                noResults.classList.add('hidden');
+            } else {
+                noResults.classList.remove('hidden');
+            }
+          }
+           
         // Create meal card
         function createMealCard(meal) {
             const card = document.createElement('div');
@@ -507,16 +450,6 @@
             searchInput.addEventListener('input', (e) => {
                 searchTerm = e.target.value;
                 renderMeals();
-            });
-
-            // Filter buttons
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    e.target.classList.add('active');
-                    currentFilter = e.target.dataset.filter;
-                    renderMeals();
-                });
             });
         }
 
