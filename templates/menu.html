@@ -25,22 +25,35 @@
 
     <div class="main-content">
         <div class="container">
-                <div class="meal-grid" id="all-meals-grid">
+            <div class="filters">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter-type="type" data-filter-value="all">All Types</button>
+                    <button class="filter-btn" data-filter-type="type" data-filter-value="veg">Veg</button>
+                    <button class="filter-btn" data-filter-type="type" data-filter-value="non-veg">Non-Veg</button>
                 </div>
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter-type="mealTime" data-filter-value="all">All Times</button>
+                    <button class="filter-btn" data-filter-type="mealTime" data-filter-value="breakfast">Breakfast</button>
+                    <button class="filter-btn" data-filter-type="mealTime" data-filter-value="lunch">Lunch</button>
+                    <button class="filter-btn" data-filter-type="mealTime" data-filter-value="dinner">Dinner</button>
+                    <button class="filter-btn" data-filter-type="mealTime" data-filter-value="snacks">Snacks</button>
+                </div>
+            </div>
+            <div class="meal-grid" id="all-meals-grid">
+            </div>
             <div class="no-results hidden" id="no-results">
                 <p>No meals found matching your search criteria. Try adjusting your filters!</p>
             </div>
         </div>
     </div>
 
+
     <script>
         // Sample meal data
         const meals = [
-            // Muscle Gain
             {
                 id: 1,
                 name: "Chicken Masala Oats",
-                category: "muscle-gain",
                 type: "non-veg",
                 mealTime: "breakfast",
                 benefit: "Combines lean protein with complex carbs to kickstart muscle growth and energy for the day",
@@ -53,7 +66,6 @@
             {
                 id: 2,
                 name: "Mass Gainer Smoothie",
-                category: "muscle-gain",
                 type: "veg",
                 mealTime: "breakfast",
                 benefit: "Quick and high-protein breakfast",
@@ -66,7 +78,6 @@
             {
                id: 3,
                name: "Chicken Bhuna with Roti & Cabbage",
-               category: "muscle-gain",
                type: "non-veg",
                mealTime: "lunch",
                benefit: "Desi-style high-protein lunch packed with flavor and fiber",
@@ -79,7 +90,6 @@
             {
                 id: 4,
                 name: "Paneer Bhurji + Roti + Bhindi",
-                category: "muscle-gain",
                 type: "veg",
                 mealTime: "lunch",
                 benefit: "Balanced macros with high protein and fiber, ideal for lean muscle maintenance",
@@ -92,7 +102,6 @@
             {
                 id: 5,
                 name: "Tandoori Chicken + Sweet Potato",
-                category: "muscle-gain",
                 type: "non-veg",
                 mealTime: "dinner",
                 benefit: "Lean Protein with anti-inflammatory spices",
@@ -104,21 +113,7 @@
             },
              {
                 id: 6,
-                name: "Paneer & Veg Curry Bowl (No carb)",
-                category: "muscle-gain",
-                type: "veg",
-                mealTime: "dinner",
-                benefit: "High in protein and good fats — supports overnight recovery without excess carbs",
-                ingredients: "Paneer cubes, lauki, cabbage, light tomato gravy",
-                quantity: "300g",
-                nutrition: { calories: 430, protein: 28, carbs: 10, fats: 28 },
-                Image: "/static/images/paneer_curry.jpg",
-                price:"159"
-            },
-             {
-                id: 7,
                 name: "Grilled Chicken Skewers with Peanut Dip",
-                category: "muscle-gain",
                 type: "non-veg",
                 mealTime: "snacks",
                 benefit: "Great for muscle fueling between meals, keeps cravings and hunger in check",
@@ -129,24 +124,8 @@
                 price:"199"
             },
             {
-                id: 8,
-                name: "Tofu Chaat Bowl",
-                category: "muscle-gain",
-                type: "veg",
-                mealTime: "snacks",
-                benefit: "Protein-packed snack for muscle growth",
-                ingredients: "Grilled Tofu , onions , tomatoes , chaat masala , corriander",
-                quantity: "200g",
-                nutrition: { calories: 370, protein: 22, carbs: 15, fats: 20 },
-                Image: "/static/images/tofu_chaat.jpg",
-                price:"149"
-            },
-
-            // Weight Loss
-            {
-                id: 9,
+                id: 7,
                 name: "Eggless Chicken Sandwich (Curd-based)",
-                category: "weight-loss",
                 type: "non-veg",
                 mealTime: "breakfast",
                 benefit: "High protein & gut-friendly twist to a regular sandwich",
@@ -157,9 +136,8 @@
                 price:"149"
             },
             {
-                id: 10,
+                id: 8,
                 name: "Poha with Roasted Peanuts",
-                category: "weight-loss",
                 type: "veg",
                 mealTime: "breakfast",
                 benefit: "Provides sustained energy with fiber and moderate protein — ideal for a weight loss morning meal",
@@ -170,9 +148,8 @@
                 price:"129"
             },
             {
-                id: 11,
+                id: 9,
                 name: "Chicken Breast Curry + Brown Rice",
-                category: "weight-loss",
                 type: "non-veg",
                 mealTime: "lunch",
                 benefit: "Clean high-protein lunch for fat loss",
@@ -183,35 +160,8 @@
                 price:"199"
             },
             {
-                id: 12,
-                name: "Moong Dal + Brown Rice + Lauki Sabzi",
-                category: "weight-loss",
-                type: "veg",
-                mealTime: "lunch",
-                benefit: "Great for digestion and satiety while controlling calorie intake",
-                ingredients: "Moong dal, 1/2 cup brown rice, bottle gourd curry",
-                quantity: "350g",
-                nutrition: { calories: 380, protein: 18, carbs: 45, fats: 10 },
-                Image: "/static/images/moong_dal.jpeg",
-                price:"169"
-            },
-            {
-                id: 13,
-                name: "Chicken Curry + 1 Roti + Cabbage Sabzi",
-                category: "weight-loss",
-                type: "non-veg",
-                mealTime: "dinner",
-                benefit: "Balanced, low-calorie dinner for weight loss and recovery",
-                ingredients: "Chicken curry (lean breast), whole wheat roti, cabbage sabzi, spices",
-                quantity: "1 roti + 150g chicken curry + 100g cabbage sabzi",
-                nutrition: { calories: 360, protein: 28, carbs: 22, fats: 15 },
-                Image: "/static/images/chicken_curry_roti_cabbage.jpeg",
-                price:"199"
-            },
-            {
-                id: 14,
+                id: 10,
                 name: "Rajma Curry + 1 Roti + Bhindi Sabzi",
-                category: "weight-loss",
                 type: "veg",
                 mealTime: "dinner",
                 benefit: "High-fiber, plant-protein dinner for weight loss and gut health",
@@ -222,9 +172,8 @@
                 price:"169"
             },       
             {
-                id: 15,
+                id: 11,
                 name: "Chicken-Drumstick-Curd Dip with Carrot Sticks",
-                category: "weight-loss",
                 type: "non-veg",
                 mealTime: "snacks",
                 benefit: "Tasty, hydrating, and low-carb",
@@ -235,9 +184,8 @@
                 price:"169"
             },
             {
-                id: 16,
+                id: 12,
                 name: "Curd Bowl with Chia & Fruits",
-                category: "weight-loss",
                 type: "veg",
                 mealTime: "snacks",
                 benefit: "Supports digestion and keeps hunger away between meals",
@@ -250,9 +198,8 @@
 
             // General Health
              {
-                id: 17,
+                id: 13,
                 name: "Sweet Potato Chicken Hash",
-                category: "general-health",
                 type: "non-veg",
                 mealTime: "breakfast",
                 benefit: "Balanced blend of lean protein and complex carbs",
@@ -262,36 +209,9 @@
                 Image: "/static/images/sweet_potato_chicken_hash.png",
                 price:"169"
             },
-             {
-                id: 18,
-                name: "Oats Upma with Veggies",
-                category: "general-health",
-                type: "veg",
-                mealTime: "breakfast",
-                benefit: "Balanced blend of lean protein and complex carbs",
-                ingredients: "Rolled oats, carrots, cabbage, onions, green chili, ghee",
-                quantity: "250g",
-                nutrition: { calories: 330, protein: 12, carbs: 40, fats: 10 },
-                Image: "/static/images/oats_upma.png",
-                price:"149"
-            },
             {
-                id: 19,
-                name: "Chicken & Lauki Kofta + Roti",
-                category: "general-health",
-                type: "non-veg",
-                mealTime: "lunch",
-                benefit: "Combines hydration from lauki with lean protein for a perfect mid-day boost",
-                ingredients: "Minced chicken, grated lauki, 2 rotis",
-                quantity: "350g",
-                nutrition: { calories: 480, protein: 35, carbs: 40, fats: 18 },
-                Image: "/static/images/minced_chicken_lauki_roti.jpeg",
-                price:"199"
-            },
-            {
-                 id: 20,
+                 id: 14,
                  name: "Paneer Stir Fry + Sweet Potato Mash",
-                 category: "general-health",
                  type: "veg",
                  mealTime: "lunch",
                  benefit: "Balanced meal rich in protein, fiber, and complex carbs",
@@ -303,9 +223,8 @@
                  
             },
             {
-                id: 21,
+                id: 15,
                 name: "Grilled Chicken + Boiled Veg Plate",
-                category: "general-health",
                 type: "non-veg",
                 mealTime: "dinner",
                 benefit: "A clean dinner that fuels recovery and keeps you feeling light",
@@ -316,22 +235,8 @@
                 price:"199"
             },
             {
-                id: 22,
-                name: "Tofu Sabzi + Roti + Bhindi",
-                category: "general-health",
-                type: "veg",
-                mealTime: "dinner",
-                benefit: "Supports digestion while providing enough protein and fiber",
-                ingredients: "Tofu, onion-tomato gravy, 1 roti, bhindi sabzi",
-                quantity: "300g",
-                nutrition: { calories: 400, protein: 22, carbs: 35, fats: 15 },
-                Image: "/static/images/tofu_sabzi_roti_bhindi.png",
-                price:"169"
-            },
-            {
-                id: 23,
+                id: 16,
                 name: "Chicken Lettuce Wraps",
-                category: "general-health",
                 type: "non-veg",
                 mealTime: "snacks",
                 benefit: "Clean energy and protein punch – perfect mid-day fuel",
@@ -341,28 +246,20 @@
                 Image: "/static/images/chicken_lettuce_wraps.png",
                 price:"159"
             },
-            {
-                id: 24,
-                name: "Peanut Butter Oats Balls",
-                category: "general-health",
-                type: "veg",
-                mealTime: "snacks",
-                benefit: "Nutritious energy bites rich in healthy fats and fiber",
-                ingredients: "Rolled oats, natural peanut butter, honey, chia seeds",
-                quantity: "3 medium balls (120g)",
-                nutrition: { calories: 250, protein: 10, carbs: 20, fats: 14 },
-                Image: "/static/images/peanut_butter_oats_balls.png",
-                price:"99"
-            }
+           
         ];
 
         // DOM elements
         const searchInput = document.getElementById('searchInput');
         const allMealsGrid = document.getElementById('all-meals-grid');
         const noResults = document.getElementById('no-results');
+        const filterButtons = document.querySelectorAll('.filter-btn');
 
         // State
         let searchTerm = '';
+        let currentTypeFilter = 'all';
+        let currentMealTimeFilter = 'all';
+
 
         // Initialize
         function init() {
@@ -378,11 +275,16 @@
             // Filter meals
             const filteredMeals = meals.filter(meal => {
                 const searchLower = searchTerm.toLowerCase();
-                return (
+                const matchesSearch = (
                     meal.name.toLowerCase().includes(searchLower) ||
                     meal.ingredients.toLowerCase().includes(searchLower) ||
                     meal.benefit.toLowerCase().includes(searchLower)
                 );
+
+                const matchesType = (currentTypeFilter === 'all' || meal.type === currentTypeFilter);
+                const matchesMealTime = (currentMealTimeFilter === 'all' || meal.mealTime === currentMealTimeFilter);
+
+                return matchesSearch && matchesType && matchesMealTime;
             });
 
             // Render all filtered meals
@@ -452,6 +354,30 @@
                 renderMeals();
             });
         }
+
+         // Filter button functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const filterType = e.target.dataset.filterType;
+                    const filterValue = e.target.dataset.filterValue;
+
+                    // Remove 'active' class from all buttons of the same filter type
+                    document.querySelectorAll(`.filter-btn[data-filter-type="${filterType}"]`).forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // Add 'active' class to the clicked button
+                    e.target.classList.add('active');
+
+                    if (filterType === 'type') {
+                        currentTypeFilter = filterValue;
+                    } else if (filterType === 'mealTime') {
+                        currentMealTimeFilter = filterValue;
+                    }
+                    renderMeals();
+                });
+            });
+        
 
         // Initialize the app
         init();
