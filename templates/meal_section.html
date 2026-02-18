@@ -1,58 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
 <div class="meal-card-item">
-    <div class="meal-header">
-        <h4>{{ meal.item }}</h4>
-        <span class="meal-time-badge">{{ meal_time_passed }}</span>
-    </div>
+  <div class="meal-header">
+    <h4>{{ meal.item }}</h4>
+    <span class="meal-time-badge">{{ meal_time_passed }}</span>
+  </div>
 
-    <p class="meal-quantity">Quantity: {{ meal.quantity }}</p>
-    <p class="meal-time">Scheduled Time: {{ meal.time if meal.time is defined else 'N/A' }}</p>
+  <p class="meal-quantity">Quantity: {{ meal.quantity }}</p>
+  <p class="meal-time">Scheduled Time: {{ meal.time if meal.time is defined else 'N/A' }}</p>
 
-    <div class="nutrients">
-        <span class="badge calories">{{ meal.calories }} kcal</span>
-        <span class="badge protein">{{ meal.protein }}g Protein</span>
-        <span class="badge carbs">{{ meal.carbs }}g Carbs</span>
-        <span class="badge fats">{{ meal.fats }}g Fats</span>
-    </div>
+  <div class="nutrients">
+    <span class="badge calories">{{ meal.calories }} kcal</span>
+    <span class="badge protein">{{ meal.protein }}g Protein</span>
+    <span class="badge carbs">{{ meal.carbs }}g Carbs</span>
+    <span class="badge fats">{{ meal.fats }}g Fats</span>
+  </div>
 
-    <form action="/order" method="POST" style="margin-top: 15px;">
-        <input type="hidden" name="meal_time" value="{{ meal_time_passed }}">
-        <input type="hidden" name="item" value="{{ meal.item }}">
-        <input type="hidden" name="quantity" value="{{ meal.quantity }}">
-        <input type="hidden" name="time" value="{{ meal.time }}">
-        <input type="hidden" name="calories" value="{{ meal.calories }}">
-        <input type="hidden" name="protein" value="{{ meal.protein }}">
-        <input type="hidden" name="carbs" value="{{ meal.carbs }}">
-        <input type="hidden" name="fats" value="{{ meal.fats }}">
-
-        <!-- <button type="submit" class="order-btn">Order This Meal</button> -->
-        <!-- <a 
-    href="https://wa.me/917045475886?text=Hello%2C%20I%20would%20like%20to%20order%3A%0A%0AMeal%20Time%3A%20{{ meal_time_passed }}%0AItem%3A%20{{ meal.item }}%0AQuantity%3A%20{{ meal.quantity }}%0ATime%3A%20{{ meal.time if meal.time is defined else 'N%2FA' }}%0ACalories%3A%20{{ meal.calories }}%20kcal%0AProtein%3A%20{{ meal.protein }}g%20%7C%20Carbs%3A%20{{ meal.carbs }}g%20%7C%20Fats%3A%20{{ meal.fats }}g"
-    target="_blank"
-    class="order-btn">
-    <i class="fab fa-whatsapp"></i>
-    Order via WhatsApp -->
-</a>
-    </form>
+  <form action="/order" method="POST" class="meal-order-form">
+    <input type="hidden" name="meal_time" value="{{ meal_time_passed }}">
+    <input type="hidden" name="item" value="{{ meal.item }}">
+    <input type="hidden" name="quantity" value="{{ meal.quantity }}">
+    <input type="hidden" name="time" value="{{ meal.time }}">
+    <input type="hidden" name="calories" value="{{ meal.calories }}">
+    <input type="hidden" name="protein" value="{{ meal.protein }}">
+    <input type="hidden" name="carbs" value="{{ meal.carbs }}">
+    <input type="hidden" name="fats" value="{{ meal.fats }}">
+  </form>
 </div>
-</body>
-</html>

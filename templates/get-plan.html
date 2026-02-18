@@ -11,7 +11,6 @@
     {{ super() }}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.x.x/tsparticles.bundle.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -865,7 +864,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
         <div class="progress-step" data-step="3"></div>
     </div>
 
-    <form id="dietPlanForm" action="/generate-plan" method="post">
+    <form id="dietPlanForm" action="/result" method="post">
         <div class="form-step" id="step-1">
             <h3 class="step-title">1. Tell Us About Yourself</h3>
             <div class="form-group">
@@ -978,7 +977,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
                     <div class="card-content">
                         <span class="plan-tag premium best-value">PREMIUM</span>
                         <h4>7-Day Full Immersion  (CURRENTLY UNAVAILABLE)</h4>
-                        <p>Comprehensive weekly plan for sustainable results. **Most Popular!**</p>
+                        <p>Comprehensive weekly plan for sustainable results. Most Popular!</p>
                         <ul class="features-list">
                             <li><i class="fas fa-check-circle"></i> 7-Day comprehensive plan</li>
                             <li><i class="fas fa-check-circle"></i> Unlimited meal customization</li>
@@ -1018,7 +1017,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
 </footer>
 
 <script>
-    // Theme Toggle Logic
+    // Theme Icon Sync
     const themeToggleBtn = document.getElementById("theme-toggle");
     const themeIcon = themeToggleBtn.querySelector('i');
 
@@ -1033,18 +1032,9 @@ body.light-mode .plan-card .features-list li .grey-icon {
     }
 
     themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
-        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        updateThemeIcon();
+        window.setTimeout(updateThemeIcon, 0);
     });
-
-    // Load theme on page load and update icon
-    window.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-mode');
-        }
-        updateThemeIcon(); // Set initial icon based on loaded theme
-    });
+    window.addEventListener('DOMContentLoaded', updateThemeIcon);
 
     // Form Steps Logic
     const formSteps = document.querySelectorAll('.form-step');
@@ -1212,9 +1202,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
             this.method = 'post';
             this.submit();
         } else if (planDuration === '3-day-premium' || planDuration === '7-day-premium') {
-            // For premium plans, allow the form to submit to the backend
-            // The backend will then handle payment logic and subsequent redirection
-            this.submit(); // Programmatically submit the form
+            alert('Premium plans are currently unavailable. Please choose the 1-Day Trial for now.');
         } else {
             // Fallback for no plan selected (shouldn't happen with 'required' attribute)
             alert('Please select a plan duration.');

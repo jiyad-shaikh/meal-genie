@@ -100,7 +100,7 @@
             <p><strong>Protein:</strong> {{ protein }} g | <strong>Carbs:</strong> {{ carbs }} g | <strong>Fats:</strong> {{ fats }} g</p>
         </div>
 
-        <form action="/submit_order" method="POST">
+        <form action="/confirm_order" method="POST">
             <!-- Hidden Meal Data -->
             <input type="hidden" name="meal_time" value="{{ meal_time }}">
             <input type="hidden" name="item" value="{{ item }}">

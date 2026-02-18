@@ -19,52 +19,35 @@
     </header>
 
     <section class="contact-section">
-        <div class="contact-info">
-            <h3>Reach Out</h3>
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mealgenieofficial@gmail.com">mealgenieofficial@gmail.com</a></p>
-            <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/918976102818" target="_blank">+91 8976102818</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Location: Mumbai, India</p>
-        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Reach Out</h2>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mealgenieofficial@gmail.com">mealgenieofficial@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/918976102818" target="_blank">+91 8976102818</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: Mumbai, India</p>
+            </div>
 
-        <form class="contact-form" action="https://formsubmit.co/mealgenieofficial@gmail.com" method="POST">
-            <h3>Send Us a Message</h3>
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="Name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="Email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="Message" placeholder="Type your message here..." rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+            <form class="contact-form" action="https://formsubmit.co/mealgenieofficial@gmail.com" method="POST">
+                <h3>Send Us a Message</h3>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="Message" placeholder="Type your message here..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <div style="text-align: center; margin-top: 20px;">
         <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
     </div>
 
-    <script>
-        const toggleBtn = document.getElementById("theme-toggle");
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("light-mode");
-            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.add('light-mode');
-            }
-        });
-
-        const hamburgerMenu = document.getElementById("hamburger-menu");
-        const navbarMenu = document.querySelector(".navbar-menu");
-        hamburgerMenu.addEventListener("click", () => {
-            navbarMenu.classList.toggle("active");
-        });
-    </script>
 {% endblock %}

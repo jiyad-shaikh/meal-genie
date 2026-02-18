@@ -1,78 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Meal Genie</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+{% extends "base.html" %}
 
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
-<body>
-    <button id="theme-toggle" title="Toggle Theme">
-        &#x1f31c;
-    </button>
+{% block title %}Terms of Service | Meal Genie{% endblock %}
 
-    <main class="wrapper">
-        <section>
-            <h1 class="section-title">Terms of Service</h1>
-            <p>Last updated: May 2025</p>
-            
-            <div class="legal-content">
-                <h2>1. Acceptance of Terms</h2>
-                <p>By accessing or using Meal Genie's services, you agree to be bound by these Terms of Service.</p>
-                
-                <h2>2. Service Description</h2>
-                <p>Meal Genie provides personalized meal planning services based on user-provided information about dietary preferences, health goals, and other relevant factors.</p>
-                
-                <h2>3. User Responsibilities</h2>
-                <p>You agree to:</p>
-                <ul>
-                    <li>Provide accurate and complete information</li>
-                    <li>Use the service for personal, non-commercial purposes</li>
-                    <li>Not share your account credentials</li>
-                    <li>Consult with a healthcare professional before making significant dietary changes</li>
-                </ul>
-                
-                <h2>4. Intellectual Property</h2>
-                <p>All meal plans, content, and materials provided by Meal Genie are protected by copyright and may not be reproduced or distributed without permission.</p>
-                
-                <h2>5. Payments and Refunds</h2>
-                <p>Premium services require payment. Refund policies are as follows:</p>
-                <ul>
-                    <li>Digital products: No refunds after delivery</li>
-                    <li>Subscription services: Cancel anytime, no prorated refunds</li>
-                </ul>
-                
-                <h2>6. Disclaimer</h2>
-                <p>Meal Genie provides general dietary information, not medical advice. Results may vary based on individual adherence and other factors.</p>
-                
-                <h2>7. Limitation of Liability</h2>
-                <p>Meal Genie shall not be liable for any indirect, incidental, or consequential damages resulting from use of our services.</p>
-                
-                <h2>8. Modifications</h2>
-                <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of changes.</p>
-                
-                <h2>9. Governing Law</h2>
-                <p>These terms shall be governed by the laws of India , Maharashtra.</p>
-                
-                <h2>10. Contact Information</h2>
-                <p>For questions about these terms, please contact us at <a href="{{ url_for('contact') }}">our contact page</a>.</p>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+{% block content %}
+<button id="theme-toggle" title="Toggle Theme">
+  &#x1f31c;
+</button>
+
+<main class="wrapper">
+  <section>
+    <h1 class="section-title">Terms of Service</h1>
+    <p>Last updated: May 2025</p>
+
+    <div class="legal-content">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using Meal Genie's services, you agree to be bound by these Terms of Service.</p>
+
+      <h2>2. Service Description</h2>
+      <p>Meal Genie provides personalized meal planning services based on user-provided information about dietary preferences, health goals, and other relevant factors.</p>
+
+      <h2>3. User Responsibilities</h2>
+      <p>You agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information</li>
+        <li>Use the service for personal, non-commercial purposes</li>
+        <li>Not share your account credentials</li>
+        <li>Consult with a healthcare professional before making significant dietary changes</li>
+      </ul>
+
+      <h2>4. Intellectual Property</h2>
+      <p>All meal plans, content, and materials provided by Meal Genie are protected by copyright and may not be reproduced or distributed without permission.</p>
+
+      <h2>5. Payments and Refunds</h2>
+      <p>Premium services require payment. Refund policies are as follows:</p>
+      <ul>
+        <li>Digital products: No refunds after delivery</li>
+        <li>Subscription services: Cancel anytime, no prorated refunds</li>
+      </ul>
+
+      <h2>6. Disclaimer</h2>
+      <p>Meal Genie provides general dietary information, not medical advice. Results may vary based on individual adherence and other factors.</p>
+
+      <h2>7. Limitation of Liability</h2>
+      <p>Meal Genie shall not be liable for any indirect, incidental, or consequential damages resulting from use of our services.</p>
+
+      <h2>8. Modifications</h2>
+      <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of changes.</p>
+
+      <h2>9. Governing Law</h2>
+      <p>These terms shall be governed by the laws of India, Maharashtra.</p>
+
+      <h2>10. Contact Information</h2>
+      <p>For questions about these terms, please contact us at <a href="{{ url_for('contact') }}">our contact page</a>.</p>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Order Confirmed | MealGenie{% endblock %}
+
+{% block content %}
+<button id="theme-toggle" title="Toggle Theme">
+  &#x1f31c;
+</button>
+
+<section id="success-section">
+  <div class="success-animation">
+    <i class="fas fa-check-circle"></i>
+  </div>
+  <h2>Order Confirmed</h2>
+  <p>Your order details have been received. We will contact you shortly.</p>
+  <div class="text-center">
+    <a href="{{ url_for('menu') }}" class="btn btn-primary">Back to Menu</a>
+  </div>
+</section>
+{% endblock %}
