@@ -31,6 +31,7 @@
         .order-heading {
             text-align: center;
             margin-bottom: 30px;
+            font-size: 1.9rem;
         }
 
         .meal-details {
@@ -62,6 +63,13 @@
             background-color: #121212;
             color: #ffffff;
             border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 96px;
+            line-height: 1.5;
         }
 
         button {
@@ -74,10 +82,80 @@
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            min-height: 44px;
         }
 
         button:hover {
             background-color: #00cc6e;
+        }
+
+        #get-location {
+            margin-top: 10px;
+        }
+
+        .location-note {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.45;
+        }
+
+        .location-spinner {
+            display: none;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .order-container {
+                padding: 22px 18px;
+            }
+
+            .order-heading {
+                font-size: 1.55rem;
+                margin-bottom: 22px;
+            }
+
+            .meal-details {
+                padding: 16px;
+                margin-bottom: 22px;
+            }
+
+            .meal-details p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            label {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .order-container {
+                padding: 16px 14px;
+                border-radius: 10px;
+            }
+
+            .order-heading {
+                font-size: 1.35rem;
+            }
+
+            .meal-details p strong {
+                display: inline-block;
+                min-width: 70px;
+            }
+
+            .location-note {
+                font-size: 0.82rem;
+            }
         }
     </style>
 </head>
@@ -90,7 +168,7 @@
     </button>
 
     <div class="order-container">
-        <h2 class="order-heading">🛒 Confirm Your Order</h2>
+        <h2 class="order-heading">Confirm Your Order</h2>
 
         <div class="meal-details">
             <p><strong>Meal Time:</strong> {{ meal_time }}</p>
@@ -126,11 +204,11 @@
                 <textarea id="address" name="address" placeholder="Enter your delivery address" rows="3" required></textarea>
 
                <button type="button" id="get-location" class="btn btn-secondary">Select My Live Location</button>
-<div id="location-note" style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">
+<div id="location-note" class="location-note">
     <i class="fas fa-info-circle"></i> Note: Please allow location access for accurate delivery address.
 </div>
 
-<div id="location-spinner" style="display: none; margin-top: 10px;">
+<div id="location-spinner" class="location-spinner">
     <i class="fas fa-spinner fa-spin"></i> Getting your location...
 </div>
             </div>
@@ -221,3 +299,4 @@ document.getElementById('get-location').addEventListener('click', function () {
 
 </body>
 </html>
+

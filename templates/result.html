@@ -27,10 +27,8 @@ body {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 10px;
+    display: block;
+    padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
 }
@@ -38,14 +36,15 @@ body {
 .wrapper {
     max-width: 1200px;
     width: 100%;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 10px 10px 0;
 }
 
 .result-container {
     background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 40px;
+    padding: 34px;
     box-shadow: 0 0 20px rgba(0, 255, 174, 0.3);
     animation: fadeIn 1s ease;
 }
@@ -129,6 +128,8 @@ h2 {
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
 }
 
 .action-btn {
@@ -141,7 +142,11 @@ h2 {
     transition: background-color 0.3s, transform 0.2s;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    text-align: center;
+    line-height: 1.35;
+    flex: 1 1 280px;
 }
 
 .action-btn:hover {
@@ -149,25 +154,39 @@ h2 {
     transform: translateY(-2px);
 }
 
-footer {
-    margin-top: 30px;
-    text-align: center;
-    color: #aaa;
-    font-size: 14px;
-}
-
 @media (max-width: 768px) {
+    .result-container {
+        padding: 22px 16px;
+        border-radius: 16px;
+    }
+
     .result-header h1 {
         font-size: 24px;
+    }
+
+    .plan-details {
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     h2 {
         font-size: 20px;
     }
 
+    .meal-plan-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .result-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .action-btn {
-        font-size: 16px;
-        padding: 30px;
+        font-size: 15px;
+        padding: 12px 14px;
+        width: 100%;
     }
 }
 
@@ -212,6 +231,7 @@ footer {
 </style>
 <body>
     <div id="tsparticles"></div>
+    {% include "navbar.html" %}
     <button id="theme-toggle" title="Toggle Theme" class="no-print">
         &#x1f31c;
     </button>
@@ -259,10 +279,11 @@ footer {
                 <i class="fab fa-whatsapp"></i> Order Your whole Day Meals via WhatsApp
             </a>
             <button id="send-email" class="action-btn btn-email">
-                <i class="fas fa-envelope"></i>  Order Your whole Day Meals viaEmail
+                <i class="fas fa-envelope"></i>  Order Your whole Day Meals via Email
             </button>
         </div>
     </div>
+    {% include "footer.html" %}
 
     <script>
     
@@ -337,5 +358,6 @@ footer {
             window.location.href = `mailto:?subject=Meal%20Genie%20Plan&body=${encodeURIComponent(planText)}`;
         });
     </script>     
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

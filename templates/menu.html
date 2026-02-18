@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 
-{% block title %}MealGenie Pricing | Affordable Diet Plans & Meal Boxes{% endblock %}
-{% block meta_description %}Explore MealGenie's affordable pricing for diet plans and meal boxes starting from ₹99. Healthy, fresh, and personalized.{% endblock %}
-{% block meta_keywords %}MealGenie pricing, diet plan pricing, healthy meals cost, affordable meal boxes{% endblock %}
-{% block og_title %}Affordable Meal Plans by MealGenie{% endblock %}
-{% block og_description %}Check out MealGenie's flexible and affordable pricing for personalized meal boxes and diet plans.{% endblock %}
-{% block og_image %}{{ url_for('static', filename='images/pricing_share.png') }}{% endblock %}
+{% block title %}MealGenie Menu | Healthy Meals to Explore & Order{% endblock %}
+{% block meta_description %}Explore MealGenie's healthy menu with veg and non-veg options. Filter by meal time and nutrition to order meals that match your goals.{% endblock %}
+{% block meta_keywords %}MealGenie menu, healthy meals, veg meals, non-veg meals, meal order{% endblock %}
+{% block og_title %}MealGenie Menu{% endblock %}
+{% block og_description %}Browse and order healthy, goal-friendly meals from the MealGenie menu.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/home_share.png') }}{% endblock %}
 
 {% block content %}
 
+ <div class="menu-page">
  <div id="tsparticles"></div>
      <button id="theme-toggle" title="Toggle Theme">
     &#x1f31c;
   </button>
     <div class="header">
         <div class="container">
-            <div class="logo">🧞‍♂️ Meal Genie</div>
+            <div class="logo">Meal Genie Menu</div>
             <div class="search-container">
-                <div class="search-icon">🔍</div>
+                <i class="fas fa-search search-icon" aria-hidden="true"></i>
                 <input type="text" class="search-bar" placeholder="Search for meals, ingredients, or nutrition goals..." id="searchInput">
             </div>
         </div>
@@ -327,8 +328,7 @@
             const card = document.createElement('div');
             card.className = 'meal-card';
             card.innerHTML = `
-                <div class="meal-image"
-                    style="position: relative;">
+                <div class="meal-image">
                     <img src="${meal.Image || 'https://via.placeholder.com/300x200?text=Meal+Image'}" alt="${meal.name}" class="meal-photo" />
     <div class="meal-type-badge ${meal.type}">${meal.type === 'veg' ? 'VEG' : 'NON-VEG'}</div>
     <div class="meal-time-badge">${meal.mealTime.charAt(0).toUpperCase() + meal.mealTime.slice(1)}</div>
@@ -360,8 +360,8 @@
                         </div>
                     </div>
                     <div class="meal-price">Price: ${meal.price}</div>
-                    <div class="order-whatsapp-container" style="margin-top: 16px; text-align: center;">
-                        <a class="order-whatsapp-btn" href="https://wa.me/917045475886?text=Hi%2C%20I%20would%20like%20to%20order%20the%20meal%20'%20${encodeURIComponent(meal.name)}%20'" target="_blank" style="display:inline-block; background-color:#25D366; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:bold; font-size:16px;">
+                    <div class="order-whatsapp-container">
+                        <a class="order-whatsapp-btn" href="https://wa.me/917045475886?text=${encodeURIComponent('Hi, I would like to order the meal ' + meal.name)}" target="_blank" rel="noopener noreferrer">
                             Order via WhatsApp
                         </a>
                     </div>
@@ -425,5 +425,5 @@ tsParticles.load("tsparticles", {
     });
 
     </script>
-
+ </div>
 {% endblock %}

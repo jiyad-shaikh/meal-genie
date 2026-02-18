@@ -29,13 +29,34 @@ body {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark gradient background */
     color: white;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    display: block;
+    padding: 20px;
     overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative; /* For tsParticles */
+}
+
+.get-plan-page {
+    max-width: 920px;
+    margin: 20px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.get-plan-page .form-container {
+    margin: 0 auto;
+}
+
+/* Keep shared navbar and footer consistent with the rest of the site */
+body > .navbar {
+    width: 100%;
+    max-width: none;
+}
+
+body > .navbar,
+body > .navbar *,
+body > footer,
+body > footer * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* tsParticles Container */
@@ -538,57 +559,6 @@ header {
 }
 
 
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: center;
-    color: #aaa;
-    font-size: 14px;
-    width: 100%;
-    position: relative; /* For z-index */
-    z-index: 1;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px 30px; /* Row-gap, column-gap */
-    padding: 0 20px;
-}
-
-.footer-links a,
-.footer-legal a {
-    color: #00ffae;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s, text-decoration 0.3s;
-}
-
-.footer-links a:hover,
-.footer-legal a:hover {
-    color: #00ffc8;
-    text-decoration: underline;
-}
-
-.footer-legal p {
-    margin: 0;
-}
-
-.footer-social a {
-    color: #00ffae;
-    font-size: 20px;
-    margin: 0 10px;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.footer-social a:hover {
-    color: #00ffc8;
-    transform: scale(1.2);
-}
-
-
 /* Light Mode Adjustments (if you decide to keep it) */
 body.light-mode {
     background: linear-gradient(135deg, #e0e0e0, #f0f0f0, #ffffff);
@@ -649,23 +619,6 @@ body.light-mode .back-btn {
 
 body.light-mode .back-btn:hover {
     background: rgba(26, 122, 108, 0.1);
-}
-
-body.light-mode footer,
-body.light-mode footer p {
-    color: #666;
-}
-
-body.light-mode .footer-links a,
-body.light-mode .footer-legal a,
-body.light-mode .footer-social a {
-    color: #1a7a6c;
-}
-
-body.light-mode .footer-links a:hover,
-body.light-mode .footer-legal a:hover,
-body.light-mode .footer-social a:hover {
-    color: #268a7c;
 }
 
 body.light-mode .progress-step {
@@ -827,10 +780,6 @@ body.light-mode .plan-card .features-list li .grey-icon {
         font-size: 15px;
     }
 
-    footer .footer-content {
-        flex-direction: column;
-        gap: 15px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -850,6 +799,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
 }
 </style>
 
+<div class="get-plan-page">
 <header>
     <button id="theme-toggle" title="Toggle Theme">
         <i class="fas fa-sun"></i>
@@ -996,25 +946,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
         </div>
     </form>
 </section>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-links">
-            <a href="{{ url_for('faq') }}">FAQ</a>
-            <a href="{{ url_for('contact') }}">Contact Us</a>
-            <a href="{{ url_for('about') }}">About Us</a>
-            <a href="{{ url_for('pricing') }}">Pricing</a>
-        </div>
-        <div class="footer-legal">
-            <p>&copy; 2024 MealGenie. All rights reserved.</p>
-            <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
-            <a href="{{ url_for('terms_of_service') }}">Terms of Service</a>
-        </div>
-        <div class="footer-social">
-            <a href="https://www.instagram.com/mealgenie_official" target="_blank" aria-label="MealGenie Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-</footer>
+</div>
 
 <script>
     // Theme Icon Sync
