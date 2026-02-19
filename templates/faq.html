@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block title %}MealGenie FAQs | Your Questions Answered{% endblock %}
-{% block meta_description %}Find answers to common questions about MealGenie’s diet plans, meal boxes, pricing, and more.{% endblock %}
+{% block meta_description %}Find answers to common questions about MealGenie's diet plans, meal boxes, pricing, and more.{% endblock %}
 {% block meta_keywords %}MealGenie FAQ, diet plan questions, meal box delivery, pricing FAQs{% endblock %}
 {% block og_title %}MealGenie Frequently Asked Questions{% endblock %}
-{% block og_description %}Get answers to all your queries about MealGenie’s services, pricing, and delivery process.{% endblock %}
+{% block og_description %}Get answers to all your queries about MealGenie's services, pricing, and delivery process.{% endblock %}
 {% block og_image %}{{ url_for('static', filename='images/faq_share.png') }}{% endblock %}
 
 {% block content %}
@@ -72,10 +72,11 @@
             <p>If your question hasn't been answered here, or you need further assistance, please don't hesitate to reach out to our support team. You can visit our <a href="{{ url_for('contact') }}" class="nav-link">Contact Us page</a> to find our email address or fill out a contact form. We aim to respond to all inquiries promptly.</p>
         </div>
 
-        <div class="section-actions-lg">
+        <div class="section-actions-lg section-actions-dual">
             <a href="{{ url_for('get_plan') }}" class="btn btn-primary">Get Your Personalized Plan Now!</a>
             <a href="{{ url_for('contact') }}" class="btn btn-primary">Still Have Questions? Contact Us</a>
         </div>
     </section>
 
 {% endblock %}
+
