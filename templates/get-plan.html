@@ -9,7 +9,6 @@
 
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 {% endblock %}
 
@@ -18,26 +17,26 @@
 
 <style>
     /* General Styling */
-* {
+.get-plan-page {
+    font-family: 'Poppins', sans-serif;
+}
+
+.get-plan-page * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Changed font */
 }
 
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark gradient background */
-    color: white;
-    min-height: 100vh;
-    display: block;
-    padding: 20px;
     overflow-x: hidden; /* Prevent horizontal scroll */
     position: relative; /* For tsParticles */
 }
 
 .get-plan-page {
     max-width: 920px;
+    width: min(100%, 920px);
     margin: 20px auto 0;
+    padding: 0 6px 10px;
     position: relative;
     z-index: 1;
 }
@@ -50,13 +49,6 @@ body {
 body > .navbar {
     width: 100%;
     max-width: none;
-}
-
-body > .navbar,
-body > .navbar *,
-body > footer,
-body > footer * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* tsParticles Container */
@@ -80,36 +72,45 @@ header {
 }
 
 #theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1200;
+    background: rgba(43, 232, 138, 0.12);
+    border: 2px solid #2be88a;
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+    color: #2be88a;
     cursor: pointer;
-    transition: transform 0.3s, color 0.3s;
-    margin-right: 15px;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    margin-right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
-    border-radius: 50%;
-    /* Subtle hover effect */
-    box-shadow: 0 0 0 rgba(0, 255, 174, 0);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 #theme-toggle:hover {
-    transform: scale(1.1);
-    color: #00ffc8;
-    box-shadow: 0 0 10px rgba(0, 255, 174, 0.5);
+    transform: translateY(-1px);
+    color: #063327;
+    background-color: #2be88a;
+    box-shadow: 0 6px 14px rgba(43, 232, 138, 0.35);
 }
 
 .form-heading {
     font-size: 38px; /* Slightly larger */
-    color: #00ffae;
+    color: #2be88a;
     animation: slideFade 1s ease forwards; /* Added forwards to keep final state */
     text-align: center;
     font-weight: 700; /* Bolder */
     letter-spacing: 0.5px;
-    text-shadow: 0 0 10px rgba(0, 255, 174, 0.4);
+    line-height: 1.24;
+    max-width: 18ch;
+    margin: 0 auto;
+    text-shadow: 0 0 10px rgba(43, 232, 138, 0.4);
 }
 
 @keyframes slideFade {
@@ -130,7 +131,7 @@ header {
     border-radius: 20px;
     width: 100%;
     max-width: 750px; /* Wider form for better layout */
-    box-shadow: 0 0 30px rgba(0, 255, 174, 0.4); /* More prominent shadow */
+    box-shadow: 0 0 30px rgba(43, 232, 138, 0.4); /* More prominent shadow */
     animation: fadeIn 1.2s ease forwards;
     position: relative; /* For z-index */
     z-index: 1;
@@ -155,6 +156,7 @@ header {
     display: flex;
     justify-content: space-between;
     width: 80%; /* Adjust width as needed */
+    max-width: 430px;
     margin-bottom: 40px;
     position: relative;
     padding: 0 10px; /* Padding for the circles */
@@ -167,7 +169,7 @@ header {
     left: 15px;
     right: 15px;
     height: 4px;
-    background: rgba(0, 255, 174, 0.2);
+    background: rgba(43, 232, 138, 0.2);
     transform: translateY(-50%);
     z-index: 0;
 }
@@ -176,21 +178,21 @@ header {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: rgba(0, 255, 174, 0.2);
-    border: 2px solid #00ffae;
+    background: rgba(43, 232, 138, 0.2);
+    border: 2px solid #2be88a;
     transition: background 0.4s ease, border-color 0.4s ease;
     position: relative;
     z-index: 1; /* Ensure steps are above the line */
 }
 
 .progress-step.active {
-    background: #00ffae;
-    box-shadow: 0 0 15px rgba(0, 255, 174, 0.7);
+    background: #2be88a;
+    box-shadow: 0 0 15px rgba(43, 232, 138, 0.7);
 }
 
 .progress-step.completed {
-    background: #00ffae; /* Stays green if completed */
-    border-color: #00ffc8;
+    background: #2be88a; /* Stays green if completed */
+    border-color: #1fdc7c;
 }
 
 /* Form Steps */
@@ -216,11 +218,11 @@ header {
 
 .step-title {
     font-size: 26px;
-    color: #00ffae;
+    color: #2be88a;
     text-align: center;
     margin-bottom: 30px;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(0, 255, 174, 0.2);
+    text-shadow: 0 0 5px rgba(43, 232, 138, 0.2);
 }
 
 /* Form Groups */
@@ -234,27 +236,28 @@ header {
     width: 100%;
     padding: 14px 18px; /* Increased padding */
     border-radius: 10px;
-    border: 1px solid #00ffae;
+    border: 1px solid #2be88a;
     background: rgba(0, 0, 0, 0.4);
     color: white;
     outline: none;
     transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
     font-size: 17px; /* Slightly larger font */
-    box-shadow: 0 0 5px rgba(0, 255, 174, 0.1);
+    box-shadow: 0 0 5px rgba(43, 232, 138, 0.1);
     appearance: none; /* For custom select arrow */
     -webkit-appearance: none;
     -moz-appearance: none;
+    line-height: 1.35;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #00ffc8;
+    border-color: #1fdc7c;
     background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 15px rgba(0, 255, 174, 0.5); /* Glowing effect on focus */
+    box-shadow: 0 0 15px rgba(43, 232, 138, 0.5); /* Glowing effect on focus */
 }
 
 .form-group select {
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%2300ffae" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232be88a" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 20px;
@@ -283,7 +286,7 @@ header {
     top: -10px;
     left: 10px;
     font-size: 13px; /* Smaller font when floated */
-    color: #00ffc8;
+    color: #1fdc7c;
     background: rgba(0, 0, 0, 0.6); /* Background for the label when floated */
     padding: 0 8px;
     border-radius: 4px;
@@ -292,17 +295,17 @@ header {
 
 .read-only-input {
     background: rgba(0, 0, 0, 0.2) !important;
-    border: 1px dashed rgba(0, 255, 174, 0.5) !important; /* Dotted border for readonly */
+    border: 1px dashed rgba(43, 232, 138, 0.5) !important; /* Dotted border for readonly */
     cursor: default !important;
 }
 
 .read-only-input + label {
-    color: #00ffae !important;
+    color: #2be88a !important;
 }
 
 .tooltip-icon {
     font-size: 14px;
-    color: #00ffae;
+    color: #2be88a;
     margin-left: 8px;
     cursor: help;
     position: relative;
@@ -335,12 +338,12 @@ header {
 
 /* Buttons */
 .btn {
-    background: linear-gradient(90deg, #00ffae, #00ffc8); /* Gradient button */
+    background: linear-gradient(90deg, #2be88a, #1fdc7c); /* Gradient button */
     border: none;
     padding: 16px 25px; /* Wider padding */
     width: 100%;
     border-radius: 10px;
-    color: #0d1e2b; /* Darker text for contrast */
+    color: #053527;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
@@ -349,13 +352,13 @@ header {
     align-items: center;
     justify-content: center;
     gap: 10px; /* Space between text and icon */
-    box-shadow: 0 5px 15px rgba(0, 255, 174, 0.3);
+    box-shadow: 0 5px 15px rgba(43, 232, 138, 0.3);
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #00ffc8, #00ffae); /* Reverse gradient on hover */
+    background: linear-gradient(90deg, #1fdc7c, #2be88a); /* Reverse gradient on hover */
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 255, 174, 0.5);
+    box-shadow: 0 8px 20px rgba(43, 232, 138, 0.5);
 }
 
 .btn i {
@@ -375,15 +378,15 @@ header {
 
 .back-btn {
     background: transparent;
-    border: 1px solid #00ffae;
-    color: #00ffae;
+    border: 1px solid #2be88a;
+    color: #2be88a;
     box-shadow: none;
 }
 
 .back-btn:hover {
-    background: rgba(0, 255, 174, 0.2);
+    background: rgba(43, 232, 138, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(0, 255, 174, 0.4);
+    box-shadow: 0 0 10px rgba(43, 232, 138, 0.4);
 }
 
 /* Plan Selection Grid */
@@ -404,7 +407,7 @@ header {
 
 .plan-card {
     background: rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(0, 255, 174, 0.3);
+    border: 2px solid rgba(43, 232, 138, 0.3);
     border-radius: 15px;
     padding: 25px;
     text-align: center;
@@ -431,17 +434,17 @@ header {
 }
 
 .plan-card:hover {
-    border-color: #00ffc8;
+    border-color: #1fdc7c;
     background: rgba(0, 0, 0, 0.6);
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 255, 174, 0.4);
+    box-shadow: 0 10px 25px rgba(43, 232, 138, 0.4);
 }
 
 .plan-card input[type="radio"]:checked + .card-content {
-    border: 2px solid #00ffae; /* Visible border on selection */
-    box-shadow: 0 0 25px rgba(0, 255, 174, 0.7);
+    border: 2px solid #2be88a; /* Visible border on selection */
+    box-shadow: 0 0 25px rgba(43, 232, 138, 0.7);
     transform: translateY(-8px); /* More pronounced lift */
-    background: rgba(0, 255, 174, 0.1);
+    background: rgba(43, 232, 138, 0.1);
 }
 
 /* Ensure the checkmark for the selected card */
@@ -452,7 +455,7 @@ header {
     position: absolute;
     top: 15px;
     right: 15px;
-    color: #00ffae;
+    color: #2be88a;
     font-size: 24px;
     opacity: 1;
     transition: opacity 0.3s;
@@ -471,14 +474,14 @@ header {
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #00ffae;
+    background: #2be88a;
     color: #0d1e2b;
     padding: 6px 15px;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    box-shadow: 0 3px 10px rgba(0, 255, 174, 0.4);
+    box-shadow: 0 3px 10px rgba(43, 232, 138, 0.4);
     z-index: 2;
 }
 
@@ -499,7 +502,7 @@ header {
     font-size: 24px;
     margin-top: 25px; /* Space for tag */
     margin-bottom: 10px;
-    color: #00ffae;
+    color: #2be88a;
     font-weight: 600;
 }
 
@@ -513,7 +516,7 @@ header {
 .plan-card .price {
     font-size: 32px;
     font-weight: 700;
-    color: #00ffae;
+    color: #2be88a;
     margin-top: auto; /* Pushes price to bottom */
     margin-bottom: 15px;
 }
@@ -522,8 +525,8 @@ header {
     display: block;
     font-size: 16px;
     font-weight: 600;
-    color: #00ffc8;
-    background: rgba(0, 255, 174, 0.1);
+    color: #b9ffeb;
+    background: rgba(43, 232, 138, 0.1);
     padding: 8px 15px;
     border-radius: 8px;
     margin-top: 10px;
@@ -531,7 +534,7 @@ header {
 }
 
 .plan-card input[type="radio"]:checked + .card-content .cta-text {
-    background: #00ffc8;
+    background: #1fdc7c;
     color: #0d1e2b;
 }
 
@@ -552,7 +555,7 @@ header {
 
 .features-list li i {
     margin-right: 8px;
-    color: #00ffae; /* Checkmark color */
+    color: #2be88a; /* Checkmark color */
 }
 .features-list li .grey-icon {
     color: #888; /* Grey for 'not included' features */
@@ -561,12 +564,23 @@ header {
 
 /* Light Mode Adjustments (if you decide to keep it) */
 body.light-mode {
-    background: linear-gradient(135deg, #e0e0e0, #f0f0f0, #ffffff);
+    background: linear-gradient(135deg, #e8f8f0, #f2fff8, #ffffff);
     color: #333;
 }
 
+body.light-mode #theme-toggle {
+    border-color: #109b5e;
+    color: #109b5e;
+    background: rgba(26, 122, 108, 0.1);
+}
+
+body.light-mode #theme-toggle:hover {
+    color: #ffffff;
+    background: #109b5e;
+}
+
 body.light-mode header .form-heading {
-    color: #1a7a6c;
+    color: #109b5e;
     text-shadow: 0 0 5px rgba(26, 122, 108, 0.2);
 }
 
@@ -577,14 +591,14 @@ body.light-mode .form-container {
 
 body.light-mode .form-group input,
 body.light-mode .form-group select {
-    border: 1px solid #1a7a6c;
+    border: 1px solid #109b5e;
     background: rgba(255, 255, 255, 0.7);
     color: #333;
 }
 
 body.light-mode .form-group input:focus,
 body.light-mode .form-group select:focus {
-    border-color: #1a7a6c;
+    border-color: #109b5e;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 15px rgba(26, 122, 108, 0.3);
 }
@@ -597,24 +611,24 @@ body.light-mode .form-group input:focus + label,
 body.light-mode .form-group input:not(:placeholder-shown) + label,
 body.light-mode .form-group select:focus + label,
 body.light-mode .form-group select:not([value=""]) + label {
-    color: #1a7a6c;
+    color: #109b5e;
     background: rgba(255, 255, 255, 0.9);
 }
 
 body.light-mode .btn {
-    background: linear-gradient(90deg, #1a7a6c, #268a7c);
+    background: linear-gradient(90deg, #109b5e, #0d874f);
     color: white;
     box-shadow: 0 5px 15px rgba(26, 122, 108, 0.3);
 }
 
 body.light-mode .btn:hover {
-    background: linear-gradient(90deg, #268a7c, #1a7a6c);
+    background: linear-gradient(90deg, #0d874f, #109b5e);
     box-shadow: 0 8px 20px rgba(26, 122, 108, 0.5);
 }
 
 body.light-mode .back-btn {
-    border: 1px solid #1a7a6c;
-    color: #1a7a6c;
+    border: 1px solid #109b5e;
+    color: #109b5e;
 }
 
 body.light-mode .back-btn:hover {
@@ -623,12 +637,12 @@ body.light-mode .back-btn:hover {
 
 body.light-mode .progress-step {
     background: rgba(26, 122, 108, 0.1);
-    border: 2px solid #1a7a6c;
+    border: 2px solid #109b5e;
 }
 
 body.light-mode .progress-step.active,
 body.light-mode .progress-step.completed {
-    background: #1a7a6c;
+    background: #109b5e;
     box-shadow: 0 0 15px rgba(26, 122, 108, 0.5);
 }
 
@@ -637,7 +651,7 @@ body.light-mode .progress-bar-container::before {
 }
 
 body.light-mode .step-title {
-    color: #1a7a6c;
+    color: #109b5e;
     text-shadow: 0 0 5px rgba(26, 122, 108, 0.2);
 }
 
@@ -648,19 +662,19 @@ body.light-mode .plan-card {
 }
 
 body.light-mode .plan-card:hover {
-    border-color: #1a7a6c;
+    border-color: #109b5e;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 body.light-mode .plan-card input[type="radio"]:checked + .card-content {
-    border: 2px solid #1a7a6c;
+    border: 2px solid #109b5e;
     box-shadow: 0 0 25px rgba(26, 122, 108, 0.5);
     background: rgba(26, 122, 108, 0.1);
 }
 
 body.light-mode .plan-card h4 {
-    color: #1a7a6c;
+    color: #109b5e;
 }
 body.light-mode .plan-card p,
 body.light-mode .features-list li {
@@ -668,21 +682,21 @@ body.light-mode .features-list li {
 }
 
 body.light-mode .plan-card .price {
-    color: #1a7a6c;
+    color: #109b5e;
 }
 
 body.light-mode .plan-card .cta-text {
-    color: #1a7a6c;
+    color: #109b5e;
     background: rgba(26, 122, 108, 0.1);
 }
 
 body.light-mode .plan-card input[type="radio"]:checked + .card-content .cta-text {
-    background: #1a7a6c;
+    background: #109b5e;
     color: white;
 }
 
 body.light-mode .plan-card .plan-tag.free {
-    background: #1a7a6c;
+    background: #109b5e;
     color: white;
     box-shadow: 0 3px 10px rgba(26, 122, 108, 0.4);
 }
@@ -700,7 +714,7 @@ body.light-mode .plan-tag.best-value {
 }
 
 body.light-mode .plan-card .features-list li i {
-    color: #1a7a6c;
+    color: #109b5e;
 }
 body.light-mode .plan-card .features-list li .grey-icon {
     color: #aaa;
@@ -708,8 +722,14 @@ body.light-mode .plan-card .features-list li .grey-icon {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .get-plan-page {
+        margin-top: 12px;
+        padding: 0 2px 8px;
+    }
+
     .form-heading {
         font-size: 30px;
+        max-width: 20ch;
     }
 
     .form-container {
@@ -780,11 +800,21 @@ body.light-mode .plan-card .features-list li .grey-icon {
         font-size: 15px;
     }
 
+    .progress-bar-container {
+        width: min(94%, 420px);
+        margin-bottom: 30px;
+    }
+
 }
 
 @media (max-width: 480px) {
+    .get-plan-page {
+        margin-top: 8px;
+    }
+
     .form-heading {
         font-size: 26px;
+        max-width: 22ch;
     }
     .form-container {
         padding: 25px 15px;
@@ -801,9 +831,7 @@ body.light-mode .plan-card .features-list li .grey-icon {
 
 <div class="get-plan-page">
 <header>
-    <button id="theme-toggle" title="Toggle Theme">
-        <i class="fas fa-sun"></i>
-    </button>
+    <button id="theme-toggle" title="Toggle Theme">&#x1f31c;</button>
     <h2 class="form-heading">Your Personalized Meal Plan Journey</h2>
 </header>
 
@@ -949,25 +977,6 @@ body.light-mode .plan-card .features-list li .grey-icon {
 </div>
 
 <script>
-    // Theme Icon Sync
-    const themeToggleBtn = document.getElementById("theme-toggle");
-    const themeIcon = themeToggleBtn.querySelector('i');
-
-    function updateThemeIcon() {
-        if (document.body.classList.contains('light-mode')) {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        } else {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-    }
-
-    themeToggleBtn.addEventListener("click", () => {
-        window.setTimeout(updateThemeIcon, 0);
-    });
-    window.addEventListener('DOMContentLoaded', updateThemeIcon);
-
     // Form Steps Logic
     const formSteps = document.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-step');
@@ -1146,12 +1155,12 @@ body.light-mode .plan-card .features-list li .grey-icon {
         fullScreen: { enable: false },
         particles: {
             number: { value: 80, density: { enable: true, area: 800 } },
-            color: { value: "#00ffae" },
+            color: { value: "#2be88a" },
             shape: { type: "circle" },
             opacity: { value: 0.5, random: true },
             size: { value: 3, random: true },
             move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
-            links: { enable: true, distance: 150, color: "#00ffae", opacity: 0.4, width: 1 }
+            links: { enable: true, distance: 150, color: "#2be88a", opacity: 0.4, width: 1 }
         },
         interactivity: {
             events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },

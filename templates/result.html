@@ -1,363 +1,345 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4213903728229123"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4213903728229123">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Diet Plan</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-71JWJ7DBKD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+{% extends "base.html" %}
 
-  gtag('config', 'G-71JWJ7DBKD');
-</script>
-<style>
-body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    min-height: 100vh;
-    display: block;
-    padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-}
+{% block title %}Your Personalized Diet Plan | MealGenie{% endblock %}
+{% block meta_description %}View your personalized MealGenie meal schedule and place your meal order quickly.{% endblock %}
+{% block meta_keywords %}MealGenie result, personalized meal plan, daily meal schedule{% endblock %}
+{% block og_title %}Your Personalized MealGenie Plan{% endblock %}
+{% block og_description %}Your custom daily meal schedule is ready. Review it and place your order instantly.{% endblock %}
+{% block og_image %}{{ url_for('static', filename='images/home_share.png') }}{% endblock %}
 
-.wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 10px 0;
-}
-
-.result-container {
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    padding: 34px;
-    box-shadow: 0 0 20px rgba(0, 255, 174, 0.3);
-    animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+{% block head %}
+  {{ super() }}
+  <style>
+    .result-page {
+      position: relative;
+      min-height: calc(100vh - 140px);
     }
-    to {
+
+    .result-page #tsparticles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .result-page .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 8px auto 0;
+      padding: 0;
+    }
+
+    .result-page .result-container {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 34px;
+      box-shadow: 0 0 20px rgba(43, 232, 138, 0.3);
+      animation: resultFadeIn 0.8s ease;
+    }
+
+    @keyframes resultFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
         opacity: 1;
         transform: translateY(0);
+      }
     }
-}
 
-.result-header h1 {
-    text-align: center;
-    font-size: 36px;
-    color: #00ffae;
-    margin-bottom: 10px;
-}
+    .result-page .result-header h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #2be88a;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
 
-.plan-details {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #ccc;
-}
+    .result-page .plan-details {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 28px;
+      color: #cfdcd5;
+      line-height: 1.5;
+    }
 
-h2 {
-    color: #00ffae;
-    margin-bottom: 20px;
-}
+    .result-page .section-heading {
+      color: #2be88a;
+      margin-bottom: 18px;
+      text-align: center;
+      font-size: 1.55rem;
+    }
 
-.meal-plan-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-}
+    .result-page .meal-plan-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
 
-.meal-card {
-    box-sizing: border-box;
-    max-width: 100%;
-    min-width: unset;
-    width: 100%;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #00ffae;
-    border-radius: 10px;
-    padding: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    .result-page .meal-card {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #2be88a;
+      border-radius: 12px;
+      padding: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.meal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 10px #00ffae;
-}
+    .result-page .meal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(43, 232, 138, 0.65);
+    }
 
-.meal-time h2 {
-    font-size: 22px;
-    color: #00ffae;
-    margin-bottom: 15px;
-    text-align: center;
-}
+    .result-page .meal-time h2 {
+      font-size: 22px;
+      color: #2be88a;
+      margin-bottom: 12px;
+      text-align: center;
+    }
 
-.meal-content {
-    font-size: 16px;
-}
+    .result-page .meal-content {
+      font-size: 16px;
+    }
 
-.tip-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(0, 255, 174, 0.1);
-    border-left: 4px solid #00ffae;
-    border-radius: 10px;
-    font-size: 16px;
-}
+    .result-page .tip-section {
+      grid-column: 1 / -1;
+      margin-top: 6px;
+      padding: 18px;
+      background: rgba(43, 232, 138, 0.1);
+      border-left: 4px solid #2be88a;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #dff6eb;
+    }
 
-.result-actions {
-    margin-top: 30px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
+    .result-page .result-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
 
-.action-btn {
-    background: #00ffae;
-    color: black;
-    padding: 14px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-    line-height: 1.35;
-    flex: 1 1 280px;
-}
+    .result-page .action-btn {
+      background: #2be88a;
+      color: #053527;
+      padding: 13px 20px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      line-height: 1.35;
+      flex: 1 1 280px;
+      max-width: 520px;
+      cursor: pointer;
+    }
 
-.action-btn:hover {
-    background: #00ffc8;
-    transform: translateY(-2px);
-}
+    .result-page .action-btn:hover {
+      background: #1fdc7c;
+      transform: translateY(-1px);
+    }
 
-@media (max-width: 768px) {
-    .result-container {
+    body.light-mode .result-page .result-container {
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 0 20px rgba(26, 122, 108, 0.14);
+    }
+
+    body.light-mode .result-page .plan-details {
+      color: #285042;
+    }
+
+    body.light-mode .result-page .meal-card {
+      background: rgba(16, 54, 40, 0.08);
+      border-color: #1f8b66;
+      color: #1f3128;
+    }
+
+    body.light-mode .result-page .tip-section {
+      color: #1d3c30;
+      background: rgba(26, 122, 108, 0.12);
+      border-left-color: #109b5e;
+    }
+
+    @media (max-width: 768px) {
+      .result-page .result-container {
         padding: 22px 16px;
         border-radius: 16px;
-    }
+      }
 
-    .result-header h1 {
-        font-size: 24px;
-    }
+      .result-page .result-header h1 {
+        font-size: 26px;
+      }
 
-    .plan-details {
-        font-size: 16px;
+      .result-page .plan-details {
+        font-size: 15px;
         margin-bottom: 20px;
-    }
+      }
 
-    h2 {
-        font-size: 20px;
-    }
+      .result-page .section-heading {
+        font-size: 1.25rem;
+      }
 
-    .meal-plan-container {
+      .result-page .meal-plan-container {
         grid-template-columns: 1fr;
         gap: 12px;
-    }
+      }
 
-    .result-actions {
+      .result-page .result-actions {
         flex-direction: column;
-        gap: 12px;
-    }
+        gap: 10px;
+      }
 
-    .action-btn {
+      .result-page .action-btn {
+        width: 100%;
+        max-width: 100%;
         font-size: 15px;
         padding: 12px 14px;
-        width: 100%;
+      }
     }
-}
+  </style>
+{% endblock %}
 
-/* Existing CSS (keep your base styles) */
+{% block content %}
+<div class="result-page">
+  <div id="tsparticles"></div>
+  <button id="theme-toggle" title="Toggle Theme" class="no-print">
+    &#x1f31c;
+  </button>
 
-/* ===== Foldable Device Adjustments ===== */
-/* Cover Screen (Tall & Narrow) */
-@media (max-width: 904px) and (max-aspect-ratio: 9/20) {
-    .meal-plan-container {
-        grid-template-columns: 1fr !important; /* Force single column */
-    }
-    .meal-card {
-        padding: 12px; /* Slightly reduce padding */
-    }
-}
+  <div class="wrapper">
+    <div class="result-container" id="meal-plan-content">
+      <div class="result-header">
+        <h1>Your Personalized Meal Plan</h1>
+        <p class="plan-details">Based on your profile: Goal: {{ goal }}, Gender: {{ gender|capitalize }}, Activity: {{ activity|capitalize }}, {{ preference|capitalize }}</p>
+      </div>
 
-/* Unfolded Screen (Square-Like) */
-@media (min-width: 905px) and (max-width: 1812px) {
-    .meal-plan-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns when unfolded */
-    }
-}
-
-/* Prevent hinge interference */
-@media (min-width: 905px) {
-    .wrapper {
-        padding-left: 30px;
-        padding-right: 30px; /* Avoid center hinge */
-    }
-}
-
-/* Dynamic font scaling */
-@media (max-width: 904px) {
-    .result-header h1 { font-size: 28px; }
-    .meal-time h2 { font-size: 20px; }
-}
-
-@media (min-width: 905px) {
-    .result-header h1 { font-size: 32px; }
-    .meal-time h2 { font-size: 24px; }
-}
-</style>
-<body>
-    <div id="tsparticles"></div>
-    {% include "navbar.html" %}
-    <button id="theme-toggle" title="Toggle Theme" class="no-print">
-        &#x1f31c;
-    </button>
-   
-    <div class="wrapper">
-        <div class="result-container" id="meal-plan-content">
-            <div class="result-header">
-                <h1>Your Personalized Meal Plan</h1>
-                <p class="plan-details">Based on your profile: Goal: {{ goal }}, Gender: {{ gender|capitalize }}, Activity: {{ activity|capitalize }}, {{ preference|capitalize }} </p>
-            </div>
-             <h2>Your Daily Meal Schedule</h2>
-            <div class="meal-plan-container">
-              {% for meal_time, meals in meal_plans.items() %}
-    <div class="meal-card">
-        <div class="meal-time">
+      <h2 class="section-heading">Your Daily Meal Schedule</h2>
+      <div class="meal-plan-container">
+        {% for meal_time, meals in meal_plans.items() %}
+        <div class="meal-card">
+          <div class="meal-time">
             <h2>{{ meal_time|capitalize }}</h2>
-        </div>
-        <div class="meal-content">
+          </div>
+          <div class="meal-content">
             {% if meals is iterable and meals is not string %}
-                {% for meal in meals %}
-                    {% set meal_time_passed = meal_time %}
-                    {% include 'meal_section.html' with context %}
-                {% endfor %}
-            {% else %}
-                {% set meal = meals %}
+              {% for meal in meals %}
                 {% set meal_time_passed = meal_time %}
                 {% include 'meal_section.html' with context %}
+              {% endfor %}
+            {% else %}
+              {% set meal = meals %}
+              {% set meal_time_passed = meal_time %}
+              {% include 'meal_section.html' with context %}
             {% endif %}
+          </div>
         </div>
+        {% endfor %}
+
+        {% if healthy_tip %}
+        <div class="tip-section">
+          <p><strong>Health Tip:</strong> {{ healthy_tip }}</p>
+        </div>
+        {% endif %}
+      </div>
     </div>
-{% endfor %}
 
-                {% if healthy_tip %}
-                <div class="tip-section">
-                    <p><strong>Health Tip:</strong> {{ healthy_tip }}</p>
-                </div>
-                {% endif %}
-            </div>
-        
-        </div>
-
-        <div class="result-actions no-print">
-
-            <a href="#" id="send-whatsapp" class="action-btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Order Your whole Day Meals via WhatsApp
-            </a>
-            <button id="send-email" class="action-btn btn-email">
-                <i class="fas fa-envelope"></i>  Order Your whole Day Meals via Email
-            </button>
-        </div>
+    <div class="result-actions no-print">
+      <a href="#" id="send-whatsapp" class="action-btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> Order Your Whole Day Meals via WhatsApp
+      </a>
+      <button id="send-email" class="action-btn btn-email" type="button">
+        <i class="fas fa-envelope"></i> Order Your Whole Day Meals via Email
+      </button>
     </div>
-    {% include "footer.html" %}
+  </div>
+</div>
 
-    <script>
-    
-    tsParticles.load("tsparticles", {
-        fullScreen: { enable: false },
-        particles: {
-            number: { value: 80, density: { enable: true, area: 800 } },
-            color: { value: "#00ffae" },
-            shape: { type: "circle" },
-            opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
-            links: { enable: true, distance: 150, color: "#00ffae", opacity: 0.4, width: 1 }
-        },
-        interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
-            modes: { repulse: { distance: 100 }, push: { quantity: 4 } }
-        },
-        detectRetina: true
-    });
+<script>
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    particles: {
+      number: { value: 80, density: { enable: true, area: 800 } },
+      color: { value: "#2be88a" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: true },
+      size: { value: 3, random: true },
+      move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
+      links: { enable: true, distance: 150, color: "#2be88a", opacity: 0.4, width: 1 }
+    },
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+      modes: { repulse: { distance: 100 }, push: { quantity: 4 } }
+    },
+    detectRetina: true
+  });
 
-// WhatsApp Sharing
-        document.getElementById('send-whatsapp').addEventListener('click', (e) => {
-            e.preventDefault();
-            const planText = `I Want to order - Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
-                `{% for meal_time, meals in meal_plans.items() %}` +
-                `{{ meal_time|capitalize }}:\n` +
-                `{% if meals is iterable and meals is not string %}` +
-                `{% for meal in meals %}` +
-                `- {{ meal.item }} ({{ meal.quantity }})\n` +
-                `  Calories: {{ meal.calories }}kcal\n` +
-                `  Protein: {{ meal.protein }}g\n` +
-                `  Carbs: {{ meal.carbs }}g\n` +
-                `  Fats: {{ meal.fats }}g\n\n` +
-                `{% endfor %}` +
-                `{% else %}` +
-                `- {{ meals.item }} ({{ meals.quantity }})\n` +
-                `  Calories: {{ meals.calories }}kcal\n` +
-                `  Protein: {{ meals.protein }}g\n` +
-                `  Carbs: {{ meals.carbs }}g\n` +
-                `  Fats: {{ meals.fats }}g\n\n` +
-                `{% endif %}` +
-                `{% endfor %}` +
-                `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
-            
-            window.open(`https://wa.me/?text=${encodeURIComponent(planText)}`, '_blank');
-        });
+  const whatsappButton = document.getElementById('send-whatsapp');
+  const emailButton = document.getElementById('send-email');
 
-        // Email Sharing
-        document.getElementById('send-email').addEventListener('click', () => {
-            const planText = `I Want to order - Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
-                `{% for meal_time, meals in meal_plans.items() %}` +
-                `{{ meal_time|capitalize }}:\n` +
-                `{% if meals is iterable and meals is not string %}` +
-                `{% for meal in meals %}` +
-                `- {{ meal.item }} ({{ meal.quantity }})\n` +
-                `  Calories: {{ meal.calories }}kcal\n` +
-                `  Protein: {{ meal.protein }}g\n` +
-                `  Carbs: {{ meal.carbs }}g\n` +
-                `  Fats: {{ meal.fats }}g\n\n` +
-                `{% endfor %}` +
-                `{% else %}` +
-                `- {{ meals.item }} ({{ meals.quantity }})\n` +
-                `  Calories: {{ meals.calories }}kcal\n` +
-                `  Protein: {{ meals.protein }}g\n` +
-                `  Carbs: {{ meals.carbs }}g\n` +
-                `  Fats: {{ meals.fats }}g\n\n` +
-                `{% endif %}` +
-                `{% endfor %}` +
-                `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
-            
-            window.location.href = `mailto:?subject=Meal%20Genie%20Plan&body=${encodeURIComponent(planText)}`;
-        });
-    </script>     
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+  whatsappButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const planText = `I Want to order - Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
+      `{% for meal_time, meals in meal_plans.items() %}` +
+      `{{ meal_time|capitalize }}:\n` +
+      `{% if meals is iterable and meals is not string %}` +
+      `{% for meal in meals %}` +
+      `- {{ meal.item }} ({{ meal.quantity }})\n` +
+      `  Calories: {{ meal.calories }}kcal\n` +
+      `  Protein: {{ meal.protein }}g\n` +
+      `  Carbs: {{ meal.carbs }}g\n` +
+      `  Fats: {{ meal.fats }}g\n\n` +
+      `{% endfor %}` +
+      `{% else %}` +
+      `- {{ meals.item }} ({{ meals.quantity }})\n` +
+      `  Calories: {{ meals.calories }}kcal\n` +
+      `  Protein: {{ meals.protein }}g\n` +
+      `  Carbs: {{ meals.carbs }}g\n` +
+      `  Fats: {{ meals.fats }}g\n\n` +
+      `{% endif %}` +
+      `{% endfor %}` +
+      `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
+
+    window.open(`https://wa.me/?text=${encodeURIComponent(planText)}`, '_blank');
+  });
+
+  emailButton.addEventListener('click', () => {
+    const planText = `I Want to order - Meal Genie Plan\n\nProfile: {{ gender|capitalize }}, {{ age }}, {{ activity|capitalize }} activity\n\n` +
+      `{% for meal_time, meals in meal_plans.items() %}` +
+      `{{ meal_time|capitalize }}:\n` +
+      `{% if meals is iterable and meals is not string %}` +
+      `{% for meal in meals %}` +
+      `- {{ meal.item }} ({{ meal.quantity }})\n` +
+      `  Calories: {{ meal.calories }}kcal\n` +
+      `  Protein: {{ meal.protein }}g\n` +
+      `  Carbs: {{ meal.carbs }}g\n` +
+      `  Fats: {{ meal.fats }}g\n\n` +
+      `{% endfor %}` +
+      `{% else %}` +
+      `- {{ meals.item }} ({{ meals.quantity }})\n` +
+      `  Calories: {{ meals.calories }}kcal\n` +
+      `  Protein: {{ meals.protein }}g\n` +
+      `  Carbs: {{ meals.carbs }}g\n` +
+      `  Fats: {{ meals.fats }}g\n\n` +
+      `{% endif %}` +
+      `{% endfor %}` +
+      `Tip: {{ healthy_tip if healthy_tip else 'Stay hydrated!' }}`;
+
+    window.location.href = `mailto:?subject=Meal%20Genie%20Plan&body=${encodeURIComponent(planText)}`;
+  });
+</script>
+{% endblock %}
+
