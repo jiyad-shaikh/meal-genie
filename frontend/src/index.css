@@ -45,11 +45,20 @@ html.dark body {
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-shell-light::before {
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.32), transparent 34%),
+    linear-gradient(300deg, rgba(68, 166, 110, 0.18), transparent 42%);
+}
+
+.hero-shell-dark::before {
   background:
     linear-gradient(115deg, rgba(255, 255, 255, 0.1), transparent 35%),
     linear-gradient(300deg, rgba(5, 31, 24, 0.35), transparent 38%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-glow {
@@ -62,6 +71,14 @@ html.dark body {
   background: rgba(170, 255, 220, 0.28);
   filter: blur(8px);
   z-index: 0;
+}
+
+.hero-glow-light {
+  background: rgba(158, 235, 190, 0.72);
+}
+
+.hero-glow-dark {
+  background: rgba(170, 255, 220, 0.28);
 }
 
 .dish-track {

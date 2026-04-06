@@ -154,17 +154,23 @@ function TopNav({ theme, mobileOpen, onClose, onToggleMobile, onToggleTheme }) {
   const isDark = theme === 'dark'
   return (
     <header
-      className={`sticky top-2 z-30 rounded-2xl border px-3 py-3 shadow-soft backdrop-blur ${
-        isDark ? 'border-[#3adf95]/45 bg-[#0a1f18]' : 'border-brand-300/45 bg-white/95'
+      className={`sticky top-2 z-30 rounded-2xl border px-3 py-2 ${
+        isDark
+          ? 'border-[#67f2b9]/75 bg-[#0f3a2a] shadow-[0_16px_36px_rgba(0,0,0,0.34)] ring-1 ring-inset ring-white/10'
+          : 'border-brand-700/85 bg-brand-700 shadow-[0_16px_36px_rgba(11,79,54,0.22)] ring-1 ring-inset ring-white/10'
       }`}
     >
       <div className="flex items-center justify-between gap-3">
         <NavLink to="/" onClick={onClose} className="flex items-center gap-2">
-          <img src="/logo-192.png" alt="Meal Genie" className="h-9 w-9 rounded-lg border border-brand-400/30 object-cover" />
-          <span className={`brand-title text-xl font-extrabold ${isDark ? 'text-[#f7fff9]' : 'text-brand-700'}`}>Meal Genie</span>
+          <img src="/logo-192.png" alt="Meal Genie" className="h-8 w-8 rounded-lg border border-brand-400/30 object-cover" />
+          <span className={`brand-title text-lg font-extrabold ${isDark ? 'text-[#f7fff9]' : 'text-white'}`}>Meal Genie</span>
         </NavLink>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav
+          className={`hidden items-center gap-1 rounded-2xl px-1 py-1 md:flex ${
+            isDark ? 'bg-transparent' : 'bg-transparent'
+          }`}
+        >
           <NavItem to="/" theme={theme}>Home</NavItem>
           <NavItem to="/menu" theme={theme}>Menu</NavItem>
           <NavItem to="/plan" theme={theme}>Get Plan</NavItem>
@@ -178,10 +184,10 @@ function TopNav({ theme, mobileOpen, onClose, onToggleMobile, onToggleTheme }) {
           <button
             type="button"
             onClick={onToggleTheme}
-            className={`hidden h-11 w-11 items-center justify-center rounded-xl border transition sm:inline-flex ${
+            className={`hidden h-10 w-10 items-center justify-center rounded-xl transition sm:inline-flex ${
               isDark
-                ? 'border-[#48e7a0]/50 bg-[#164435] text-[#f5fff9] hover:bg-[#1e5945]'
-                : 'border-brand-400/45 bg-brand-100 text-brand-800 hover:bg-brand-200'
+                ? 'bg-transparent text-[#f5fff9] hover:bg-white/10'
+                : 'bg-transparent text-white hover:bg-white/10'
             }`}
             title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
             aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
@@ -191,10 +197,10 @@ function TopNav({ theme, mobileOpen, onClose, onToggleMobile, onToggleTheme }) {
           <button
             type="button"
             onClick={onToggleTheme}
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-xl border transition sm:hidden ${
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition sm:hidden ${
               isDark
-                ? 'border-[#48e7a0]/55 bg-[#164435] text-[#f5fff9] hover:bg-[#1e5945]'
-                : 'border-brand-500/60 bg-brand-100 text-brand-800 hover:bg-brand-200'
+                ? 'bg-transparent text-[#f5fff9] hover:bg-white/10'
+                : 'bg-transparent text-white hover:bg-white/10'
             }`}
             title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
             aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
@@ -203,10 +209,10 @@ function TopNav({ theme, mobileOpen, onClose, onToggleMobile, onToggleTheme }) {
           </button>
           <button
             type="button"
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-xl border transition md:hidden ${
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-xl transition md:hidden ${
               isDark
-                ? 'border-[#48e7a0]/55 text-[#f7fff9] hover:bg-[#1d4f3d]'
-                : 'border-brand-500/60 text-brand-700 hover:bg-brand-100'
+                ? 'text-[#f7fff9] hover:bg-white/10'
+                : 'text-white hover:bg-white/10'
             }`}
             onClick={onToggleMobile}
             aria-label="Toggle menu"
@@ -222,8 +228,10 @@ function TopNav({ theme, mobileOpen, onClose, onToggleMobile, onToggleTheme }) {
 
       {mobileOpen && (
         <nav
-          className={`mt-3 grid gap-2 rounded-xl border px-2 py-2 md:hidden ${
-            isDark ? 'border-[#49e9a3]/45 bg-[#103124]' : 'border-brand-200/80 bg-white'
+          className={`mt-3 grid gap-2 rounded-xl px-2 py-2 md:hidden ${
+            isDark
+              ? 'bg-[#103124] shadow-[0_12px_28px_rgba(0,0,0,0.24)]'
+              : 'bg-brand-700 shadow-[0_12px_24px_rgba(15,84,58,0.18)]'
           }`}
         >
           <NavItem to="/" onClick={onClose} theme={theme}>Home</NavItem>
@@ -272,14 +280,14 @@ function NavItem({ to, children, onClick, theme }) {
       to={to}
       onClick={onClick}
       className={({ isActive }) =>
-        `rounded-xl px-3 py-2 text-sm font-semibold transition ${
+        `rounded-xl px-2.5 py-1.5 text-sm font-semibold transition ${
           isActive
             ? isDark
-              ? 'bg-[#43d988] text-[#06281b]'
-              : 'bg-brand-600 text-white'
+              ? 'bg-[#43d988] text-[#06281b] shadow-[0_6px_18px_rgba(67,217,136,0.22)]'
+              : 'bg-white text-brand-800 shadow-[0_6px_18px_rgba(0,0,0,0.12)]'
             : isDark
-              ? 'text-[#dcffef] hover:bg-[#1f5441] hover:text-white'
-              : 'text-slate-700 hover:bg-brand-100'
+              ? 'text-[#dcffef] hover:bg-white/10 hover:text-white'
+              : 'text-white/90 hover:bg-white/10 hover:text-white'
         }`
       }
     >
@@ -293,30 +301,68 @@ function Home({ theme }) {
   const sectionShell = isDark ? 'border-[#2e624d] bg-[#0f2a20]' : 'border-brand-300/40 bg-white/92'
   const bodyText = isDark ? 'text-[#d5f4e4]' : 'text-slate-700'
   const mutedText = isDark ? 'text-[#b8decf]' : 'text-slate-500'
+  const heroShellClass = isDark
+    ? 'hero-shell hero-shell-dark rounded-[28px] border border-brand-300/45 bg-gradient-to-br from-[#0a3326] via-[#0f6b4e] to-[#19b172] p-4 shadow-soft sm:p-6 dark:border-brand-400/30'
+    : 'hero-shell hero-shell-light rounded-[28px] border border-[#a7ddb9] bg-gradient-to-br from-[#dff7e8] via-[#b8ebcc] to-[#72cf9d] p-4 shadow-soft sm:p-6'
+  const heroEyebrowClass = isDark ? 'text-emerald-100/90' : 'text-brand-700/80'
+  const heroTitleClass = isDark ? 'text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.25)]' : 'text-brand-900'
+  const heroTextClass = isDark ? 'text-emerald-50/95' : 'text-brand-900/80'
+  const heroPrimaryButtonClass = isDark
+    ? 'border-[#dffef0]/45 bg-[#ffffff] text-brand-800 shadow-[0_8px_20px_rgba(4,34,24,0.2)] hover:bg-brand-100'
+    : 'border-white/70 bg-white text-brand-800 shadow-[0_10px_24px_rgba(16,110,71,0.12)] hover:bg-brand-50'
+  const heroSecondaryButtonClass = isDark
+    ? 'border-[#dffef0]/45 bg-[#0b3f2f]/90 text-emerald-50 hover:bg-[#0e4a38]'
+    : 'border-brand-700/20 bg-brand-600 text-white shadow-[0_10px_24px_rgba(16,110,71,0.18)] hover:bg-brand-700'
+  const heroBadgeClass = isDark
+    ? 'border-white/35 bg-white/20 text-emerald-50'
+    : 'border-[#8fd1ae] bg-white/60 text-brand-800'
+  const heroMediaClass = isDark
+    ? 'border-white/15 bg-[#04261b]/25'
+    : 'border-[#9dd7b6] bg-white/45'
+  const ctaShellClass = isDark
+    ? 'rounded-3xl border border-brand-300/45 bg-gradient-to-r from-[#0a3326] via-[#0f6b4e] to-[#159b68] p-5 shadow-soft sm:p-6'
+    : 'rounded-3xl border border-[#a7ddb9] bg-gradient-to-r from-[#dff7e8] via-[#b8ebcc] to-[#72cf9d] p-5 shadow-soft sm:p-6'
+  const ctaTitleClass = isDark ? 'text-white' : 'text-brand-900'
+  const ctaTextClass = isDark ? 'text-emerald-50/95' : 'text-brand-900/80'
+  const ctaPrimaryClass = isDark
+    ? 'border-white/35 bg-white text-brand-800 hover:bg-brand-100'
+    : 'border-white/70 bg-white text-brand-800 shadow-[0_10px_24px_rgba(16,110,71,0.12)] hover:bg-brand-50'
+  const ctaSecondaryClass = isDark
+    ? 'border-white/35 bg-[#0b3f2f]/90 text-emerald-50 hover:bg-[#0e4a38]'
+    : 'border-brand-700/20 bg-brand-600 text-white shadow-[0_10px_24px_rgba(16,110,71,0.18)] hover:bg-brand-700'
+  const ctaGhostClass = isDark
+    ? 'border-white/35 bg-transparent text-emerald-50 hover:bg-white/10'
+    : 'border-brand-700/20 bg-white/35 text-brand-900 hover:bg-white/55'
 
   return (
     <main className="mt-3 space-y-4 sm:space-y-5">
-      <section className="hero-shell rounded-[28px] border border-brand-300/45 bg-gradient-to-br from-[#0a3326] via-[#0f6b4e] to-[#19b172] p-4 shadow-soft sm:p-6 dark:border-brand-400/30">
-        <div className="hero-glow" />
+      <section className={heroShellClass}>
+        <div className={`hero-glow ${isDark ? 'hero-glow-dark' : 'hero-glow-light'}`} />
         <div className="relative z-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-emerald-100/90 sm:text-xs sm:tracking-[0.2em]">Scheduled Meal Subscriptions</p>
-          <h1 className="brand-title mt-1 max-w-2xl text-3xl font-extrabold leading-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.25)] sm:mt-2 sm:text-5xl">
+          <p className={`text-[11px] font-semibold uppercase tracking-[0.17em] sm:text-xs sm:tracking-[0.2em] ${heroEyebrowClass}`}>Scheduled Meal Subscriptions</p>
+          <h1 className={`brand-title mt-1 max-w-2xl text-3xl font-extrabold leading-tight sm:mt-2 sm:text-5xl ${heroTitleClass}`}>
             Meal Genie
           </h1>
-          <p className="mt-2 max-w-xl text-xs leading-relaxed text-emerald-50/95 sm:mt-3 sm:text-base">
+          <p className={`mt-2 max-w-xl text-xs leading-relaxed sm:mt-3 sm:text-base ${heroTextClass}`}>
             Home-style, clean, and hygienic meals for fat loss, muscle gain, and daily wellness with scheduled delivery slots.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5 sm:flex sm:flex-row sm:gap-3">
-            <NavLink to="/plan" className="inline-flex items-center justify-center rounded-xl border border-[#dffef0]/45 bg-[#ffffff] px-3 py-2.5 text-sm font-bold text-brand-800 shadow-[0_8px_20px_rgba(4,34,24,0.2)] transition hover:bg-brand-100 sm:rounded-2xl sm:px-6 sm:py-3 sm:text-base">Get My Plan</NavLink>
-            <NavLink to="/menu" className="inline-flex items-center justify-center rounded-xl border border-[#dffef0]/45 bg-[#0b3f2f]/90 px-3 py-2.5 text-sm font-bold text-emerald-50 transition hover:bg-[#0e4a38] sm:rounded-2xl sm:px-6 sm:py-3 sm:text-base">Explore Menu</NavLink>
+            <NavLink to="/plan" className={`inline-flex items-center justify-center rounded-xl border px-3 py-2.5 text-sm font-bold transition sm:rounded-2xl sm:px-6 sm:py-3 sm:text-base ${heroPrimaryButtonClass}`}>Get My Plan</NavLink>
+            <NavLink to="/menu" className={`inline-flex items-center justify-center rounded-xl border px-3 py-2.5 text-sm font-bold transition sm:rounded-2xl sm:px-6 sm:py-3 sm:text-base ${heroSecondaryButtonClass}`}>Explore Menu</NavLink>
           </div>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="rounded-full border border-white/35 bg-white/20 px-3 py-1 text-xs font-semibold text-emerald-50">Weekly & Monthly Plans</span>
-            <span className="rounded-full border border-white/35 bg-white/20 px-3 py-1 text-xs font-semibold text-emerald-50">Scheduled Delivery Slots</span>
-            <span className="hidden rounded-full border border-white/35 bg-white/20 px-3 py-1 text-xs font-semibold text-emerald-50 sm:inline-flex">Fresh Daily Preparation</span>
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+            <span className={`inline-flex min-w-0 items-center justify-center rounded-full border px-2.5 py-1 text-center text-[11px] font-semibold leading-tight sm:px-3 sm:text-xs ${heroBadgeClass}`}>
+              <span className="whitespace-nowrap sm:hidden">Weekly Plans</span>
+              <span className="hidden sm:inline">Weekly & Monthly Plans</span>
+            </span>
+            <span className={`inline-flex min-w-0 items-center justify-center rounded-full border px-2.5 py-1 text-center text-[11px] font-semibold leading-tight sm:px-3 sm:text-xs ${heroBadgeClass}`}>
+              <span className="whitespace-nowrap sm:hidden">Delivery Slots</span>
+              <span className="hidden sm:inline">Scheduled Delivery Slots</span>
+            </span>
+            <span className={`hidden rounded-full border px-3 py-1 text-xs font-semibold sm:inline-flex ${heroBadgeClass}`}>Fresh Daily Preparation</span>
           </div>
         </div>
-        <div className="relative z-10 mt-4 overflow-hidden rounded-xl border border-white/15 bg-[#04261b]/25 p-2 sm:mt-6 sm:rounded-2xl sm:p-3">
+        <div className={`relative z-10 mt-4 overflow-hidden rounded-xl border p-2 sm:mt-6 sm:rounded-2xl sm:p-3 ${heroMediaClass}`}>
           <div className="dish-track">
             {[...fallbackMenuItems, ...fallbackMenuItems].map((meal, index) => (
               <div key={`${meal.id}-${index}`} className="dish-chip" aria-hidden="true">
@@ -425,15 +471,15 @@ function Home({ theme }) {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-brand-300/45 bg-gradient-to-r from-[#0a3326] via-[#0f6b4e] to-[#159b68] p-5 shadow-soft sm:p-6">
-        <h2 className="brand-title text-3xl font-extrabold text-white sm:text-4xl">Ready To Start A Better Meal Routine?</h2>
-        <p className="mt-2 max-w-3xl text-sm text-emerald-50/95 sm:text-base">
+      <section className={ctaShellClass}>
+        <h2 className={`brand-title text-3xl font-extrabold sm:text-4xl ${ctaTitleClass}`}>Ready To Start A Better Meal Routine?</h2>
+        <p className={`mt-2 max-w-3xl text-sm sm:text-base ${ctaTextClass}`}>
           Start with your personalized plan, then move to a practical weekly or monthly subscription model designed for consistent results.
         </p>
         <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-          <NavLink to="/plan" className="inline-flex items-center justify-center rounded-2xl border border-white/35 bg-white px-6 py-3 text-sm font-bold text-brand-800 transition hover:bg-brand-100 sm:text-base">Generate My Plan</NavLink>
-          <NavLink to="/menu" className="inline-flex items-center justify-center rounded-2xl border border-white/35 bg-[#0b3f2f]/90 px-6 py-3 text-sm font-bold text-emerald-50 transition hover:bg-[#0e4a38] sm:text-base">See Menu & Subscription Options</NavLink>
-          <NavLink to="/contact" className="inline-flex items-center justify-center rounded-2xl border border-white/35 bg-transparent px-6 py-3 text-sm font-bold text-emerald-50 transition hover:bg-white/10 sm:text-base">Talk To Team</NavLink>
+          <NavLink to="/plan" className={`inline-flex items-center justify-center rounded-2xl border px-6 py-3 text-sm font-bold transition sm:text-base ${ctaPrimaryClass}`}>Generate My Plan</NavLink>
+          <NavLink to="/menu" className={`inline-flex items-center justify-center rounded-2xl border px-6 py-3 text-sm font-bold transition sm:text-base ${ctaSecondaryClass}`}>See Menu & Subscription Options</NavLink>
+          <NavLink to="/contact" className={`inline-flex items-center justify-center rounded-2xl border px-6 py-3 text-sm font-bold transition sm:text-base ${ctaGhostClass}`}>Talk To Team</NavLink>
         </div>
       </section>
     </main>
